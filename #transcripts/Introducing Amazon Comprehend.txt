@@ -1,0 +1,60 @@
+Hi, and welcome back to this lesson
+on Amazon Comprehend.
+And Comprehend is a service
+that uses natural language processing
+and machine learning to process text.
+Natural language processing
+is a way for computers to analyze,
+understand and derive meaning from language.
+And this allows you to discover insights,
+meaning and connections within your text data.
+For instance, you can use Comprehend
+to extract meaning from documents,
+customer interactions, reviews,
+emails, support messages or social media feeds.
+But what kind of things can it discover?
+Well, it can perform sentiment analysis
+on social media feeds or customer support interactions
+so you can find out how customers feel
+about your product or service.
+It can be used to identify the language
+of the provided text or analyze a set of documents
+to discover the primary topics.
+Now, the most common use cases for Amazon comprehend
+include voice of customer analytics.
+So you can understand and gauge
+whether customer sentiment is positive,
+neutral or negative or mixed
+based on the feedback that you receive
+from customer support calls,
+emails and social media.
+You can use it to provide a better search experience
+by indexing key phrases, sentiment and key entities.
+This enables you to focus the search
+on intent and context
+instead of just basic keywords,
+so enabling customers to search more intelligently.
+And you can also use it
+for knowledge management and discovery,
+so you can analyze and organize
+a collection of documents by topic,
+and you can then use these topics
+to serve relevant and personalized content
+for your customers.
+So for the exam,
+know that Comprehend uses natural language processing
+to process text, discover key phrases,
+topics and languages,
+perform sentiment analysis,
+and provide intelligence search
+that is focused on intent and context
+instead of just basic keywords.
+And Comprehend is all about reading
+and understanding your text data,
+and it can be used with documents,
+customer interactions, reviews,
+emails, support messages and social media feeds.
+So that's all for this lesson
+and if you'd like to continue,
+please join me in the next one.
+Thank you.

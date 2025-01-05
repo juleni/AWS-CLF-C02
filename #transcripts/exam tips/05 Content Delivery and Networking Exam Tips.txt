@@ -1,0 +1,94 @@
+Hi everybody.
+In this lesson, we'll be going over content delivery
+and networking exam tips.
+This session will highlight important points
+from our content delivery and networking related topics.
+Let's dive in.
+Remember that we described CDNs as a network
+of speedy delivery routes that get your delicious pizzas
+or website content to hungry customers
+or users around the world.
+In AWS, we have Amazon CloudFront,
+which is our premier pizza delivery network.
+CloudFront works by caching your content
+in multiple data centers known as edge locations.
+When a user requests your content,
+CloudFront serves it from the edge location
+nearest to the user.
+Remember that CloudFront can be used for delivering videos,
+applications, or data anywhere in the world.
+Next up is AWS Global Accelerator.
+AWS Global Accelerator improves application performance
+by directing traffic through Amazon's optimized paths.
+It can be beneficial to use in cases of global user bases,
+high traffic events, and multi-region applications.
+It simplifies traffic management across multiple regions,
+acting as a single entry point,
+and thus reducing the complexity
+of handling global network traffic.
+Don't forget its built-in DDoS protection
+and automatic failover capabilities.
+It integrates with other AWS services,
+such as Elastic Load Balancing, Amazon EC2, and Amazon S3.
+Let's briefly touch on VPC or Virtual Private Cloud.
+Our VPC has multiple components,
+and our VPC is located within an availability zone
+that is isolated from failures in other availability zones.
+Remember that subnets allow you
+to segment your VPC into different network sections.
+Public subnets are accessible from the internet,
+ideal for front end servers, while private subnets are used
+for backend systems like databases.
+Route tables control the flow of traffic within the VPC.
+Each subnet in your VPC is associated with a route table
+that dictates where its traffic should go,
+and Internet Gateway allows resources in your public subnets
+to communicate with the internet.
+Security groups act as virtual firewalls
+for EC2 instances controlling inbound and outbound traffic,
+at the instance level, they are stateful.
+Network ACLs, on the other hand, provide an additional layer
+of security at the subnet level, controlling both inbound
+and outbound traffic.
+They are stateless.
+Moving on to DNS service with Amazon Route 53.
+Recall that a domain name system
+or DNS is like the big phone book of the internet.
+DNS works behind the scenes
+to find the corresponding IP address to a website URL
+In the AWS universe, Amazon Route 53 is our DNS service.
+It provides domain name registration,
+health checks, and failover,
+different types of routing like geolocation routing,
+latency based routing, and weighted round robin routing.
+It scales automatically
+and integrates with AWS services.
+For hybrid networking in AWS,
+remember that AWS Direct Connect is like a private road
+built exclusively for your use.
+It provides a direct private connection
+from your data center to AWS bypassing the public internet.
+AWS VPN is like an armored vehicle,
+transporting ingredients safely on public roads.
+It encrypts your data, safeguarding it
+as it travels over the internet to AWS.
+Remember that there are two types of VPNs.
+Site-to-site VPN creates secure connection
+between your data center or branch office
+and your AWS environment.
+Client VPN allows you to securely access your AWS resources
+or your private network from any location.
+You might wanna use Direct Connect
+if your organization regularly transfers massive amounts
+of data, you have applications
+that need real-time data analytics,
+or you have sensitive data
+you don't want traversing the public internet.
+A VPN might be useful if you want encrypted connections
+for remote access, you have smaller data transfer needs,
+or you want a quick, easy, flexible setup.
+That was a pretty quick overview
+of content delivery and networking tips.
+Make sure you take the quiz
+to further solidify your understanding of the subjects.
+See you in the next section.

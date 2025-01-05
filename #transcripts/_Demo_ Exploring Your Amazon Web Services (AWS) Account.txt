@@ -1,0 +1,135 @@
+Hey there gurus.
+Welcome to this demonstration lesson,
+Exploring Your Amazon Web Services AWS Account.
+In this lesson, we'll review our scenario
+and then roll up our sleeves and dive into the console.
+We'll close out with some exam tips.
+Let's get started.
+You've been tasked with creating a new AWS account.
+This means that you'll need to secure the root user
+and create a daily user
+for your team to start working in that account.
+In order to follow along
+you'll need to create your own AWS account.
+This cannot be done in our sandbox.
+Let's head in.
+Okay, let's create our account.
+Check your resources for a link to this page.
+We'll come up here to the top right hand corner
+and click create an AWS account.
+We'll need to pick our root user email address
+and account name, and then verify that email address.
+So let's do that.
+We successfully verified our email address
+so now we need to pick a password and let's confirm that.
+So I'll fill out all
+of this information here and you do the same.
+I'll pause the video here and then when you're finished
+come back to this point.
+Okay, with our information in
+we can continue to our next step.
+We'll enter in our card information to be used for billing.
+With that complete, we can move on to our next step.
+It wants to confirm our identity
+so we'll let it do that by putting
+in our mobile phone number and entering the security check.
+As soon as you get your verify code
+go ahead and plug that in and then we'll continue.
+And here's where you would select your support plan.
+I'm gonna choose the basic support
+or free account for this demonstration.
+Let's complete our signup and we've got our new account.
+We'll go ahead and go into the management console.
+Our first login should be with our root user.
+We'll put in our email address and our password.
+Congratulations. You've created your first AWS account.
+Step one is we need to secure our root user.
+So let's head into IAM or Identity and Access Management.
+Now right off the top
+we see we need to add MFA for our root user.
+Thanks AWS.
+We'll click add MFA.
+We'll use an authenticator app.
+We'll call this device my phone and we'll say next.
+In order to use MFA
+you will need a compatible application
+like Google Authenticator, Duo Mobile
+or an Authy app on your mobile device
+or computer or whatever device you're using to authenticate.
+I've already got Google Authenticator on my phone
+so I'll use that
+and I'll select show QR code to get this going.
+And now we need to enter our codes and add MFA.
+Perfect. Our MFA device set up was successful.
+Our second step is now to set up our daily user.
+So let's go over on the left hand side to users.
+We'll do create user.
+We are gonna call it our daily user.
+We want to provide them access to the console.
+For this demonstration
+we're going to select a create an IAM user.
+Typically, if it was an actual person
+you could use the identity center
+which is a little more secure.
+We do wanna set up programmatic access using keys
+and things like that for this demonstration.
+So we'll say, I wanna create an IAM user.
+Let's do a custom password.
+You can create your own custom password here
+just to make sure it is eight characters long
+and that it follows the rules listed.
+Now, typically, you would want your user to
+create a new password when they sign in.
+For this demonstration, we'll uncheck this box
+because we just put in our custom password.
+So we'll hit next.
+For our demonstration
+we'll attach policies directly to this user.
+Typically, you would add your user to a group
+so that all of your permissions would be
+to a single group and not individual users.
+For this demonstration, we'll allow administrator access.
+So we'll type in admin
+and we'll select administrator access.
+If you open up this policy
+you'll see that this particular policy allows every action
+on every resource.
+Now, typically, you would want to select specific resources
+and actions to be able to follow the principle
+of lease privilege, but for our demonstration
+we'll just grant the administrator access here.
+We'll come on down and click next.
+Let's review our information here.
+We've got our daily user with our custom password.
+We are not requiring a password reset.
+They will have administrator access
+and we don't have any tags.
+So let's go ahead and create our user.
+Perfect. We've got our user listed here.
+So from here we wanna make sure we grab our account number
+so we can sign in successfully.
+Let's go up here to my account, see your account ID,
+copy that account ID,
+go ahead and paste it somewhere on the side
+like in a text document.
+Now we can sign out.
+We'll leave this page and now we'll try logging back in
+as our new user.
+We'll select I am User, we'll put in our account ID,
+click next
+and now we enter our username and the password
+which is Daily User with our password we selected.
+And we'll sign in.
+Great.
+We are now in as our daily user, and we can go forth,
+share this with our team and get going.
+Great job gurus.
+And with that, we're ready for our exam tips.
+Know how to protect the root user.
+Enable MFA and have a daily user to run daily tasks.
+Know how to navigate through the AWS Management console.
+Remember those widgets and how to find the service.
+Always remember to check the region you're in
+before making any changes.
+That'll wrap up this lesson, gurus.
+I'll see you in the next one when you're ready.

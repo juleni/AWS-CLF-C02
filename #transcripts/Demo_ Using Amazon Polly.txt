@@ -1,0 +1,83 @@
+Hi, and welcome back
+to this lesson on Amazon Polly.
+Now, Polly is a service that uses deep learning
+to generate realistic natural sounding speech
+from text that you provide,
+and deep learning is just a type of artificial intelligence
+that lets computers learn how to process data
+in a similar way to the human brain.
+With Polly, you can provide the text
+in a variety of different languages.
+The resulting audio can be streamed, saved or downloaded,
+for instance, you can download it as an mp3 file.
+And Polly can be used to add natural sounding speech
+to your applications,
+so think of a blogging website
+that wants to offer an audio version of their content.
+Well, you can do that with Amazon Polly.
+But the quickest way to understand Polly
+is to actually use it, and it's fun to use as well.
+So let's jump straight into the demo.
+In this scenario, each year, the CEO of your company
+sends an email to all staff
+thanking them for all their hard work.
+This year, you'd like to provide
+an audio version of the email
+so that the sales reps can listen to the message
+while they're driving, and you decide to use Polly
+to generate natural sounding speech from the email.
+So after navigating to Polly,
+we'll select neural text-to-speech
+and that's gonna give us the most natural sounding speech.
+We'll provide the input text that we want Polly to read,
+and after Polly has processed our text
+we can listen to the results
+and note that we can select a voice
+and the language that we want to use as well,
+and we also have the option to save the resulting file
+to S3 or download it as an mp3.
+And we'll be doing everything using the
+AWS Cloud Playground,
+so if you'd like to join me in the AWS console, we'll begin.
+In the Console I'll search for Polly.
+Using the menu on the left hand side, select text-to-speech.
+Make sure that neural is selected,
+and this option produces more natural and human-like speech.
+Down here we can select the language that we want to use,
+and I'm gonna select English British.
+Next, I'll select a voice and I'm gonna use Amy.
+Then down here, this is where we can add the text
+that we want Polly to read out.Demo-Using-Amazon-Polly
+
+So I'm gonna get rid of the sample text,
+and my text is gonna be the end
+of year message from our company, CEO,
+so I'll type the message in here.
+After adding our text, we can then listen to the result.
+So we can listen using this button here,
+we can save to S3 or download.
+So let's go ahead and listen to the result.
+Dear Staff, while it's that time of year again
+when I wish you all happy Holidays,
+thank you for all your hard work,
+and as an extra reward this year
+I have decided to give you all an extra five days vacation.
+Keep up the good work, and thanks again.
+All the best, your CEO, Amy.
+Pretty good, hey?
+Well, I'm not gonna complain about
+an extra five days vacation,
+so thanks very much, Amy.
+And for the exam, just remember that Polly
+is a service that uses deep learning
+to add natural sounding speech to your applications.
+Use cases could be to have Polly read a blog post,
+a short story, or read the contents of a website
+to help people who are visually impaired.
+You provide the text and Polly will generate speech
+that can be streamed, downloaded, or saved to S3.
+And Polly supports a variety
+of different languages and voices.
+Well, that is all for this demo
+and if you're ready to move on,
+please join me in the next one. Thank you.

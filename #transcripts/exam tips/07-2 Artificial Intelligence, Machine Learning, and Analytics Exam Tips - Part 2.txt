@@ -1,0 +1,98 @@
+Hi, and welcome back to this lesson,
+which is part two of the summary and exam tips
+for the AI machine learning and analytics section.
+Beginning with managed streaming for Apache Kafka
+or Amazon MSK,
+which is a fully managed Apache Kafka service.
+It can process streams of events from hundreds
+of different event sources and it's used
+to build real time data streaming applications.
+And my example use case is an application that's used
+to track and analyze stock market data in real time.
+QuickSight is a business analytics service that lets
+you make better business decisions based on your data.
+It's able to connect to AWS data
+and on-premises data stores,
+and it lets you build dashboards to visualize your data.
+For instance, you can build scatter plots, pie charts
+and bar graphs, et cetera.
+And use cases include analyzing sales, performance
+and trends, application usage and traffic
+and marketing campaign data.
+SageMaker is a fully managed machine learning service
+and it can import data from AWS data sources
+like S3, Athena, Redshift, or Elastic Map Produce.
+It can also help you identify potential errors
+in your data, data quality issues and bias.
+It lets you build your model using built-in models
+for common use cases or custom models that you provide.
+Then you can use it to train your model
+using optimized infrastructure and it can also help you
+with automatic model tuning as well.
+And then finally, you can use SageMaker
+to deploy the model to optimized EC2 instances.
+And there's also a serverless option,
+or you can deploy to physical devices located on premises.
+Lex is a service used to build conversational chat bots
+and it uses machine learning
+and natural language models to interact with humans.
+And it's worth remembering the use cases
+like providing a helpful customer service chatbot
+on your website.
+We can use Kendra to add custom search to our application,
+letting users search based on your data.
+You can query using natural language,
+and Kendra uses natural language processing
+to handle your queries.
+Data sources include S3, FSx, RDS, databases
+and external data sources like GitHub or Google Drive.
+Data can be unstructured or semi-structured.
+And Kendra supports formats like HTML, XML, PDF, CSV
+or Microsoft Office.
+So think Word documents or PowerPoint documents.
+The types of questions that you can ask Kendra are simple
+fact-based questions like who, what or where,
+or descriptive questions like,
+how do I return a faulty item?
+Polly is a service that uses deep learning
+to add natural sounding speech to your applications.
+Use cases could be to have Polly read a blog post,
+a short story, or read the contents of a website
+to help people that have visually impaired.
+You provide the text and Polly will generate speech
+that could be streamed, downloaded, or saved to S3.
+And Polly supports a variety of different languages
+and voices with more being added all the time.
+Comprehend uses natural language processing
+or NLP to process text.
+It's used to discover key phrases, topics
+and languages, perform sentiment analysis
+and provide intelligent search that's focused on intent
+and context instead of just basic keywords.
+And comprehend is all about reading
+and understanding your text-based data
+and it can be used with documents,
+customer interactions, reviews, emails,
+support messages, and social media feeds.
+Textract, Transcribe, and Translate are all machine learning
+services that perform automated document processing
+that helps you reduce manual effort.
+They all sound pretty similar, so be sure
+to understand the differences between these services.
+So Textract, extracts text
+and information from your documents.
+Transcribe is a speech to text service
+that takes speeches input, and transcribes it to text.
+And then Translate is for accurate,
+natural sounding language translation.
+Recognition is used for image and video analysis.
+It can perform content moderation to identify harmful
+or offensive images, identity verification, for instance,
+identifying celebrities or for identification purposes.
+And it can be used to identify objects
+or text within images.
+While that's all for this lesson, well done
+for getting through another section of the course.
+And if you are ready to continue,
+please join us in the next one.
+Thank you.

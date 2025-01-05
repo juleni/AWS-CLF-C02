@@ -1,0 +1,67 @@
+Hi, and welcome back to this lesson
+on continuous integration
+and continuous deployment, or CI/CD.
+And we'll begin with what is CI/CD.
+We'll discuss the benefits,
+review an example continuous integration workflow,
+and the same for continuous deployment.
+And we'll finish off with my exam tips.
+Now you may have heard about CI/CD
+because it is widely accepted
+as a software development best practice,
+and it's an essential practice to adopt for anyone
+who is implementing DevOps.
+The idea is to automate everything.
+For instance, code integration,
+which simply means integrating code changes
+from multiple developers as well as automating the build,
+test and deployment functions.
+One of the reasons it's a great practice is
+that it makes change easy
+by applying multiple small changes at least once a day.
+This helps to reduce the risk of breaking something,
+and allows developers to make small incremental changes
+to an application and quickly make new features
+available to customers.
+Now, there are loads of benefits to working this way.
+Automation is a great thing
+because it means that everything that you do is fast,
+repeatable, and scalable.
+Manual effort is avoided, which is ideal
+because of course when we do things manually,
+it's often slow, error prone and inconsistent.
+And with CI/CD, small changes are applied frequently,
+which means that developers can catch bugs
+while they're small and simple to fix.
+So let's take a look at
+an example continuous integration workflow.
+Here's our development team,
+and they're all working on different parts of the code
+downloaded from a central repository
+and saved locally on their own machine.
+When they're ready, they build and test their code locally.
+And if no bugs are found, then the code is committed
+to the shared code repository.
+And in this way, multiple developers are able
+to work on the code and commit their changes.
+So what about continuous deployment?
+Well, after the code has been successfully tested,
+it is merged with the master repository.
+Next, the code is prepared, so it's built, tested again,
+and packaged for deployment.
+And then the final step is to automatically deploy the code
+as soon as it's ready.
+So for the exam, it's useful to understand
+that continuous integration is all about integrating
+or merging small code changes frequently,
+at least once a day.
+Continuous deployment is all about automating the build,
+test and deployment functions,
+which means that bugs are caught early,
+while they are still small and easy to fix.
+And together continuous integration
+and continuous deployment make up the software development
+best practices that are essential for implementing DevOps.
+So that is all for this lesson,
+and if you are ready to move on,
+I will see you in the next one, thank you.

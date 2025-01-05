@@ -1,0 +1,152 @@
+In this lesson,
+we're diving deeper into Amazon VPC.
+While our previous discussion was theoretical,
+it's now time to see a VPC in action.
+This lesson will primarily be a hands-on demo,
+showcasing the main features and concepts of Amazon VPC.
+Let's get started.
+Remember how we described a VPC,
+like our own secure isolated section of a cloud kitchen?
+Well, we're going to jump into the AWS console
+to see what it looks like in the actual cloud.
+Get logged into your AWS account and I'll see you in there.
+Okay, so I'm logged into my AWS account
+and I'm going to head over to the VPC service.
+I can click it here or I can head up to the search bar
+and type in VPC.
+I'll select the VPC service
+and you should be brought to a screen that looks like this.
+I currently have a couple VPCs, some subnets, route tables,
+internet gateways, and what we're going
+to do is you can either click on your VPCs
+here in the left hand navigation,
+or I'm going to click on create VPC.
+And we have a few options here.
+We can create a VPC only
+and then manually create some other resources,
+or we can click VPC and more.
+And that's what we'll do for this example.
+As you can see, a preview populates with kind
+of a map showing
+how these different resources connect to one another.
+In this default option, we have our VPC
+and we have four subnets
+and we have two availability zones, US East 1A
+and US East 1B.
+And within each availability zone, we have a public subnet
+and a private subnet.
+And then we have a route table that connects
+to both our public subnets in each availability zone.
+And then we have route tables for each
+of our private subnets in each availability zone.
+And as you can see on the far right end of this map,
+we have our internet gateway, which allows our VPC
+to connect to the internet through our public subnets
+and public route table.
+And here at the bottom we have a VPC endpoint.
+If I go back over to the left here, you can see
+that we can choose our CIDR block,
+which I'll leave as default.
+If I scroll down a little bit, you can customize
+how many availability zones you'd like.
+And remember that availability zones are isolated
+from one another.
+So if one availability zone fails, it doesn't mean
+that another availability zone will fail.
+So we'll leave it at two
+for higher availability in case one availability zone fails.
+And then in this next section, we're able
+to choose which availability zone we'd like
+for each availability zone.
+If I were to choose one availability zone,
+then we could choose to have one public subnet
+and one private subnet in each availability zone.
+But since we're gonna have two,
+we need two public subnets in order
+to put one subnet in each availability zone.
+If I scroll down further,
+you can see we can customize our subnet CIDR blocks.
+We'll leave those as default.
+We can set up a NAT gateway if we'd like.
+As of now, we have a VPC endpoint,
+but I'll select none for that.
+So now I'll go ahead and create the VPC.
+And this should just take a few moments
+and you can see all of the connections being made
+and resources being created.
+I'll click on view VPC,
+and you can see our resource map here again.
+We're gonna go ahead
+and just remember these last four digits
+of our VPC ID, 4916.
+If I click back into your VPCs, you can see
+that our VPC has been created.
+So remembering that number 4916,
+it will likely be different for you.
+I'm going to head down to security
+and I'll click on network ACLs.
+As you can see, a default network ACL
+has been created for our VPC.
+If I go ahead and click on that, you can see
+that there's already some inbound and outbound rules.
+And I just wanna quickly mention here
+that network access control lists or NACLs,
+they operate at the subnet level and they're stateless.
+So that means they don't remember.
+I like to think about NACLs as a gated community.
+There are guards that stand at the entrances of these gates
+and they allow or do not allow people in
+and out of the community.
+And there's so many people within the community
+that they don't necessarily remember who has come in.
+So they need to have a set of inbound
+and outbound rules made separately
+to determine who or what can leave and enter.
+And this differs from security groups which are stateful.
+And as you can see,
+there has been a default security group associated
+with our VPC that we've created.
+We have an inbound rule and we have an outbound rule.
+And like I said, security groups are stateful,
+which means they do remember.
+Security groups operate at the instance level.
+And so I like to think of this as your house
+and the guards at your door do remember
+who comes into your house,
+and if they allow traffic in one direction,
+they have to allow it back out the other direction.
+And so that's sort of the difference between security groups
+and network ACLs.
+So that was just a really quick demo
+of exploring networking services.
+And so as we wrap up our hands-on exploration of Amazon VPC,
+here's some key takeaways
+and tips that might come in handy for the exam.
+Remember when setting up a VPC,
+selecting the right IP address range, creating subnets,
+and making sure you have the right number
+of availability zones is foundational.
+And each decision you make
+impacts the network's architecture and functionality.
+Make sure you know the distinction
+between public and private subnets.
+Public subnets are accessible from the internet,
+while private subnets are used
+for internal resources like databases.
+Understand that route tables control the flow
+of traffic within the VPC
+and an internet gateway is essential for a VPC
+to communicate with the internet.
+Also understand that security groups
+are instance level security measures,
+stateful and more granular.
+NACLs or network access control lists operate
+at the subnet level.
+They're stateless
+and they offer an additional layer of security.
+Thanks for watching.
+And keep these tips in mind as they sometimes form the basis
+for many of the questions you'll encounter
+on the certification exam.
+Next up, you're able to get some hands-on experience
+with a lab.

@@ -1,0 +1,115 @@
+Hi and welcome back to this lesson
+on Machine Learning with Amazon SageMaker.
+Before we dive into SageMaker,
+let's take a look at some of the activities
+that you would need to undertake
+when deploying a machine learning application.
+So first of all, you need to collect and prepare your data.
+Now, the fuel for machine learning is, of course, data,
+and you will need both quality and quantity.
+So high-quality, relevant, and correct data is needed,
+and a lot of it, to perform meaningful analysis.
+The next step would be to implement
+a machine learning model.
+You then go through the process of training your model
+using example data, known as training data,
+and this lets the machine learning model learn
+from the data that you've provided.
+And it's using this data to learn how
+to make predictions or inferences.
+Next, you test the model and evaluate its performance,
+checking for accuracy and bias.
+Then after testing, you probably have some tuning to do
+to improve model accuracy.
+Then after tuning the model,
+if you're happy with your model accuracy and performance,
+you can then deploy your model to production
+and start using the model to make predictions
+using real data.
+And that in a nutshell
+is a typical machine learning workflow.
+And SageMaker is a fully managed machine learning platform,
+enabling you to prepare your data,
+so it can import data from AWS data sources like S3,
+Athena, Redshift, or Elastic MapReduce,+
+and it can even help you prepare your data
+by identifying potential errors in the data,
+finding data quality issues,
+and identifying bias in your data set.
+It includes built-in models for common use cases
+and supports custom models,
+so you can use your own model that you've created.
+It can be used to train your model
+using optimized infrastructure.
+So custom hardware and chips that are designed
+for machine learning.
+And it can even help with automatic model tuning.
+And then finally, you can also use SageMaker
+to deploy your model,
+and that could be to optimized EC2 instances.
+There's also a serverless option,
+or you can deploy to edge devices,
+like smart cameras and other physical devices
+that are located on-premises.
+Example use cases for machine learning applications
+running on SageMaker include:
+a recommendation engine
+to recommend products based on customers' shopping habits
+and browsing history.
+Banks might use machine learning
+to identify suspected fraudulent transactions.
+An insurance company might use it to predict
+which policyholders are most likely to make a claim
+because they're accident-prone or careless.
+And has this ever happened to you
+that you contacted your home insurance company
+and you told them that you'd lost something,
+but you didn't end up making a claim?
+However, your insurance premium went up anyway.
+Well, if that happens,
+it's probably because the machine learning algorithm
+decided that you were a higher risk
+because you contacted them and told them
+that you lost your phone, your laptop, your iPad,
+or your diamond earring or whatever.
+And the machine learning algorithm probably decided
+that you are not good at looking after your stuff.
+So for that reason, you became a higher risk.
+And then finally,
+what about a virtual customer service assistant
+that deals with customer queries?
+For instance, think of an airline
+that wants to support its customers
+by using a virtual assistant to answer questions
+and provide the latest updates about delayed flights.
+Well, all of these kind of systems can be built
+using machine learning models available on SageMaker.
+Now, when I first heard about this service,
+I wondered, "Why is it called SageMaker?"
+Well, a sage is usually someone who's very wise,
+knowledgeable, with lots of experience,
+someone who you might go to to ask for advice
+or to understand the world.
+So maybe they think that if we all use SageMaker,
+we'll be able to unlock all this wisdom and knowledge
+from our data.
+And for the exam,
+just be aware that SageMaker is a fully managed
+machine learning service.
+It lets you import and prepare your data.
+So it can import the data from data sources like S3,
+Athena, Redshift, Elastic MapReduce.
+And it can even identify potential errors in your data
+and data quality issues.
+It lets you build your model
+and includes built-in models for common use cases
+and supports custom models, so you can use your own.
+Then you can train the model using optimized infrastructure.
+And finally, deploy your model
+to optimized EC2 instances.
+There's also the serverless option,
+or you can deploy to physical devices located on-premises.
+Well, that's all for this lesson,
+and if you'd like to continue,
+please join me in the next one.
+Thank you.

@@ -1,0 +1,66 @@
+Hi, and welcome back to this lesson,
+where we'll answer the question,
+what is Elastic Beanstalk?
+And we'll jump straight in with a use case.
+Imagine you're a developer,
+busy developing your billion-dollar web application.
+You probably want to focus on writing code,
+and you don't want to worry
+about any of the underlying infrastructure
+that's needed to run the application.
+Do you really want to be bothered
+with ensuring the infrastructure is resilient,
+load balanced, and scalable?
+Do you want to worry about installing
+and maintaining the runtime environments needed
+to run your application,
+like Java, .NET, or node.js,
+or the web application platforms needed
+to serve your application over the internet
+platforms like Apache Tomcat, HTTP Server, Nginx,
+Microsoft IIS, or Docker?
+Well, this is where Elastic Beanstalk comes in.
+As a developer, you can simply upload your application code,
+and Elastic Beanstalk
+will provision the infrastructure needed
+to run your application in production,
+including the installation
+and management of the application stack needed
+to run your application.
+So it's gonna take care of capacity provisioning,
+load balancing, auto-scaling,
+and application health monitoring using CloudWatch.
+So Elastic Beanstalk allows developers
+to focus on their code.
+There's no need to worry
+about configuring the underlying infrastructure needed
+to run the application.
+That means that you can get your application
+to market faster.
+It's the fastest and simplest way
+to deploy your application in AWS.
+And Elastic Beanstalk also handles
+operating system patches and updates,
+as well as updates
+to whatever web server application platform you're using
+as well, like Apache Tomcat or HTTP Server.
+So in summary,
+Elastic Beanstalk deploys
+and scales your web applications,
+including the web application server platform.
+It provisions the AWS resources for you,
+so everything that your application needs to run,
+for instance, EC2 instances, RDS databases,
+S3 Storage, Elastic Load Balancers,
+and it will even configure Auto Scaling Groups as well.
+It supports programming languages like Java, .NET,
+PHP, node.js, Python, Ruby, and Go.
+And it supports application server platforms
+like Apache Tomcat, Microsoft IIS, Nginx, and Docker.
+You also get operating system
+and application server updates.
+Monitoring, metrics, and health checks are also included.
+So that is all for this lesson,
+and if you'd like to continue,
+please join me in the next one.
+Thank you.

@@ -1,0 +1,60 @@
+Hi, and welcome back to this lesson on Kendra.
+Now, Kendra is an intelligent search service
+that uses natural language processing
+to let you query your data using natural language
+instead of using a programming language,
+and it enables you to provide
+a customized search capability,
+allowing you to search your data
+or find the answers to customer queries.
+Data sources include S3, FSx, RDS, Aurora,
+Oracle, or SQL Server.
+It also supports websites and external drives,
+like Google Drive or Dropbox, SharePoint or GitHub.
+As for data types, it supports unstructured
+and semi-structured data in formats like HTML, XML,
+PDF, CSV, or Microsoft Office,
+including Word documents and PowerPoint documents.
+How does it work?
+Well, imagine you have some documents stored in S3
+that you want to be able to query using natural language.
+Well, Kendra can first index your data,
+and the index holds the contents of your documents,
+and it's structured in a way that makes them searchable.
+After the index is created,
+you can then question Kendra using natural language,
+and it will provide the answers using the data in the index.
+Here's some examples of the type of questions
+that you can ask.
+So, firstly, you can ask fact-based questions,
+so simple questions, like who, what, where, and when.
+For instance, "When is the deadline for completing
+"the compliance training?"
+And the answer will then be retrieved
+from your indexed documents.
+Now, you can also ask descriptive questions,
+and with this type of question,
+the answer could be a paragraph or a document.
+For instance, "How do I register
+"for the AWS Certified Cloud Practitioner Exam,"
+or even, "How do I return a faulty item?"
+And Kendra is gonna retrieve the answer from your data.
+Now, for the exam, know that we can use Kendra
+to add custom search to our applications,
+so users can search based on the data that we provide.
+You can query the data using natural language,
+and Kendra uses natural language processing
+to handle the query.
+Data sources include S3, FSx, RDS, databases,
+as well as external sources, like GitHub and Google Drive.
+Data could be unstructured or semi-structured,
+and it supports formats like HTML, XML, PDF,
+CSV, and Microsoft Office,
+and the types of questions that you can ask
+are simple fact-based questions, like who, what, and where,
+or more descriptive questions like,
+"How do I return a faulty item?"
+Well, that is all for this lesson,
+and if you're ready to move on,
+please join me in the next one.
+Thank you.

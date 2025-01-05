@@ -1,0 +1,45 @@
+Hi, and welcome back to this lesson,
+where we'll discover the differences
+between standard and FIFO SQS Queues.
+Now, standard queues are the default queue type,
+and with standard queues,
+they guarantee that a message is delivered at least once.
+You get best-effort ordering,
+which means that messages are generally delivered
+in the same order as they're sent.
+However, occasionally, more than one copy
+of a message might be delivered
+or the message might be delivered out of order.
+And in this example, showing a standard queue,
+we can see that the messages
+are generally in the right order.
+However, we've got one message
+that seems to be out of order,
+and we've got a duplicate as well.
+And with FFO queues,
+FIFO stands for first-in-first-out ordering,
+and this means that the order in which messages are sent
+and received is strictly preserved.
+You get exactly once processing,
+which means that duplicates are not introduced.
+So this is a much more predictable option
+if you need to preserve the order of messages
+and ensure that there are no duplicates.
+For instance, this is a great option
+for financial transactions,
+where things need to happen in strict order,
+and a duplicate transaction is gonna cause a problem.
+And that is pretty much all you need to know.
+So for the exam,
+a standard queue gives you best-effort ordering.
+Messages are delivered at least once.
+You may find that you get occasional duplicates,
+and it is the default queue type,
+whereas with a FIFO Queue,
+the first-in-first-out message order is strictly preserved.
+Messages are delivered once only with no duplicates.
+And this is great for banking transactions, for example,
+which need to happen in a strict order.
+So that's it for this lesson.
+And if you're ready to move on,
+I'll see you in the next one, thank you.

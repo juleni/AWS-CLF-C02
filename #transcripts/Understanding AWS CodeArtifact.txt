@@ -1,0 +1,70 @@
+Hi and welcome back
+to this lesson on CodeArtifact.
+So what is CodeArtifact?
+Well, it's an artifact repository
+that lets developers securely store,
+publish, and share software packages
+that are needed for your software development process.
+Examples of packages include Maven,
+NPM, or Python packages.
+And CodeArtifact is an artifact repository
+that makes it easy for developers
+to find the software packages that they need.
+A package is simply a bundle of software
+and CodeArtifact supports open-source software
+from public repositories
+as well as software developed in-house,
+so developers can add software
+that they've developed and created themselves.
+Now let's say that you've got multiple development teams
+working on different parts of an application.
+Using an artifact repository like CodeArtifact
+enables all of your developers
+to easily get the correct version
+of the software packages needed for their projects.
+In this example, our development teams need to use
+a specific version of a package called Express,
+which is just an example of a framework
+that's used for building web and mobile applications
+using the Node.js programming language.
+And this is a third party package
+available from the public NPM repository.
+So by using an artifact repository like CodeArtifact,
+this avoids situations where somebody
+is mistakenly using the wrong version,
+and it also saves time because the developers
+don't need to search the internet
+for the particular software versions that they need.
+Now you might be wondering, what are artifacts?
+Well in this context, the term artifact
+is used to describe a lot of different things,
+including documentation, compiled applications,
+deployable packages, and libraries.
+And another reason why it's good practice
+to use an artifact repository like this
+is that IT leaders can make approved packages available
+and developers will know where to find
+the approved packages.
+And when we talk about approved packages,
+often this just means the version
+that our engineering team is willing to support
+because they've tested it
+and they know that it works correctly.
+If we just allowed people to use the latest version
+of certain libraries and packages,
+then we might run into issues with the software not behaving
+in the way that we intend.
+So for the exam, CodeArtifact is an artifact repository
+that makes it easy for developers
+to find the software versions that they need.
+Artifacts includes documentation, compiled applications,
+deployable packages and libraries.
+CodeArtifact supports third party
+or in-house developed artifacts,
+and it's used by developers to find
+the approved software packages that they need
+and to publish their own.
+Well, that is it for this lesson.
+Any questions let me know,
+otherwise please join me for the next one.
+Thank you.

@@ -1,0 +1,103 @@
+Hi everybody.
+In this lesson, we'll be going over storage exam tips.
+This session will highlight important points from our
+storage related topics.
+Let's dive on in.
+Let's start with EC2 storage options.
+Remember that EBS is like the pizza oven
+in our EC2 kitchen, it's directly attached.
+EBS provides persistent block storage for EC2 instances.
+It can take backups
+and also use those backups to create new volumes.
+We described EFS like a pizza conveyor system
+that can serve many kitchens or EC2 instances
+and give many chefs access to it.
+EFS offers scalable file storage ideal for use
+with multiple EC2 instances.
+It automatically scales on demand without
+disrupting applications.
+Instance stores are like a temporary prep table.
+You prepare your ingredients or data there,
+but if you shut down the kitchen
+or terminate the instance, the prep is gone.
+Instance stores provide temporary block level storage
+with high IOPS.
+Understand when to use each type based on durability,
+data persistence, and performance needs.
+For Amazon S3,
+remember that we described it as a giant walk-in
+refrigerator with all our ingredients or data.
+Remember S3's high durability
+and scalability features.
+Understand S3's security measures like bucket
+policies and ACLs.
+Be familiar with S3 features like versioning
+and lifecycle policies.
+Remember that versioning lets you keep multiple versions
+of an object in your bucket and lifecycle policies
+let you set rules that define actions to be taken on a group
+of objects.
+Regarding S3 storage classes,
+S3 standard is like your refrigerator's
+primary shelves for ingredients
+or data that's frequently accessed.
+S3 intelligent tiering is the dynamic
+shelves in your fridge.
+Perfect for data with unpredictable access patterns.
+S3 standard infrequent access is like your pantry,
+designed for data that's less frequently accessed,
+but requires rapid access when needed.
+S3 one zone infrequent access is like a special
+section in your fridge,
+storing data in just one availability zone.
+Less durable, but more cost effective.
+S3 Glacier Instant Retrieval is like the top drawer in
+your freezer, allowing you to quickly access
+important ingredients,
+but ones that aren't used so often.
+S3 Glacier Flexible retrieval is like another
+compartment in your deep freezer
+that isn't accessed as much.
+And then we have S3 Glacier Deep Archive,
+and this is the very bottom of your deep freezer.
+The most cost-effective for long-term archival.
+Up next is additional storage services.
+Remember to think of FSX
+as a specially designed storage shelf tailored for those
+pizzas requiring very specific conditions.
+In this case, that specific condition is Windows workloads.
+Elastic Disaster Recovery is like the backup
+generator for our pizza kitchen.
+If there's a power outage,
+it ensures the pizza making continues.
+Elastic disaster recovery allows you
+to maintain business continuity without disruptions.
+Know the differences between the EBS volume types.
+For SSD, there's general purpose SSD,
+provisioned IOPS SSD, and for HDD,
+there's throughput optimized HDD and cold HDD.
+Remember that SSD is for high IOPS
+and HDD is for throughput.
+AWS storage gateway is like a delivery scooter
+that brings ingredients or data from an offsite location
+or on-premises to our AWS kitchen.
+Be able to differentiate
+between file gateway, volume gateway,
+tape gateway, and FSX file.
+Gateway knowhow storage gateway facilitates data migration,
+backup, and archival.
+AWS backup is like the recipe book.
+If something goes wrong, you can refer to the recipe book
+to recreate the pizza.
+Understand AWS backup as a centralized service
+for automating and managing backups across AWS services.
+Recognize the importance of automated backup policies
+and their role in simplifying data protection.
+Know that data is secure with AWS backup,
+and be aware of AWS backups capabilities in terms
+of cross region backup, supporting compliance
+and disaster recovery strategies.
+That was a pretty quick overview of storage tips.
+Make sure you take the quiz
+to further solidify your understanding of the subjects.
+See you in the next section.

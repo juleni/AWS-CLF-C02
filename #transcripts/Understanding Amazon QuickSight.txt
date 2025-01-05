@@ -1,0 +1,55 @@
+Hi, and welcome back to this lesson
+on Amazon QuickSight.
+Let's first consider a common problem with data.
+Many businesses are storing large amounts of data
+in a variety of different places,
+with more being generated each day.
+But how do we make the most of all this data,
+and use it to help us make better business decisions?
+For instance, which products should we restock and when,
+or who are our most loyal customers?
+Well, the solution is Amazon QuickSight,
+and QuickSight is a software as a service model
+business analytics service.
+It connects to your AWS data sources,
+as well as on-premises data,
+and it allows you to create dashboards
+to gain business insights.
+So QuickSight is all about getting value from your data.
+It connects to data sources,
+whether they're in AWS or they're hosted on-premises,
+and it allows you to build out dashboards with graphs,
+bar charts, scatterplots, pie charts, heat maps,
+and loads of other different types of diagram
+that let you visualize your data
+and display it in different ways
+so that you can see what's going on,
+and really make informed business decisions
+that are data-driven.
+Common use cases include analyzing sales performance
+to gain insights on your sales, for instance,
+to understand who is buying what,
+which are your most successful products,
+and are there any regional differences,
+using application traffic data
+to visualize trends in your application's traffic,
+and understand things like what are the most popular times,
+and what are your maximum concurrent users,
+or to perform marketing campaign analysis
+to measure engagement and conversion rates,
+and gather point-in-time data to visualize trends.
+So for the exam, know that QuickSight
+is a business analytics service
+that lets you make better decisions based on your data.
+It's able to connect to AWS data
+and on-premises data sources,
+and it lets you build dashboards to visualize your data,
+and supports lots of different types of graphs and charts
+to display your data in different ways,
+and use cases include
+analyzing sales performance and trends,
+application usage and traffic, and marketing campaign data.
+Well, that's all for this one,
+and if you're ready to move on to the next lesson,
+please join me in the next one.
+Thank you.

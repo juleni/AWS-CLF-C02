@@ -1,0 +1,136 @@
+Hello and welcome back to this demo
+where we'll be deploying an application
+using Elastic Beanstalk.
+In this scenario, you are working as a developer
+and you've developed an application using PHP.
+You want to run your application in AWS,
+however, you don't want to provision, configure,
+or manage the EC2 instances yourself.
+So for that reason, you've decided
+to deploy your application using Elastic Beanstalk.
+To do that, you'll first need to create
+a service role for Elastic Beanstalk,
+and this is just going
+to allow the Elastic Beanstalk service
+to deploy AWS services on your behalf.
+Next, you'll configure an EC2 instance profile,
+also known as an instance role.
+This is gonna give the EC2 instance,
+where your application will run, the required permissions
+to interact with Elastic Beanstalk.
+And after you've done that,
+you can simply create your application
+by uploading the provided code
+and you'll find the code and written instructions
+for this lesson, in the GitHub repository
+that's provided in the resources for this lesson.
+Here's the repository, select go to file
+and then select the Elastic Beanstalk demo folder.
+We need to save this zip file to our local machine.
+So I'll select the file
+and then use this button here to download
+and it's gonna download it
+to my downloads folder on my local machine.
+So now if you're ready to get started
+with Elastic Beanstalk, please join me in the AWS console.
+From the console we'll first create a service role
+for Elastic Beanstalk and this is gonna allow
+the Elastic Beanstalk service
+to deploy AWS services on our behalf.
+Search for IAM,
+then select roles,
+create role.
+Trusted entity type is AWS service.
+Under use cases, search for Elastic Beanstalk
+and make sure that Elastic Beanstalk
+customizable is selected.
+Then hit next.
+It's automatically selected the permissions that we need.
+So click next and under the role name,
+we'll call it Custom Service Role for Elastic Beanstalk.
+Then scroll down to the bottom and create role.
+Next, we'll create an EC2 instance profile
+for Elastic Beanstalk.
+And this is gonna give our EC2 instance
+the required permissions to interact with Elastic Beanstalk.
+So once again, select create role,
+trusted entity type is AWS service,
+under use case, select EC2 under commonly used services.
+Then select next.
+Under permissions, we're gonna search
+for the AWS Elastic Beanstalk read only policy name.
+And there it is. So select that one.
+Hit next. Under role name,
+we'll call it, Custom EC2 Instance Profile
+for Elastic Beanstalk.
+Scroll down to the bottom and create role.
+So now finally, we can create our application.
+In the search bar, search for Elastic Beanstalk,
+then select create application.
+We're creating a web server environment
+under application name
+enter, "Hello Cloud Gurus."
+Scroll down to platform. It's gonna be a managed platform.
+We'll choose a platform and it's gonna be PHP.
+Then under application code, we're gonna upload our code.
+So select upload your code.
+The version label is gonna be version one.
+So type V1, we're using a local file,
+select choose file, select the file
+that we downloaded earlier and select open.
+Scroll down to the bottom and hit next.
+Then under service role,
+we're gonna use an existing service role.
+It's the one we created earlier.
+So using the dropdown, select custom service role
+for Elastic Beanstalk.
+We don't need to provide an EC2 key pair.
+And then under EC2 instance profile,
+select the dropdown and select your
+custom EC2 instance profile for Elastic Beanstalk.
+After that, hit next, this page is optional.
+So this allows you to optionally configure
+VPC, instance and database settings
+and we don't need to change anything here.
+So scroll to the bottom and hit next.
+On the configure instance traffic
+and scaling page, these settings are also optional,
+so scroll to the bottom and hit next.
+On the configure updates, monitoring
+and logging page under system,
+we're just gonna select basic health reporting.
+Then onto managed platform updates,
+for now, I'm gonna deactivate the managed updates.
+So these are operating system and platform updates
+that it can automatically apply for you.
+Then scroll down to the bottom
+and hit next.
+The review page displays a summary of all your choices.
+You can scroll to the bottom and hit submit.
+Now it's gonna take a few minutes to complete everything
+because it's creating our EC2 instance,
+configuring the required networking,
+installing the PHP platform on there,
+copying our code and starting our application.
+And you can see exactly what's going on
+in this event section.
+So just be patient and in a few moments
+our Elastic Bean stalk environment will be ready.
+And there it is, environment successfully launched.
+After your environment has successfully launched,
+select the domain URL available
+under the environment overview.
+And if you click on this link, it will take you straight
+to your application and it's just a website
+with a really unflattering picture of me.
+Well, there you have it. That is Elastic Beanstalk.
+And for the exam, remember that Elastic Beanstalk
+deploys and scales your web applications,
+including the web application server platform,
+and it provisions the AWS resources for you.
+For instance, EC2 instances, RDS databases, S3 storage,
+elastic load balances, and auto scaling groups as well.
+So that is all for this demo,
+and if you are ready to continue,
+please join me for the next lesson.
+Thank you.

@@ -1,0 +1,106 @@
+Hi, and welcome back to this lesson
+on Kinesis.
+So what is Kinesis?
+Well, it's a family of services that enables you to collect,
+process and analyze streaming data in real time.
+And it allows you to build custom applications
+for your own business needs and make decisions
+or take actions based on the data that you're streaming.
+Now, when I first came across Kinesis,
+I wondered why did they choose that name?
+Well, Kinesis is originally a Greek word
+and it means movement or motion,
+and it's actually a really good name for this service
+because Kinesis deals with data that is in motion,
+moving from one place to another.
+So in other words, with streaming data rather than data
+that's static or stored on disc or in S3 or in a database.
+So Kinesis is all about handling streaming data,
+which is essentially data generated continuously
+by thousands of data sources
+or producers that typically send data records simultaneously
+in small sizes of just a few kilobytes.
+For instance, think about a stream
+of financial transactions, or it could be stock prices.
+What about in-game data created as the player progresses
+through the game or social media feeds,
+location tracking data.
+For example, the kind of location data used by Uber
+or Google Maps, IOT sensors or internet of things.
+So think about sensors inside a factory,
+detecting air temperature or quality, clickstream data,
+or even application log files.
+So we're talking about a fairly steady stream that consists
+of lots of small pieces of unstructured data.
+And Kinesis allows you to collect
+and analyze this type of data in real time so
+that you can make decisions
+and take actions based on your findings.
+Now, Kinesis isn't just one service,
+it's actually a few different services,
+but the one thing they all have in common is
+that they're all dealing with streaming data.
+So first of all, we've got Kinesis streams,
+and this enables you to stream data
+or video to allow you to build custom applications
+that process the data in real time.
+And with Kinesis streams,
+there are two different options available.
+Kinesis data streams deals with data,
+so it lets you process streaming data
+and Kinesis video streams,
+which is designed to be used with video data.
+So it lets you stream video into AWS
+for storage and processing.
+Here's an example of how you might use Kinesis data streams.
+On the left, we've got our data producers,
+and these are all the devices
+that are producing the data.
+It could be applications running on EC2 instances,
+mobile devices, laptops, and IOT devices.
+So connected devices like devices in a factory
+or a vehicle, anything connected to a network.
+And all of these devices are producing data
+and they're sending it over to Kinesis data streams.
+Now, Kinesis Streams retains the data by default
+for 24 hours with a maximum of 365 days retention.
+The data is stored in these things called shards,
+and a shard is basically a sequence of data records.
+Each data record has a unique sequence number
+and a Kinesis stream is made up of one or more shards.
+So the data gets stored in these shards.
+It's retained for 24 hours by default,
+but once our data is in Kinesis, if we want to do anything
+with it, we will need to introduce some data consumers.
+And these could be EC2 instances or Lambda functions,
+for example, which consume the data from Kinesis.
+And the consumers basically take the data from
+the shard and process it.
+For instance, they might run some algorithm on stock prices,
+run sentiment analysis on a social media feed,
+or analyze clickstream data
+to generate product recommendations.
+After the data consumers have completed their calculations,
+they can then send the data to permanent storage,
+for example, to DynamoDB, S3, Elastic Map Produce,
+or Redshift, for example.
+But the main thing to understand is
+that Kinesis data streams is basically facilitating
+this whole architecture by making it easy to collect
+and stream the data so
+that your application can then consume
+and process it as you wish.
+Now for the exam, the main thing I would like you
+to take away from this lesson is that Kinesis is a service
+that enables you to collect, process,
+and analyze streaming data in real time.
+Examples of streaming data include website, click streams,
+social media feeds,
+IOT telemetry data and stock prices.
+And Kinesis data streams is for streaming data,
+whereas Kinesis video streams is for streaming video,
+for instance, from connected video devices.
+So that is the end of this lesson,
+and if you're ready to move on,
+I'll see you in the next one.
+Thank you.

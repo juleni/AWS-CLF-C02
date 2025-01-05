@@ -1,0 +1,82 @@
+Hey there, Gurus.
+Welcome to exploring regions and availability zones.
+In this lesson, we'll dive right into AWS regions
+and their characteristics.
+We'll continue on to availability zones
+and their characteristics.
+We'll sneak in a quick quiz
+before going over our exam tips on this topic.
+Let's get started.
+An AWS region is a physical location.
+AWS groups their regions by geographic locations
+and can include several regions within each location.
+Observe, the Ohio and North Virginia regions reside
+under the US East geographic location.
+There are several geographic locations.
+These are just a few.
+Regions are fully independent and isolated, meaning
+that if one region is impacted by, let's say, an earthquake,
+the others will not be.
+Another characteristic of regions is that they are resource
+and service specific, meaning that they are isolated
+and resources are not automatically replicated across them.
+You would need to replicate any resource in each region.
+AWS regions consist of multiple availability zones.
+AWS availability zones consist
+of one or more physically separated data centers.
+Now, this is just to help you understand AZs
+and data centers
+as AWS has no specific documentation saying anything
+as to how many data centers each AZ has.
+But let's say that us-east-1a has four data centers,
+B and C have three each,
+and D, E and F have two data centers each.
+Each data center is housed in different facilities.
+AWS specifically defines an AZ
+as one or more discrete data centers
+with redundant power, networking and connectivity
+in an AWS region.
+Let's talk more about the characteristics
+of availability zones.
+Now, while they're all housed separately,
+and have their own power sources,
+they're each connected through low latency links.
+AZs are fault tolerant, meaning that if one AZ goes out
+of service, the others should not be impacted.
+AZs also allow for high availability, which we discussed
+in a previous lesson.
+Let's say that you have an application running
+across multiple AZs, 1a, 1b, and 1c
+but 1a goes out of service.
+Your application will still be running in 1b and 1c.
+Let's take a quick quiz to make sure you understand
+all the information we've covered.
+I'll give you a scenario and you have three seconds
+to decide the right answer.
+Let's head into it.
+Our first scenario is that you are asked by an executive
+if the application launched is fault tolerant.
+You investigate and see that it is currently
+in us-east-1a only.
+Is the application fault tolerant?
+If you said that it is not fault tolerant, you are correct.
+In order to be considered fault tolerant,
+the application would need to span across multiple AZs.
+Our last scenario is you have your application running
+across multiple AZs, but it's gone down.
+What could be the reason?
+If you said that it could be
+that the whole region went down, you are correct.
+Regions are made up of multiple AZs,
+so in order for an application running
+across multiple AZs to go down, other than human error,
+the region itself would have to be out of service.
+With that, we're ready for our exam tips.
+Remember, a region is global and is made up
+of two or more AZs.
+An AZ is made up of multiple data centers.
+And multi-AZ deployments provide high availability
+and fault tolerance.
+Great job getting through another lesson, Gurus.
+Take a break and I'll see you in the next lesson
+when you're ready.

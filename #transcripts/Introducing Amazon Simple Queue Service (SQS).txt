@@ -1,0 +1,90 @@
+Hi, and welcome back to this lesson
+on Simple Queue Service, or SQS.
+Now, SQS is a message queue service.
+It enables web applications,
+like our pizza ordering application,
+to quickly and reliably queue messages
+that one component in the application produces
+for another component to consume.
+A queue is a temporary repository
+for messages that are awaiting processing.
+Messages wait in the queue
+until the consumer is ready to process them.
+No component gets overloaded by too many requests,
+and the system is not gonna crash
+if a single component goes offline.
+And this approach is known as decoupling.
+So, the component that creates the customer order
+and the component that notifies the kitchen to do something
+are not dependent on each other.
+Instead, they have the queue in between them,
+like a middleman,
+keeping the messages in the queue
+until they're ready to be processed.
+And this resolves the issues that can arise
+if the producer is producing work
+faster than the consumer can process it,
+or if the producer or consumer
+are only intermittently connected to the network.
+So, let's review some of the key features of SQS.
+Now, SQS is pull-based,
+and that means that consumers pull messages from the queue
+when they are ready to process the next message.
+Multiple components can add
+and consume messages from the same queue.
+Messages are processed asynchronously,
+which means that you don't just sit there
+and wait for a response
+because you don't know how long it's gonna take
+for a request to be processed.
+And with standard SQS queues,
+messages are guaranteed to be processed at least once.
+Let's think about a money transfer application
+that needs to perform well under a heavy load.
+While SQS lets you build an application like this
+that is loosely coupled,
+allowing components to store and receive messages.
+Let's say you have a mobile app that sends money overseas.
+The green square represents the money transfer request.
+And imagine there are millions of other people
+who are also sending requests at the same time.
+So, instead of making a user wait for a confirmation
+that the transfer is complete,
+instead the application just lets them know
+that the request has been submitted and it's being handled.
+Once the request has been submitted,
+it gets added to a queue.
+And in this example, there are three other requests
+already waiting in the queue to be processed,
+so these are gonna be processed
+before our green money transfer request.
+Since the money transfer process,
+along with doing any special security checks,
+could take a while to complete.
+The benefit of using a queue
+is that the user doesn't need to wait
+until everything is completed.
+They click the button to send the money,
+they get a message to say, "Okay, the money is sent."
+And using queuing technology, the request is processed.
+And sometime later, hopefully it's only a few minutes,
+your friend receives the money you sent.
+So, overall, SQS improves performance
+and the ability for this application to scale
+and support millions of concurrent requests
+because the requests can be held in the queue
+until we're ready to process them.
+Now, for the exam, there are three things
+that I want you to understand.
+Firstly, SQS is a distributed message queuing system.
+And if you only remember one thing from this lesson,
+it should be that SQS is used to decouple the components
+of an application so that they can operate independently,
+and that is the most important thing to remember about SQS.
+And finally, SQS is pull-based, not push-based,
+and that means that consumers
+pull the messages from the queue when they're ready.
+The queue does not send out any messages to consumers.
+Well, that's all for this lesson.
+Any questions, let me know.
+Otherwise, please join me in the next one. Thank you.

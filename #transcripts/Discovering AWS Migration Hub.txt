@@ -1,0 +1,44 @@
+Hi, and welcome back to this lesson
+on discovering AWS Migration Hub.
+Now, Migration Hub is essentially a central location
+to gather application and server inventory information.
+It enables you to assess, plan,
+and track migrations into AWS.
+It also allows you to logically
+group servers together for migration.
+And overall, it's used as a central place to manage
+the migration of your applications and data into AWS.
+Now, one of the great things about Migration Hub
+is that it integrates with the other migration services,
+including the Application Discovery Service,
+which, as you know, is used to discover
+your existing applications and databases,
+build out an inventory,
+and gather configuration information,
+which is saved in Migration Hub.
+It also integrates with the Application Migration Service,
+so the automated lift and shift service.
+And it integrates with the Database Migration Service,
+which is used to migrate existing databases,
+for instance, Oracle databases
+hosted in your own data center into AWS.
+Now, Migration Hub can also make recommendations
+about modernizing your applications.
+For instance, you might want to re-platform your Java
+or .Net applications to run as docker containers
+in Elastic Container Service.
+And it can also provide an estimate
+for the cost of running your existing workload
+on EC2 instances in AWS.
+So for the exam, understand that AWS Migration Hub
+is a central place to manage the migration of applications
+and data into AWS.
+It's integrated with the Application Discovery Service,
+the Application Migration Service,
+and the Database Migration Service.
+And it lets you group servers together logically,
+so that you can plan and track
+the progress of your migrations.
+Well, that is it for this lesson.
+And if you're ready to move on,
+I'll see you in the next one, thank you.

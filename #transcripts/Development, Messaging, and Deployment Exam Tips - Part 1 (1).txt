@@ -1,0 +1,73 @@
+Hi, and welcome back to this lesson,
+which is part one of the summary
+of the development, messaging and deployment section,
+including all of my exam tips.
+Beginning with continuous integration,
+which is all about integrating or merging small code changes
+frequently, at least once a day.
+Continuous deployment is all about automating
+the build, test, and deployment functions
+in your software release process.
+And the great thing about this practice
+is that it means bugs are caught early,
+while they are small and easy to fix.
+AWS provides a range of developer tools
+that help with software development.
+So firstly, there's CodeCommit,
+the source control service that enables teams to collaborate
+on code, HTML, pages, scripts, images, and binaries.
+CodeBuild is the automated build service
+that compiles source code, runs tests,
+and produces packages that are ready to deploy,
+and a package is simply a bundle of software.
+CodeDeploy automates code deployments,
+for instance, to EC2 instances,
+Lambda and on-premises servers as well.
+And CodePipeline manages the workflow.
+So it's the end-to-end solution
+that handles build, test and deployment of your application
+every time there's a code change.
+We use the AWS CloudShell,
+which is a browser-based shell
+with the AWS CLI pre-installed.
+The AWS CLI is of course a command line tool
+that is used to manage AWS services.
+We also used Cloud9,
+which is a browser-based IDE that lets developers write,
+run, and debug their code.
+It comes with lots of popular tools pre-installed,
+like the AWS CLI
+and support for the most popular programming languages.
+CodeArtifact is an artifact repository
+that makes it easy for developers
+to find the software versions that they need.
+So that's artifacts like documentation,
+compiled applications, deployable packages, and libraries.
+They can be third party or in-house developed.
+And it's a great way for developers
+to find approved packages
+and they can also publish their own.
+Now in the exam you may see questions
+related to decoupling an application,
+and coupling relates to interdependencies or connections
+between the components of a system.
+With tight coupling,
+different parts of the system are highly dependent
+on one another,
+so if one part fails, it can bring the whole system down,
+which is why tight coupling is to be avoided.
+With loose coupling,
+decoupled components can be connected to each other,
+but they are not dependent on one another.
+SNS is a service that allows you you to send
+or push notifications,
+for instance, SMS text messages and emails.
+It uses a pub-sub model,
+so subscribers must subscribe to a topic
+in order to receive the messages.
+And a topic is like an access point,
+allowing subscribers to receive notifications.
+Well, that's all for part one.
+And if you're ready for part two,
+please join me in the next one.
+Thank you.

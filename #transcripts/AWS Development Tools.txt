@@ -1,0 +1,75 @@
+Hi, and welcome back to this lesson,
+which is going to review the development tools
+that are available from AWS
+that help you quickly and easily implement CI/CD processes.
+And the four main development tools
+that you will need to be aware of are CodeCommit,
+CodeBuild, CodeDeploy, and CodePipeline.
+And, at the end, we'll cover my exam tips.
+So let's begin with CodeCommit,
+which is a central code repository.
+And if you've ever used Git before
+or if you've heard of Git,
+then CodeCommit is just like
+a private Git repository in the cloud.
+It's a place to centrally store source code,
+binaries, images, and software libraries.
+It manages updates from multiple sources,
+so from multiple developers,
+enables collaboration, tracks and manages code changes,
+and maintains version history.
+CodeBuild is a fully managed build service
+that runs a set of commands that you define,
+for instance, to compile code, run tests,
+and produce artifacts that are ready to deploy.
+It can reference code stored in your CodeCommit repository
+and use the code to build deployable artifacts,
+like packages or Docker images,
+and a package is simply a bundle of code
+that's ready to deploy.
+CodeDeploy is an automated deployment service
+allowing you to automatically deploy software
+to EC2 instances, on-premises systems, and Lambda.
+And by automating the deployment service
+developers can quickly release new features,
+avoid downtime during deployments,
+and avoid the risks associated with manual processes.
+And then, finally, there is CodePipeline,
+which is an automated CI/CD pipeline,
+so it orchestrates the CI/CD process,
+and the pipeline is triggered every time
+there's a change to your code.
+The code is then built, for instance, using CodeBuild,
+and when the deployable packages are ready,
+they can be deployed using CodeDeploy.
+So just like a conductor in an orchestra,
+CodePipeline orchestrates the software release process
+making it fast, consistent, and with fewer mistakes.
+And it integrates with lots of other services,
+including CodeCommit, CodeBuild, and CodeDeploy.
+And if we revisit our example CI/CD workflow,
+we can see that CodeCommit
+is used to merge or integrate code;
+CodeBuild is used to build, test,
+and package the code ready for deployment;
+CodeDeploy automatically deploys the code
+in a repeatable way;
+and CodePipeline orchestrates the entire process
+managing the end-to-end CI/CD workflow.
+So, for the exam, you will need to understand
+what each of these developer tools is used for.
+So CodeCommit is a source control service
+enabling teams to collaborate on code,
+HTML pages, scripts, images, and binaries.
+CodeBuild, compiles the source code, runs tests,
+and produces packages that are ready to deploy.
+CodeDeploy automates code deployments,
+for instance to EC2 instances,
+Lambda functions, and on-premises servers.
+And CodePipeline manages the workflow,
+so it orchestrates the end-to-end solution, the build,
+test, and deployment of your application
+automatically every time there's a code change.
+So that is it for this lesson,
+and if you are ready to move on,
+please join me in the next one, thank you.

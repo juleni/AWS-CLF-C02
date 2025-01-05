@@ -1,0 +1,65 @@
+Hi everybody.
+In this lesson, we'll be going over database exam tips.
+This session will highlight important points from our
+database-related topics.
+Let's dive on in.
+Remember that we described databases like different methods
+of organizing our ingredients.
+Relational databases like Amazon RDS
+are structured and organized.
+NoSQL databases such as DynamoDB provide more flexibility
+with key value pairs.
+In memory databases like MemoryDB for Redis
+offer rapid data access,
+and we also mentioned Neptune,
+a graph database handling data with complex relationships
+and interconnections, making it ideal for certain types
+of applications like fraud detection
+or recommendation systems.
+Remember that a relational database is a type of database
+that stores and provides access to data
+that is organized into rows and columns, like a table.
+RDS supports various database engines like
+MySQL, PostgreSQL, MariahDB, Oracle, and SQL Server.
+RDS is ideal for structured data storage, complex queries
+and transactional applications.
+An example of where RDS works in the real world is
+e-commerce platforms to manage inventory, customer orders
+or product catalogs.
+AWS Database Migration Service
+or DMS is crucial for migrating databases to AWS
+with minimal downtime.
+It supports both homogeneous and heterogeneous migrations
+and is essential for efficiently moving
+databases to the cloud.
+Remember that AWS Schema conversion tool
+or SCT is a powerful tool
+that helps convert the database schema
+or the blueprint of how the database is constructed
+of your source database into a format,
+compatible with AWS target databases.
+DynamoDB is a NoSQL key value
+and document database, ideal for applications
+that need consistent, single digit millisecond latency.
+It's highly scalable and managed,
+perfect for mobile web gaming and IOT applications.
+It automatically scales up and down to adjust for capacity
+and to maintain performance,
+and also enables you to build security
+sensitive applications.
+For ultra fast data access, AWS offers
+memory-based databases.
+MemoryDB for Redis provides durability
+for in-memory databases.
+It's like keeping your most used pizza ingredients on the
+counter for quick access.
+It automatically replicates data across multiple AWS
+availability zones, ensuring data durability
+and high availability, perfect for session stores
+and gaming leaderboards,
+where it can give you real time updates
+of player scores and ranks.
+That was a pretty quick overview of database tips.
+Make sure you take the quiz
+to further solidify your understanding of the subjects.
+See you in the next section.

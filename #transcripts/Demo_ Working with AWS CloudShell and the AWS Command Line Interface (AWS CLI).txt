@@ -1,0 +1,106 @@
+Hi, and welcome to this demo,
+where we'll be working with the AWS CloudShell
+and using the AWS Come Online Interface.
+In this scenario,
+you've been tossed with creating an S3 bucket
+and uploading a file.
+You would like to accomplish this
+using the AWS CLI, running in the CloudShell,
+instead of using the AWS Console.
+So first of all, we're going to launch the CloudShell.
+We'll use the AWS CLI to create our bucket
+and upload a file.
+And we're also going to review the CLI documentation,
+because it's a great place to find information
+when you're trying to figure out how to use the CLI.
+And we'll do everything using our Cloud Playground.
+So if you're ready to get started,
+I'll see you in the AWS Console.
+From the Console, we'll select the CloudShell
+using this icon here, at the top of the screen.
+Now the CloudShell is a browser-based shell
+that we can use to interact with our AWS account,
+using the AWS Come Online Interface.
+It has the AWS CLI pre-installed and pre-configured.
+So, it's the easiest way to use the CLI.
+When your CloudShell is ready,
+we can type AWS minus, minus version, and hit enter.
+And that will show that the AWS CLI
+is installed in your CloudShell terminal.
+Next, let's create an S3 bucket.
+To do that, type AWS S3 M-B, for make bucket,
+then S3, colon,
+forward slash, forward slash,
+and this is where we're going to type
+the name of our bucket.
+I'll call it Mybucket hyphen,
+and then I'm going to add some random numbers
+to get a unique name.
+Because all S3 buckets need to have a globally unique name.
+After you've done that, hit enter.
+It's made our bucket.
+Now, we can type AWS S3 L-S.
+And, this is going to list the buckets available
+in our account, and hit Enter.
+And there we go, its identified the bucket
+that we just created.
+Next, let's create a file and upload it to the bucket.
+So type echo, open quote,
+my new file, closed quote.
+Then, use the redirect symbol twice.
+And we're gonna redirect to a new file
+called file.txt, and hit Enter.
+So this command just creates a new file
+with some text in it.
+Type L-S, and there's our file.
+Then type cat file.txt,
+and that will show you the contents of our file
+that we just created.
+Next, we're going to upload this file to S3.
+So, type AWS S3,
+C-P for copy.
+The name of our file, which is file.txt
+Then, we need to provide the destination.
+So copy your bucket name from up here.
+Make sure you use this S3 notation,
+and the name of your bucket.
+Then, you can hit Enter.
+And if its all worked, this is what you should see.
+So it's uploaded our file.txt to our S3 bucket.
+And now we can type AWS S3, then L-S,
+the name of our bucket, and hit Enter.
+And you should see the name of our file appear.
+So, we've successfully created an S3 bucket,
+and we've uploaded a file using the AWS CLI,
+running in the CloudShell.
+And then, the last thing I want to show you,
+is that if you ever need to use the CLI,
+and you can't remember the command syntax,
+you can type in the command,
+and then type Help, and hit Enter.
+And it will tell you all about how to use this command.
+And if I keep on pressing Enter,
+to move down the Help screen,
+and then come right to the end,
+this is where you'll find examples.
+So, examples of how to use this command.
+Come right to the end, and hit the letter Q.
+And that will exit out of the Help screen.
+You can also view the documentation online
+by searching for the AWS CLI command reference.
+And we're using version two,
+so make sure you select the version two command reference.
+So this is where you can view the documentation online,
+and it's organized by AWS service.
+So that is it for this demo.
+And for the exam,
+remember that the AWS CloudShell
+is a browser-based shell,
+with the AWS CLI pre-installed.
+And the AWS CLI is a command line tool
+that is used to manage AWS services.
+And we used it to create an S3 bucket,
+and upload a file.
+So that is it for this lesson.
+And if you're ready to move on,
+please join me for the next one. Thank you.

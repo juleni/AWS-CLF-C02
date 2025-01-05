@@ -1,0 +1,68 @@
+Hi, and welcome back
+to this lesson on AWS DataSync.
+Beginning with an example.
+Imagine you have 500 terabytes of data
+to transfer to AWS
+and you want to do it over the network.
+The data could exist in your data center,
+in other cloud providers,
+or even in AWS storage services
+in other accounts or regions.
+And you want to transfer the data
+to AWS services like S3, EFS, or FSX.
+So object storage and file storage.
+Well, you can do this using DataSync,
+and it will also encrypt the data
+as it transfers it over the network.
+So DataSync is designed
+to let you move large amounts of data.
+It enables high data throughput,
+it's automated, which helps avoid human error,
+supports NFS or network file system,
+SMB shared file systems
+used by Windows servers,
+and object stores as well.
+And you only pay
+per gigabyte of storage that you transfer.
+Other potential use cases include
+securely migrating all of your data into AWS,
+cost effectively replicating your data using AWS Storage,
+so replicating for disaster recovery purposes.
+Archiving historical data to low cost AWS Storage,
+for instance, if you have financial data
+that needs to be archived
+for a number of years,
+and hybrid or multi-cloud workflows.
+So situations where you need the data
+to exist in your data center
+or in another cloud provider,
+and you also want a copy in AWS as well.
+Now, AWS have recently published details
+about a project they completed
+with a company called Autodesk,
+who provide a computer-aided design software.
+And using AWS DataSync,
+Autodesk were able to transfer
+700 terabytes of database backups
+over a 1.4 gigabit per second network link
+during low usage hours over night.
+The backups needed to be retained for many years,
+so they were transferred to S3
+and Glacier for long-term archiving.
+And impressively, the project was completed in 2 1/2 months.
+Pretty cool.
+So for the exam,
+AWS DataSync lets you securely transfer
+terabytes of data to S3, EFS, or FSX.
+It supports NFS, SMB, or object stores.
+Data can originate on premises
+in another cloud provider
+or in AWS storage
+in a different account or region.
+And use cases include migration,
+replication to low cost storage, archiving,
+and hybrid or multi-cloud workflows.
+Well, that's all for this lesson.
+And if you're ready to move on,
+please join me in the next lesson.
+Thank you.

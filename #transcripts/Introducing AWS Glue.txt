@@ -1,0 +1,59 @@
+Hi, and welcome back to this lesson,
+which is going to introduce AWS Glue.
+Now Glue is a serverless data preparation
+and integration service.
+It discovers and catalogs your data
+and performs ETL, Extract, Transform, and Load.
+The data could be stored in S3, DynamoDB,
+in RDS, Redshift,
+or it could even be streamed data ingested
+in real-time using Kinesis.
+AWS Glue is then used to discover and categorize
+and then transform your data.
+For instance, clean, remove duplicates, or enrich the data
+and then load it into another service,
+like RDS, Athena, S3, or Redshift.
+And using a service like AWS Glue to extract, transform,
+and load your data allows you to easily use your data
+for analytics and machine learning.
+Let's take a look at an example of using Glue
+to create a centralized data catalog.
+Imagine you have different types of data,
+stored in a few different locations.
+Well, Glue can use a crawler to make sense of your data
+and classifies it to determine a schema for your data.
+It then creates metadata tables in a data catalog.
+Now, metadata is simply data about data.
+So in this case,
+we might want to catalog the type or format of data.
+So you can use AWS Glue
+to manage the metadata in this central repository,
+and you can then access the data catalog
+to support ETL and analytics.
+Another example is joining data for a data warehouse.
+Imagine you have clickstream data in RDS,
+and customer data stored in S3.
+Well, you can use AWS Glue to join and enrich your data
+and then load the results into Redshift
+so that it can be queried by your applications.
+So it's performing extract and transform
+before loading the data into its final destination,
+where it can be used for analytics.
+So for the exam,
+be aware that AWS Glue is used to prepare your data
+for analytics and machine learning.
+It crawls your data and creates the data catalog,
+which is the central repository containing the metadata,
+for instance, the type or format of your data.
+After the data catalog is created,
+it can extract data from various sources, transform it,
+for instance, categorize it, clean it,
+remove duplicates, or even join multiple datasets.
+After the data is transformed,
+it can then be loaded into other AWS services,
+like RDS, Redshift, S3, or Athena,
+for use by analytics applications and machine learning.
+Well, that's all for this lesson,
+and if you'd like to continue,
+please join me in the next one.
+Thank you.

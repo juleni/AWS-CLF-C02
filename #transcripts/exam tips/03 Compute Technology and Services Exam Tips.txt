@@ -1,0 +1,69 @@
+Hey there Gurus, welcome to
+the Compute Technology and Services Exam Tips.
+In this lesson, we'll review our exam tips
+from lessons in this section, let's get started.
+Remember, EC2 pricing options.
+They are on-demand, spot instances,
+dedicated hosts, reserved instances, and savings plans.
+Remember, spot instances are the cheapest option
+if start and stop times don't matter.
+Savings plans and reserved instances
+are time commitments from 1 to 3 years.
+Remember, dedicated hosts are not
+the same as dedicated instances.
+Next up, we have our real-world uses for EC2.
+Remember to use them for deploying
+a highly available application
+or a database that you fully control.
+Remember the two types of scaling and their benefits:
+horizontal or scaling out, and vertical or scaling up.
+Horizontal scaling has the added benefit
+of adding high availability
+as it is done across multiple AZs.
+Next is remember the four types of load balancers.
+They are classic, gateway, application and network.
+Application load balancers use HTTP
+and HTTPS protocols for your applications.
+And network load balancers offer extreme performance
+and static IPs with TCP, UDP and TLS protocols.
+Remember, how to connect to an EC2 instance
+whether it's using the console,
+instance connect, SSH, or systems manager.
+And remember that a key pair
+is necessary to use with SSH access.
+Next up, we have know the differences
+between ECS that supports Docker
+and is owned and managed by AWS
+and EKS, which is fully managed by AWS,
+but supports an open source system known as Kubernetes.
+When you think containers think lift and shifts,
+anything that mentions microservices architecture,
+CI/CD deployments and refactoring applications.
+Let's move on to our serverless topics.
+We'll start with knowing your responsibility
+when using serverless services like Lambda.
+You are responsible for your code only.
+AWS manages servers, the environment and language support.
+Understand that Fargate is considered serverless
+and is used to manage containers.
+Know that Lambda has an always free tier
+that includes 1 million requests free a month.
+It has a 15 minute timeout and can be triggered by events.
+Know that Fargate has no upfront costs and that you pay only
+for what you use in VCPUs, memory and storage.
+Let's move on to our additional compute services.
+Remember, outposts support hybrid deployment models
+while maintaining local data residency requirements.
+Lightsail is a compute services
+that quickly launches small projects
+like test environments or pre-configured WordPress websites.
+Batch processes larger, longer workloads
+into smaller batches.
+And finally, wavelength allows users
+and devices to reach applications
+without leaving the 5G mobile network.
+That was a pretty quick section,
+but it was a little dense at times.
+Make sure you take the quiz to make sure
+you've got this all down and start
+the next section when you're ready.

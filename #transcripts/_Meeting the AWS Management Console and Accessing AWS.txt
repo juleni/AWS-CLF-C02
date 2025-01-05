@@ -1,0 +1,90 @@
+Hey there, Gurus.
+Welcome to meeting the AWS Management Console
+and accessing AWS.
+In this lesson, we'll take a look
+at the AWS Management Console.
+Then we'll talk a lot about the root user.
+We'll move into other ways you can access your AWS resources
+and then have a quick quiz.
+We'll close out this lesson with some exam tips.
+Let's get started.
+Ta-da. This is the AWS Management Console.
+It is the most popular way to interact
+with AWS resources.
+The management console is accessible through your browser
+and allows you to access your AWS account and resources.
+The best thing about the console is that it is user-friendly
+and makes it easy to search for and find services.
+So it is perfect if you're new to the cloud
+or are in a non-technical role,
+such as project manager.
+You might need to just view if resources are being used.
+Of course, if you're in a technical role,
+such as an engineer or a developer role,
+you could be using the console to create, modify
+or terminate resources.
+Let's move on to the very important root user.
+Now, there can be multiple users in an AWS account
+but one of them stands to rule them all.
+It is the root user.
+This user is initially created
+when you set up your AWS account, and it is the only user
+that can completely delete the account
+and all of the resources within that account.
+It is imperative to keep this treasured user protected
+and ensure that it's not being used to log
+into the AWS account for day-to-day tasks.
+So when you create an AWS account,
+your first steps should be
+to enable multi-factor authentication
+on your root user and create a new user
+or group to use for your day-to-day tasks
+in the IAM or Identity and Access Management service.
+Let's move on to how to access your AWS account
+through other sources.
+We'll start with the CLI or the command line interface.
+The CLI allows you to access your account and resources
+through a terminal or command window
+like the one you see here.
+The difference between the CLI and the management console
+is that the CLI is mainly used by developers, engineers
+and resources because you're using commands
+that trigger APIs through your terminal.
+Fun fact, sometimes new features are available in the CLI
+before they're ready for the management console,
+but for the most part, you can do most
+of the same things you can do in the console
+through the CLI.
+The CLI gives you programmatic access, meaning access
+to AWS resources through an application or a tool,
+like the CLI.
+Let's talk more about programmatic access.
+Now, the CLI uses a terminal session
+to access resources programmatically.
+The other ways to gain programmatic access
+include application code,
+which uses calls or SDKs.
+SDKs or software development kits can access resources,
+using programming languages like Java, Python, C# and more.
+We're ready for a quick quiz question.
+Your AWS account was created last week and you're logging
+into your account to create some resources.
+Should you use the root user to log in?
+If you said that you should not use the root user,
+you are correct.
+Remember, when you create your AWS account,
+your first steps need to be to set up MFA
+and create your daily user or group.
+With that, we're ready for our exam tips.
+The root user should be protected by MFA
+and not be used for daily tasks.
+The root user is more powerful than any other user
+and it has the power to delete your account,
+among other things.
+Understand that the CLI
+and SDKs are other options that you can use
+to manage your AWS resources.
+That'll wrap up this lesson.
+Great job getting through another one, Gurus.
+Take a break and I'll see you in the next lesson
+when you're ready.

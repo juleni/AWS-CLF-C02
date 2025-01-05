@@ -1,0 +1,72 @@
+Hey there, gurus.
+Welcome to reviewing Edge Locations and Local Zones.
+In this lesson, we'll explain what latency is
+and then move into Local Zones and Edge Locations.
+We'll close out this lesson with the quiz and our exam tips.
+Let's get started.
+We'll start with explaining latency.
+So, latency is the amount of time it takes
+for a website to load, meaning the amount of time
+between a user's request and the resulting response.
+Low latency is a good thing
+because it means your users are seeing your website faster.
+If something causes higher latency,
+it is slowing down how quickly users can view your website.
+If something causes higher latency,
+it is slowing down how quickly users can view your website.
+Let's move on to Local Zones.
+Local Zones place AWS services like compute, storage,
+database, and other services closer to end-users.
+This allows for any demanding applications
+that require millisecond latencies.
+And remember, the lower the latency or time
+between the request and response, the better.
+Applications that require that kind of latency
+would include things like real-time gaming.
+Local Zones are extensions of AWS Regions
+and provide high bandwidth
+and secure connections between local workloads
+and those running in the actual Region.
+Edge Locations can help to reduce latency.
+They aren't used to launch resources,
+but instead will cache content for faster delivery to users,
+and are a feature provided by the CloudFront service,
+which we'll talk loads more about
+when we get to content delivery and networking.
+You might notice that there seem to be more Edge Locations
+than there are Regions and AZs.
+And you're right, there are.
+Edge locations uses the AWS backbone network,
+and that topic will be covered
+in the same content delivery and networking section,
+so put a pin in that.
+Let's have our quick quiz.
+I'll give you a scenario
+and you'll have three seconds to decide the right answer.
+Let's get started.
+Our first scenario is, "You've been tasked
+with ensuring that there is millisecond latency
+on the latest application launched.
+What can you use to ensure this?"
+If you said Local Zones should be used, you are correct.
+Local zones are extensions of Regions
+providing millisecond latency
+for things like real-time gaming.
+Our last scenario is, "You need to lower latency
+on a website that is available in two continents.
+What can you use to do this?"
+If you said that we should utilize Edge Locations,
+you're correct.
+As a feature of CloudFront,
+Edge locations can cut latency down
+by caching data already viewed.
+And with that, we are ready for our exam tips.
+Remember, that an Edge Location ensures low latency
+by placing content closer to users.
+There are more Edge Locations than Regions and AZs.
+And remember, a Local Zone is an extension
+of a Region that is close to your users
+where Local Zone infrastructure is deployed.
+That's another lesson down.
+You're doing great, gurus.
+I'll see you in the next lesson when you're ready.

@@ -1,0 +1,51 @@
+Hi, and welcome back to this lesson
+on Kinesis Data Firehose, also known as Kinesis Firehose.
+Now, Firehose allows you to capture, transform,
+and load data streams into AWS data stores,
+enabling near real-time analytics
+using business intelligence tools.
+So this is all about capturing, transforming,
+and loading the data.
+It's easy to use and dynamically adjusts the resources
+to handle varying data volumes, so it scales automatically.
+You get real-time processing, so it processes
+and delivers data within 60 seconds for timely insights.
+You can transform the data, customize it,
+and enhance it using Lambda
+before you load it into permanent storage.
+And it includes monitoring,
+so you've got integrated monitoring with CloudWatch,
+as well as automatic error retries if something goes wrong.
+So let's review an example.
+Here's our data producers,
+and they're producing data that's being collected
+by Kinesis Firehose.
+Optionally, we can perform some transformation using Lambda.
+Let's say, for example,
+we wanna change the format of our data.
+Now there's no data retention within Firehose.
+So after processing or transforming,
+if we want to store the data permanently,
+then we can load it into permanent storage.
+For instance, we can save it to S3, to Redshift,
+or to Opensearch.
+And with Kinesis Data Firehose, there are no shards.
+It doesn't retain the data, not even temporarily.
+There's no consumers.
+And after the data is loaded into its final destination,
+you can perform analytics using business intelligence tools.
+Use cases for Kinesis Data Firehose include:
+real-time analytics, data lake feeding,
+so loading streaming data into a data lake,
+and a data lake is simply a large scale data repository,
+log data management, and IoT data integration.
+So for the exam, be sure to know that Kinesis Data Streams
+capture and store streaming video and data,
+whereas Kinesis Data Firehose
+captures, transforms and loads data continuously
+into data stores.
+So this is all about transforming and then loading the data.
+Well, that's it for this lesson,
+and if you're ready to move on,
+I'll see you in the next one.
+Thank you.

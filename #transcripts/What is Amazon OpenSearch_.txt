@@ -1,0 +1,59 @@
+Hi, and welcome back to this lesson
+on Amazon OpenSearch.
+Before we dive in, let's review Elasticsearch.
+And you may have heard about Elasticsearch before
+because it's a very widely used
+open-source data analysis technology,
+allowing you to get real-time insights from your data.
+You can use it to analyze business data,
+to gain insights and make better business decisions.
+And another common use case is to search your log data
+so you can use it to search application, infrastructure,
+and security logs to better understand
+how your systems are operating.
+Now, Amazon OpenSearch
+is a fully-managed Elasticsearch service.
+The reason it exists
+is because deploying and administering
+your own Elasticsearch cluster
+can be a very time-consuming and complex process.
+So that is where the OpenSearch Service comes in
+to make getting up and running with Elasticsearch
+a whole lot easier.
+The great thing about it
+is that AWS does all the heavy lifting for you,
+including hardware provisioning
+and configuring the Elasticsearch cluster.
+They also take care of software installation and patching,
+and failure recovery, automated backups, and monitoring.
+It's compatible with all the standard
+Elasticsearch open-source APIs.
+It integrates with data ingestion tools like Logstash,
+which is used for data collection and processing,
+and visualization tools like Kibana,
+which is used for search and data visualization,
+allowing you to create bar charts, line graphs,
+and scatterplots.
+It also integrates with AWS services
+like CloudWatch for monitoring.
+And you can also use CloudWatch Logs
+and Kinesis Firehose for data ingestion.
+And you can even use Lambda functions
+to respond to new data, say in S3 or DynamoDB,
+by processing it and streaming it to OpenSearch.
+So for the exam, remember that Amazon OpenSearch
+is fully-managed Elasticsearch,
+and it's based on open-source technology.
+It's compatible with industry standard
+Elasticsearch open-source APIs,
+as well as Logstash,
+which is used for data collection and processing,
+and Kibana for search and data visualization.
+You can ingest data from AWS services like CloudWatch Logs,
+S3, and DynamoDB and Firehose as well.
+And use cases include log analytics, application monitoring,
+security analytics, and business data analytics.
+Well, that's all for this lesson,
+and if you're ready to move on,
+please join me in the next one.
+Thank you.

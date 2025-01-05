@@ -1,0 +1,99 @@
+Hi, and welcome back
+to this demo of AWS Cloud9.
+In this scenario, you are a developer
+and you need an IDE or integrated development environment
+that lets you write, run, and debug your code.
+You also want it
+to support the most popular programming languages
+like JavaScript, Python, Ruby, and C++,
+and it needs to let you run AWS CLI commands as well.
+Now Cloud9 is an integrated development environment or IDE
+that you can use inside your browser.
+So that means that you can write, run, and debug code
+without having to install anything
+on your own local machine.
+So first of all, we are going
+to create our own Cloud9 environment.
+Next, we'll explore the Cloud9 code editor
+and we'll write some code together,
+and then we'll also try running some AWS CLI commands,
+and we can do everything using the cloud playground.
+So if you're ready to get your hands dirty with Cloud9,
+please join me in the AWS console.
+From the console, search for Cloud9.
+Next, select Create environment.
+The environment name will be My-IDE.
+Then scroll down, Environment type
+is gonna be New EC2 instance.
+Instance type will be t3.small.
+Under Platform, select the Amazon Linux option.
+Under Network settings, we can stick with the defaults.
+Then scroll to the bottom and hit Create.
+Now under the hood,
+your Cloud9 environment is basically a Linux server.
+It has the AWS CLI pre-configured,
+so that avoids having to install the CLI,
+and it includes other popular tools
+that developers commonly use, including runtimes
+for popular programming languages like Python and Node.js,
+and development tools like Git and Docker.
+Now it does take a few moments
+to finish installing everything, so just be patient
+and your environment will be ready soon.
+(light electronic chirping)
+After the environment is created, we can connect to it.
+So select Open,
+and here is our Cloud9 environment.
+To get started, let's create a file.
+So select Create File, then type print,
+open bracket, open quote, Hello Cloud Gurus,
+then close quote and close bracket.
+We're then gonna save our file.
+So select File, Save As,
+and the file name is hello.py, and hit Save.
+So that is our code written.
+Let's now run the code and check that it works as expected.
+In the lower part of the screen, you'll see a terminal.
+And I'm just gonna move that up the screen
+to make it easier.
+Select your terminal,
+and then type ls, and hit Enter.
+And there's our file.
+Next, type python.
+Then type the letter h, and hit the Tab key,
+and it will auto complete with the name of your file.
+Then hit Enter to run your code.
+And if it all works, this is what you should see.
+And there we go, we've written some Python code
+and we've run our code to test that it works.
+Hopefully that does work for you.
+And if it doesn't work,
+just make sure you've written your code exactly
+as I have up here.
+Now Cloud9 also includes the AWS CLI pre-installed.
+So let's just check that that's working as well.
+In your terminal, type aws s3 mb, for make bucket,
+then s3://, and a unique bucket name.
+I'll call mine, my-code,
+and then I'm gonna add some random numbers on the end.
+Then hit Enter.
+So it's created our bucket successfully.
+Next, type aws s3 cp, for copy.
+Then the name of our file, and the name of our bucket.
+And I'm just gonna copy and paste it from up here.
+And hit Enter.
+And there we go, we've successfully used the AWS CLI
+to create a bucket and upload our file.
+So that is Cloud9.
+And for the exam, remember that Cloud9
+is a browser-based integrated development environment,
+and it lets developers write, run, and debug their code.
+It comes with many pre-installed tools,
+including the AWS CLI,
+and support for the most popular programming languages
+like JavaScript, Python, Ruby, and C++,
+as well as development tools like Git and Docker.
+Well, that's all for this demo,
+and if you're ready to continue,
+please join me in the next one.
+Thank you.

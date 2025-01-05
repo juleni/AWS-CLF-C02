@@ -1,0 +1,52 @@
+Hi, and welcome back to this lesson
+on database migration tools.
+And we'll begin with the AWS Database Migration Service,
+and it's also known as DMS.
+Now, the Database Migration Service is used
+to migrate your database and analytics workloads to AWS,
+and workloads could be on-premises,
+running on EC2 instances, or in RDS.
+Now, imagine that you have an Oracle database,
+and it could be in your own data center
+or running on EC2 instances.
+Well, you can use the database migration service
+to migrate this database, for instance, to RDS for Oracle,
+which is a fully managed Oracle database running in AWS.
+But what if you don't even want to use Oracle anymore?
+And instead, you want to migrate
+to a different type of database?
+Well, you can do that using a service
+called the AWS Schema Conversion Tool,
+and the Schema Conversion Tool simply converts
+from one database schema to another.
+For instance, let's say your original database is Oracle.
+Well, you can use the schema conversion tool
+to migrate and convert the data to another schema
+like AWS Aurora for MySQL.
+Let's take a look at some more examples of what's possible.
+So with the Schema Conversion Tool, we can convert
+a MySQL database to RDS for MySQL running on AWS.
+SQL Server could be converted to Aurora for PostgreSQL
+running in AWS.
+MongoDB could be converted to DocumentDB in AWS,
+and Oracle can also be converted to RedShift running in AWS.
+But the main thing to remember
+is that the Schema Conversion Tool
+is a tool that converts your database
+from one type of database to another type of database.
+And they're basically trying to make it easy for you
+to migrate your database workloads to AWS.
+And for the exam, just understand
+that the Database Migration Service migrates databases
+and analytics workloads to AWS,
+and you can migrate from EC2, on-premises systems,
+or even RDS, whereas the Schema conversion tool
+converts from one type of database to another,
+like from Oracle to Aurora MySQL, MySQL to RDS for MySQL,
+or SQL Server to Aurora PostgreSQL.
+So it is basically converting the database
+to a different database technology or schema.
+Well, that is all for this lesson,
+and if you're ready to continue,
+please join me in the next one.
+Thank you.

@@ -1,0 +1,53 @@
+Hi, and welcome back to this lesson on Amazon Lex.
+Now, Lex is a service that allows you
+to build conversational interfaces into your applications
+using natural language models, so essentially chatbots.
+And the chances are
+that when you're talking to an automated bot online,
+you are interacting with the Lex service on the backend.
+Lex seamlessly integrates with AWS Lambda
+for executing logic,
+so for taking actions
+based on the contents of your conversation.
+It works with multiple different platforms
+like mobile devices, web applications,
+and chat services like Facebook Messenger.
+It can handle speech or text input,
+and uses automatic speech recognition
+to understand human voices.
+And that means it can support
+both voice and text-based conversations.
+And it uses natural language understanding
+to understand user intent and deliver a natural experience.
+Now, use cases include
+building virtual agents and voice assistants,
+for instance, to arrange refunds or flight changes,
+password reset requests, and more.
+Automate informational responses,
+so to answer the frequently asked questions on your website
+so that users can ask them directly
+and get an answer in real time.
+Or improve productivity with application bots,
+and you can create chat bots
+that can interact with your customers
+and improve the productivity of customer support teams.
+Now, in the real world, Lex is used extensively.
+For example, for providing personalized shopping experiences
+on e-commerce websites,
+by healthcare applications
+for patient engagement and inquiries,
+in banking apps
+for handling customer queries and transactions,
+and by the hospitality industry
+for reservation systems and guest services.
+So for the exam, just know that Lex
+is used to build conversational chatbots.
+It uses machine learning and natural language models
+to interact with humans,
+and it's worth remembering some of the use cases
+like providing helpful customer service chatbots
+on your website.
+Well, that is it for this lesson,
+and if you're ready to move on,
+I'll see you in the next one.
+Thank you.

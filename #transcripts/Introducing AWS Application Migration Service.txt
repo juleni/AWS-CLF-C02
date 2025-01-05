@@ -1,0 +1,69 @@
+Hi, and welcome back
+to this lesson on application migration service.
+Let's begin with an example.
+Imagine you have a bunch of applications
+that you want to migrate to AWS.
+Well, you can simplify the migration
+by using application migration service,
+which lets you migrate your applications
+to AWS from physical servers,
+virtual servers running on VMware
+or Microsoft Hyper-V.
+It also supports migrating applications
+from other cloud providers,
+and you can even use it to migrate EC2 instances
+between AWS regions or between AWS accounts.
+Now it automatically converts your source servers
+from physical, virtual, or cloud infrastructure
+to run natively on AWS.
+It can also be used to run tests
+to make sure that everything's working
+before you cut over to the new environment.
+And this is what's known
+as a lift and shift migration approach
+because the application is simply migrated as is,
+and it's not altered in any way or redesigned or refactored.
+How it works is, first of all,
+you install the AWS replication agent
+on each application server that you want to migrate.
+The application migration service
+performs continuous replication
+of the source servers to the destination servers in AWS,
+and of course, the traffic is encrypted
+to keep all of your data private.
+While the replication is happening,
+you can continue to use your systems normally,
+and there's no performance impact.
+You pay for the AWS infrastructure that you build,
+but the application migration service,
+including the data replication element,
+is free to use for up to 90 days.
+And after that,
+they're gonna charge you for using the service.
+But most people find
+that their application is fully replicated
+and migrated within the 90 day period,
+making the application migration service free to use.
+So what else is great about it?
+Well, it's automated,
+so you can avoid doing things manually,
+which is always a good thing.
+The same process can be used
+for a range of operating systems,
+and both Windows and Linux are supported.
+For the exam,
+just remember that the application migration service
+is an automated lift and shift service,
+so it automatically migrates applications to AWS
+without modifying them in any way.
+The AWS replication agent is installed on the source server
+and replicates everything to a new server in AWS,
+and you can use it to migrate applications
+that are running on physical
+or virtual servers in your data center,
+in other cloud providers
+or in other AWS accounts or regions.
+Well, that is all for this lesson,
+and if you'd like to move on,
+please join me in the next one.
+Thank you.

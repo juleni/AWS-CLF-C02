@@ -1,0 +1,174 @@
+Hello and welcome back to this demo of X-Ray,
+where we'll be exploring how X-Ray can be used
+to monitor the performance of an application.
+Now, X-Ray is a tool that helps developers to analyze
+and debug distributed applications
+that are made up of multiple different components.
+It allows you to troubleshoot
+the root cause of performance issues and errors,
+and provides a visualization
+of your application's underlying components.
+In this scenario, you would like to understand
+how X-Ray can be used to monitor performance
+and health of a distributed application.
+You decide to install a sample application
+that uses several AWS services.
+So first,
+we'll be installing a sample tic-tac-toe application
+using CloudFormation.
+We'll play a game of tic-tac-toe,
+and that's gonna generate some performance data
+that we can take a look at later.
+After that, we can use X-Ray
+to view the application performance and health,
+and we'll do everything using the C*loud Playground.
+So if you're ready to get started with X-Ray,
+please join me in the AWS console.
+From the Console search for X-Ray.
+Select, X-ray,
+and it's gonna take us to the CloudWatch Console.
+On the right hand side select, Set Up Demo App
+and it's going to create a sample application for us
+using CloudFormation.
+So select, Create Sample Application with CloudFormation
+and CloudFormation is gonna create the entire stack for us.
+So, everything needed to run the application.
+It's pre-populated everything,
+so we don't need to change any of the settings.
+And down here is the reference
+to our CloudFormation template.
+So we can go ahead and hit Next.
+All the settings are pre-populated,
+so scroll down to the bottom,
+Hit Next.
+Once again, scroll down to the bottom and hit Next.
+On this page we can review the options,
+so just scroll down to the bottom.
+We need to check this box
+to say that we acknowledge that identity
+and access management resources might be created,
+and then hit Submit.
+Now, it's going to take a few minutes
+for the CloudFormation stack to be ready,
+because it's creating a lot of things for us
+in the background.
+So it's gonna create an EC2 instance,
+an Elastic Container Service cluster,
+DynamoDB tables, Elastic Load Balancer.
+Networking components like, routing table and subnets,
+an SNS topic, and identity and access management roles.
+And it's creating everything needed
+to run this distributed application,
+so expect it to take up to 10 minutes
+to complete everything.
+And you can refresh the status using this button.
+So while we're waiting,
+now is a good time to step away from the screen,
+go and have a cup of tea or coffee,
+and come back in 10 minutes
+and we should be good to continue.
+(digital tones)
+After the stack is completed, select the Outputs tab
+and this is where you'll find the URL
+for the load balancer of our application.
+So, right click and open the link in a new tab,
+and there is our application.
+To play the game, select Create.
+Rules is gonna be tic-tac-toe.
+Create, and Play.
+And here is our game.
+And it's probably the most basic computer game
+the world has ever seen,
+but I can't play tic-tac-toe by myself
+so I've invited my husband Rob to play against me.
+Hello, everybody.
+00:04:08.430 --> 00:04:09.780
+00:04:09.780 --> 00:04:11.250
+00:04:11.250 --> 00:04:14.010
+00:04:14.010 --> 00:04:16.710
+00:04:16.710 --> 00:04:19.890
+90
+91
+92
+93
+94
+95
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

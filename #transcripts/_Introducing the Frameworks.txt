@@ -1,0 +1,279 @@
+Hey there, gurus.
+Welcome to Introducing the Frameworks.
+In this lesson, we'll dive into
+the Cloud Adoption Framework Overview.
+Then we'll move into
+the Well-Architected Framework Overview.
+We'll close out this lesson with our exam tips.
+Let's get started.
+So the Cloud Adoption Framework
+focuses on using AWS
+to digitally transform,
+and accelerate business outcomes.
+It has several pieces that we're gonna cover.
+Our first stop is perspectives,
+and foundational capabilities.
+There are six of these,
+and we'll start with security.
+Security focuses on compliance and assurance,
+and includes topics regarding governance,
+security assurance and application security.
+This also includes things like
+infrastructure and data protection as well.
+Identity and access and vulnerability management
+are included here also.
+And then finally, incident response,
+and threat detection live here too.
+The business perspective
+focuses on strategy and outcomes,
+and includes several management focuses
+like strategy, portfolio,
+innovation and product management.
+It also includes data monetization,
+and data science as well as business insight.
+Platform focuses on infrastructure,
+and applications and includes platform,
+and data architecture and engineering.
+All things continuous integration,
+and continuous delivery or CICD are living here.
+And this topic also includes things like
+modern application development,
+as well as provisioning and orchestration.
+Operations focuses on
+successful workload delivery,
+and includes a ton of management topics
+like event incidents and problem management.
+Change in release.
+Performance and capacity.
+Configuration and patch management.
+Availability and continuity,
+and application management.
+This also includes observability
+because how else are you going to be
+able to maintain successful operations?
+Governance focuses on minimizing
+transformation-related risks,
+and maximizing organizational benefits.
+This would include things like,
+program and project benefits management,
+as well as risk, cloud financial,
+and application portfolio management.
+This is also where data governance,
+and data curation live.
+The sixth and final perspective people,
+focuses on creating a bridge
+between technology and business
+and includes things like leadership,
+and workforce transformation.
+Organizational design and alignment
+are also in this section.
+Cloud fluency, change, acceleration,
+and culture evolution
+also play parts in the people perspective.
+That was a lot, I know,
+but we'll talk about
+what you need to remember specifically
+in a moment.
+So let's move on.
+The cloud adoption framework has four domains.
+These include technology,
+which focuses on using the cloud
+to migrate and modernize
+legacy infrastructure applications
+as well as data and analytics platforms.
+Process transformation
+focuses on digitizing, automating,
+and optimizing your business operations.
+Leveraging new data and analytics platforms
+can help to improve operational efficiency
+while lowering costs,
+and improving the experience overall.
+Organizational transformation
+focuses on reimagining
+how the business and teams
+orchestrate their efforts to create more value,
+and meet goals.
+And finally,
+the product transformation domain
+focuses on reimagining your business model
+by creating new products or services,
+and revenue models.
+The last piece of
+the Cloud Adoption Framework
+are the cloud transformation journey phases.
+The Envision phase focuses on demonstrating
+how to use the cloud
+to accelerate business outcomes.
+The align phase
+focuses on identifying capability gaps
+across the six perspectives we covered.
+This includes identifying
+cross organizational dependencies,
+and finding any challenges or areas of concern.
+Then we move on to the launch phase.
+That focuses on delivering
+our pilot transformations,
+and demonstrating their value.
+This is where we watch,
+and learn and adjust before moving on
+to the next phase, which is scaling.
+Scaling focuses on
+expanding those transformations
+across our environment and scaling them out
+to meet our requirements and goals.
+That was a lot that we talked about,
+but this is what you need to take away
+from the Cloud Adoption Framework.
+This is how all the pieces fit together.
+We've got our perspectives
+or foundational capabilities
+that are all included
+in the transformation domains.
+They all lead to reducing business risks.
+Improving ESG
+or Environmental Social and Governance programs.
+Growing revenue,
+and increasing operational efficiency.
+And all of that is taking place
+while we apply the journey phases.
+We start with envision, then we align,
+we launch and then we scale,
+and continue those phases.
+Check your resources for a link to the ebook
+of the Cloud Adoption Framework
+to be able to dive in deeper
+to those perspectives.
+Next step, we have
+the Well-Architected Framework.
+It is made up of six pillars.
+Security.
+Cost optimization.
+Performance efficiency.
+Operational excellence.
+Reliability.
+And sustainability.
+The security pillar focuses on the protection
+of data systems and any assets
+used by your workload.
+This would include things like
+the principle of lease privilege.
+Securing data at rest and in transit.
+Et cetera.
+Cost optimization focuses on the ongoing process
+of maintaining cost in the cloud.
+This would include topics
+like right-sizing,
+and implementing lifecycles.
+Performance efficiency focuses on the ability
+to use computing resources efficiently
+to meet requirements.
+This would include topics like
+maximizing resource usage and trade-offs.
+Operational excellence focuses on
+creating applications that successfully
+support your workload.
+This includes things like
+event management and designing telemetry.
+Reliability focuses on architecting
+a workload to be consistent,
+and able to recover quickly.
+Disaster recovery is included here
+as well as network topology.
+And finally, sustainability
+focuses on environmental impacts,
+like energy efficiency and consumption.
+This includes region selection,
+and aligning infrastructure
+to match demand so waste is limited.
+Some examples of what applying each pillar
+looks like in the real world
+would include things like using CloudTrail
+to log all actions performed
+in your account to maintain awareness
+of your security stance.
+Using S3 intelligent tiering to automatically
+move data to optimize storage costs.
+Using Lambda to run code
+with zero administration.
+That would cut out any human error
+to implement efficiency and performance.
+And using code commit for code,
+and template version control
+to achieve operational excellence.
+Use multi AZ deployments of RDS databases
+to ensure reliability.
+And finally, use EC2 Auto Scaling
+to ensure maximum utilization,
+and scaling down accordingly
+to maintain a sustainable solution.
+The Well-Architected Framework
+also has design principles for each pillar,
+but what we're going to talk about
+are the general design principles.
+Check your resources for a link
+to the Well-Architected Framework
+Deep Dive course that covers
+each pillar's design principles in-depth.
+Now, the general design principles
+include stop guessing your capacity needs.
+Collect and use data
+to understand what your capacity needs are
+prior to implementation in the cloud.
+Auto scaling can help with this.
+Test systems at production scale,
+meaning create a complete testing environment
+to simulate your actual workload,
+and don't forget to decommission it
+when your testing is all done.
+Next is consider evolutionary architectures.
+Allow your architecture to evolve
+as the needs of the workload grows or shrinks.
+This also includes the ability
+to adopt new offerings as capabilities change.
+Next is automate with architectural
+experimentation in mind.
+Automation can save time and money
+while implementing a faster way
+to create and replicate your workloads.
+It can help with disaster recovery
+using automatic failovers,
+and reduce the impact of any incidents.
+Drive architectures using data is next,
+and this is a bit of a reiteration
+about collecting data.
+As you collect data about usage
+to determine your capacity needs,
+you should also be collecting it
+to observe how architectural choices
+are affecting your workload.
+Use that data to improve architecture over time.
+And finally, improve through game days.
+Game days help to simulate events
+so that your team can be ready
+for the real deal.
+Cutting back on time.
+Perfecting processes,
+and finding faults and performance.
+With that, we're ready for our exam tips.
+So of all the things we talked about
+regarding the Cloud Adoption Framework,
+understand the cloud adoption framework
+as a whole.
+Know that there are four phases.
+Envision.
+Align.
+Launch.
+And scale.
+And how those phases encompass
+the domains and perspectives.
+Know the benefits of using that framework,
+and pay close attention to what is included
+in each perspective.
+And finally, understand
+the Well-Architected Framework pillars.
+The general design principles,
+and how they apply in the real world.
+That will wrap up this lesson.
+Take a break and get in a good stretch.
+I'll see you in the next lesson
+when you're ready, gurus.

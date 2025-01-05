@@ -1,0 +1,106 @@
+Hey there, gurus.
+Welcome to Introducing Additional Compute Services.
+In this lesson, we'll meet Outposts
+and then we'll move on to Lightsail.
+We'll talk about Batch and then Wavelength.
+We're gonna close out this lesson with a quiz
+and our exam tips.
+Let's get started.
+Our first stop is AWS Outposts.
+Outpost allow you to run cloud services
+in your internal data center, meaning on-premises.
+Outposts support hybrid workloads
+that need to remain on-premises due to latency
+or data sovereignty needs.
+Data sovereignty means data residency
+and you might have a workload that requires
+that the data stays in a particular location.
+Outposts can provide that.
+They allow you to have access to cloud services and APIs
+to develop applications on-premises
+and have two offerings in the Outposts family.
+There is Outposts Rack and Outposts Servers.
+AWS delivers and installs servers individually
+or by the rack
+depending on the family you selected
+into your internal data center.
+Lightsail on the other hand is not on-premises.
+Lightsail allows you to quickly launch
+all the resources you need for small projects
+such as pre-configured applications like WordPress websites
+or small test environments.
+Lightsail also has a very simple user interface
+so you really don't need any cloud experience
+to navigate it.
+Lightsail plans bundle everything you need together.
+Server monitoring, SSD-based storage,
+DNS management, one-click RDP and SSH access
+and a static IP address.
+This pricing can provide low, predictable monthly fees
+but that is outside of the free tier offering of 750 hours
+or three months of Lightsail.
+Lightsail for research
+allows you to use more powerful computers
+for complex research simulations in just a few clicks.
+The key to remember about Lightsail
+is that it is quick deployments of simple workloads
+that can easily scale as they evolve
+if you're just starting out with AWS.
+Let's move on to AWS Batch.
+Batch allows you to process large workloads
+into smaller chunks or batches.
+It's typically used for longer running jobs.
+Batch is capable of running hundreds of thousands
+of smaller batch processing jobs
+and it dynamically provisions instances
+based on the volume of the workload.
+So, let's say that World Pizza
+needs to send out a newsletter
+about the pizza of the month to 50,000 subscribers.
+Sage would use Batch to send out batches
+of a thousand newsletters at a time
+to break up the large job into smaller jobs.
+Our last stop is AWS Wavelength.
+Now Wavelength delivers ultra-low latency applications
+for devices using 5G networking,
+meaning users can reach your applications super fast
+on mobile networks.
+There are a few pieces within Wavelength
+that provide the ability to offer that ultra low latency
+like zones and subnets.
+But don't get caught up in that.
+Just remember that Wavelength enables developers
+to build applications with ultra low latencies
+to devices and users on the mobile network,
+meaning 5G.
+It's time for our quick quiz.
+Our scenario here is you need to select a service
+to implement a quick deployment
+of a small temporary test environment.
+What service can you use to accomplish this?
+If you said we should use Lightsail, you're correct.
+Lightsail is perfect for quick launches of small projects
+like test environments or pre-configured WordPress website.
+Our next scenario is
+you need to suggest a service
+that will allow your data to reside in your data center
+and support a hybrid deployment model.
+What can you use to do this?
+If you said that we should utilize Outposts, you're correct.
+Outposts provide low latency
+and meet data residency or sovereignty regulations
+while still supporting a hybrid deployment model.
+With that, we're ready for our exam tips.
+Remember, Outposts support hybrid deployment models
+while maintaining local data residency requirements.
+Lightsail is a compute service
+that quickly launches small projects like test environments
+or pre-configured WordPress websites.
+Batch processes larger, longer workloads
+into smaller batches
+and Wavelength allows users and devices
+to reach applications
+without leaving the 5G mobile network.
+That's another lesson down.
+You're doing great, gurus.
+I'll see you in the next lesson when you're ready.

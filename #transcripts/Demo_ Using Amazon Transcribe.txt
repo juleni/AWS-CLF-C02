@@ -1,0 +1,41 @@
+Hi, and welcome back to this demo
+on Amazon Transcribe.
+In this scenario, you need to transcribe some audio
+to create text that could be used in a blog post.
+And you decide to do this using Amazon Transcribe.
+So from the AWS console,
+we'll first create and run a transcription job.
+Next, we'll review the transcription
+and note that the resulting file can be downloaded.
+And we'll do everything in the AWS Cloud Playground.
+So let's get started.
+From the console, search for transcribe.
+Using the menu on the left, select real-time transcription.
+And I'm just gonna get Transcribe
+to create a transcription of my voice.
+So after I select start streaming over here,
+it should begin typing out the transcription.
+Well, let's see how well it does.
+Amazon Transcribe is an automatic speech recognition service
+that takes speech as input and transcribes it to text.
+So it's listening to what's being said right now
+and creating a text file
+that can be reviewed and downloaded.
+After I finish and hit stop, I can now review the results,
+and I can download the full transcript using this button
+and it will download to my local machine
+And that is Transcribe.
+So for the exam, know that Transcribe
+is a speech-to-text service that takes speech as input
+and transcribes it to text.
+The speech can be provided
+either as audio files or streamed data,
+and when I used Transcribe to create
+a transcription of my voice in real time,
+that is an example of streamed data.
+And then when the transcription is complete,
+the output can be reviewed and downloaded.
+Well, that's all for this demo
+and if you're ready to move on,
+please join me in the next one.
+Thank you.

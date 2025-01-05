@@ -1,0 +1,44 @@
+Hi, and welcome back to this lesson
+on short polling and long polling with SQS.
+Now short polling and long polling are settings
+that you can configure,
+which define how frequently
+the consumers of your messages check or poll the queue.
+Short polling returns a response immediately,
+even if the message queue being polled is empty.
+And this can result in a lot of empty responses
+if nothing is in the queue,
+and you will still pay for these responses,
+even though they're empty.
+The alternative, you've guessed it, is long polling,
+and this is where each consumer
+periodically polls the queue.
+And the queue doesn't return a response
+until a message arrives
+or the long poll times out,
+so you get fewer empty responses,
+which can save you money.
+And for that reason,
+long polling is generally preferable to short polling.
+So given the choice, select long polling
+as the most cost-effective option.
+So for the exam, remember that with short polling,
+a response is returned immediately,
+even if there are no messages in the queue,
+and there's a cost associated with each response,
+even an empty response.
+Whereas with long polling,
+the consumers periodically poll the queue,
+and the queue only returns a response
+when a message has appeared in the queue
+or the timeout is reached.
+This is the most cost-effective option,
+and it saves you money.
+So for this reason, given the choice,
+select long polling as the most cost-effective option,
+and this is generally the preferred option
+for most use cases.
+Well, that's all for this lesson,
+and if you're ready to continue,
+please join me in the next one.
+Thank you.

@@ -1,0 +1,90 @@
+Hi, and welcome back to this lesson,
+which is a summary of all the exam tips
+for the migration and transfer section.
+Beginning with the Snow Family,
+which is the solution to use
+if you have large amounts of data,
+10 terabytes or more, that needs to be transferred to AWS
+and you cannot do it over the network.
+You will need to know the four different options
+that are available and what each one is used for.
+So there's the basic snowball
+used if you have 10 terabytes or more to migrate.
+Snowball Edge is for when you have 10 terabytes or more,
+but you need the device to also process the data
+before it goes to AWS.
+Snowmobile is the shipping container full of discs
+getting towed by a truck,
+and this is for moving massive data sets,
+10 petabytes or more.
+And then going from the largest to the smallest option,
+the cute little Snowcone,
+it's so small, you can fit it in a backpack.
+It's portable, military grade and holds up to 14 terabytes.
+And this is the one used to migrate data
+from locations that do not have proper data centers
+like military bases.
+And the Snow Family is essentially a data transfer solution.
+Transfer Family is all about file sharing
+and transfer with external third parties.
+External parties can transfer files out of your storage,
+for instance, using SFTP GET,
+or, they can transfer files in, for instance, using SFTP PUT
+and multiple commonly used file transfer protocols
+are supported.
+The database migration service
+is used to migrate databases and analytics workloads to AWS,
+and you can migrate from EC2, on-premises or from RDS.
+Whereas the schema conversion tool
+converts your database from one type to another.
+For instance, converting Oracle to Aurora MySQL,
+MySQL to RDS MySQL,
+or SQL Server to Aurora PostgreSQL.
+So it is basically converting the database
+to a different database technology or schema.
+Data sync, lets you securely transfer terabytes of data
+to S3, EFS or FSX.
+It supports NFS, SMB, or object stores.
+Data can be transferred from on-premises locations
+from another cloud provider or from AWS storage
+and use cases include migration,
+replication to low-cost storage, archiving in AWS
+and hybrid or multi-cloud workflows.
+The application discovery service
+gathers data about
+existing on-premises application servers and databases.
+An agent is installed on each server,
+which collects the data.
+Alternatively, there's also an agentless option as well.
+And with this option, a virtual appliance can be deployed
+to VMware vCenter to avoid using an agent.
+The data collected includes server inventory, configuration,
+operating system information,
+capacity usage, and networking.
+And this data can be used to develop a migration plan
+to move your applications and data to AWS.
+The application migration service
+is an automated lift and shift service,
+which automatically migrates applications to AWS
+without modifying them in any way.
+The AWS replication agent is installed on the source server
+and replicates everything to a new server in AWS.
+And you can use it to migrate applications
+running on physical servers, on virtual servers,
+from other cloud providers
+and other AWS accounts or regions.
+And AWS Migration Hub
+combines all of these migration related tools in one place.
+So it's a central place to manage the migration
+of applications and data into AWS.
+It's integrated with the application discovery service,
+the application migration service,
+and the database migration service.
+And it lets you group service together logically
+so that you can plan and track
+the progress of your migration.
+Well, that's it for this lesson,
+well done for reaching the end of this section.
+And if you'd like to continue,
+please join us for the next section of the course.
+Thank you.

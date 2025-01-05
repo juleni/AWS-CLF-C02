@@ -1,0 +1,92 @@
+Hey there, Gurus.
+Welcome to getting your head in the cloud.
+In this lesson, we'll step into the cloud
+and cover what the cloud and cloud computing actually is.
+We'll close out this lesson
+with some specific exam tips on this topic.
+Let's get started.
+So first off, what exactly is the cloud, Jess?
+I'm sure you've heard all the talk about data being
+in the cloud or companies migrating to the cloud
+and all of the buzz around people working in the cloud.
+The cloud has nothing to do
+with the fluffy bits in the sky that we like
+to pretend are animals having tea.
+Are you not doing that?
+Just me.
+Okay, then.
+Well, the cloud is a real actual place
+and can be servers located anywhere in the world
+that are in your data center or someone else's.
+Servers are very powerful computers that handle all
+of your requests for, let's say, a pizza shop
+and you're ordering online.
+Every time you interact
+with a website or application online,
+there's a server or many servers handling every interaction.
+AWS has thousands of servers
+across the globe in groups called data centers.
+These data centers are scattered in various countries
+and we'll talk more about that later in this section.
+Check your resources for a link
+to more information about data centers.
+AWS maximizes use of their servers with virtualization.
+Virtualization lets you divide hardware resources
+on a single physical server
+into smaller units like a loaf of bread.
+You share their servers
+with other customers using virtualization.
+So here we have a server that's divided
+into small units called virtual machines.
+Each virtual machine or VM is its own little server
+or slice that resides on the actual physical server.
+That means it has its own operating system, memory,
+storage, networking access, and it's yours to use.
+Now, using that VM comes with a price,
+as you might expect.
+Usage is gauged on a meter like a water or electric meter.
+Cloud providers like AWS operate a lot like power companies.
+There is on-demand usage that requires no upfront payments
+or long-term commitments and pay as you go,
+pays by the hour or sometimes by the second
+for what you use.
+With that understood, let's talk
+about what cloud computing is.
+Cloud computing is the delivery
+of computing services over the internet.
+Instead of using your own internal data center
+or local machine to store data or share applications,
+you're using AWS's servers in their data centers.
+AWS offers several different kinds
+of services, and we'll talk a ton about several of them
+in this course.
+There are compute services like EC2,
+storage services like S3,
+networking services like VPC,
+database services like RDS,
+developer tools like the Code Family,
+migration services like Migration Hub,
+machine learning services like Rekognition,
+auditing services like Trusted Advisor,
+security services like IAM
+and pricing services like the Pricing Calculator.
+Check your resources for a very important whitepaper
+that you should read in full before the exam,
+and then review the day before the exam.
+This 72-page whitepaper is a list
+of all of the AWS services broken up into categories
+like these here.
+Becoming familiar with the many services is your first step
+into understanding the AWS Cloud.
+With that, we are ready for our first exam tips.
+From all that we covered in this lesson,
+learn the different service categories.
+For example, EC2 is a compute service
+And VPC is a networking service.
+And read the overview of AWS Services Whitepaper.
+It will help you to understand service options,
+as well as immediately rule out some wrong answers
+in the exam.
+Trust me.
+Once you've got all that done,
+I'll see you in the next lesson.

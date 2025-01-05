@@ -1,0 +1,188 @@
+Hi, and welcome back to this lesson
+where we'll get some hands-on experience
+using Athena to query data stored in S3.
+In this scenario,
+you would like to use standard SQL
+to query a log file that is located in S3,
+and you decide to do this using Amazon Athena.
+So first we're gonna configure a CloudTrail
+to create some log data that we can query.
+And CloudTrail is simply a service
+that creates an audit log
+of all user activity in our account.
+So this is gonna create some data that we can work with.
+Next, we need to create an S3 bucket
+to store the Athena results.
+And then, finally,
+we'll be able to query our data using Athena.
+And you can do everything using our AWS Cloud Playground.
+From the console,
+first search for CloudTrail.
+And by activating CloudTrail,
+this is just gonna give us some data that we can play with.
+We can close these messages.
+And don't worry about this error message,
+it's not gonna affect what we're doing.
+Then select Create a Trail,
+and we can accept all the defaults.
+The trail name will be management-events,
+and it's automatically gonna create an S3 bucket
+where it's going to store our data.
+So now scroll down and Create Trail.
+Next, search for S3.
+Create Bucket.
+And this bucket will be used
+to store the Athena Query results.
+Scroll down to bucket name,
+and I'll call it my-athena-results.
+And add some random numbers on the end to get a unique name.
+We don't need to change anything else on this page,
+so scroll down to the end.
+And Create Bucket.
+And now we are ready to use Athena.
+So search for Athena.
+And I'll open the link in a new tab.
+Then, using the menu on the left,
+select the Query Editor.
+And before we run our first query,
+we need to set up our query result location.
+So select Settings, Manage,
+then Browse S3.
+Select your Athena results bucket.
+Choose.
+And then scroll down to the bottom and select Save.
+So that's our query results location setup.
+And now we are good to go to start querying with Athena.
+So select Editor.
+And this is where we're gonna type our query.
+Click the query box here,
+and I want you to type the following command
+exactly as I do.
+CREATE DATABASE athenadb.
+Then scroll down to the bottom and select Run.
+Then if you scroll down,
+you should see a message
+saying that our query has been successful.
+Now, this query has just created an empty Athena database.
+And then on the left-hand side under Database,
+you should see that your database has appeared.
+Now, this database is empty at the moment,
+so let's populate it.
+And first we're gonna create a new table
+and tell Athena where to find the data
+to populate the table.
+And I've already prepared the SQL command
+that we are going to use.
+So you can just copy and paste the command.
+In the resources for this lesson,
+you'll find a link to this GitHub repository,
+and this is where you're gonna find
+the commands for this lesson.
+I'll go into the Athena demo folder,
+and it's this file, Athena_Query_Create_Table.txt.
+So I'll select the file,
+and then we can use this icon here
+to copy the raw file.
+Back in Athena,
+hit the plus sign on the Query Editor to create a new query.
+And paste our code in here.
+Now, this is a really long piece of SQL code.
+All it does is create our table,
+and the table is gonna be called cloudtrail_logs.
+And then down here,
+it's creating all the different attributes
+that are gonna be stored in our table.
+And remember, our data contains a record
+of all the user activity in our account.
+So it's gonna be things like user identity,
+account ID,
+event time, event source,
+AWS region, et cetera.
+All the kind of information that you'd expect to see
+in an audit log.
+So these are all gonna be the attributes of our table.
+But before we run this query,
+come down to the end.
+And then right at the bottom,
+this is where we need to specify the location of our data.
+So we need to tell Athena where to find the data
+that we want it to query.
+And this is gonna be our S3 bucket
+where CloudTrail is storing the data.
+And to find that,
+head back to the S3 console,
+select the cloudtrail-logs bucket,
+then go into the AWSLogs folder,
+and then into the next folder,
+which is named after your account number.
+And your folder structure should look like this.
+So first we've got the name of your bucket,
+then AWSLogs,
+and then your account number.
+So then you can just copy the S3 URI using this button.
+And this URI is what we use to reference the location in S3.
+Then come back to our Athena Query Editor,
+and we need to replace this section of the query
+with your URI.
+After you've done that,
+it should look like this.
+So here's my bucket name,
+followed by the AWSLogs folder,
+followed by my account number.
+And then make sure
+you don't remove this forward slash at the end.
+After you've done that, hit Run.
+And if it's worked correctly,
+you should see a message at the bottom like this
+saying query successful.
+And if it wasn't successful this time,
+just make sure that you specified your location correctly,
+because if you don't get this part right,
+then Athena will not be able to find your data.
+So now under the Tables section on the left,
+you should see there's a new table called cloudtrail_logs.
+Expand the table,
+and here's all the data attributes
+that our query just created.
+And now we can go ahead and query the data using Athena.
+So come back up to the top,
+hit the plus sign to create our third query.
+And I've prepared this query for you already.
+It's in the GitHub repository.
+Come back to Athena Demo,
+and it's in the file called Athena_Query.txt.
+Once again, I'll copy the raw file using this icon,
+head back to my Query Editor,
+and paste it in here.
+And this is just a really simple SQL query
+that selects the user identity ARN,
+event name, source IP address,
+and event time from our cloudtrail_logs table.
+Scroll down and select Run.
+And then if you scroll further down,
+you can see the results of the query.
+And here they are.
+So first of all, it selected the ARN, the user identity,
+the event name, then the source IP address,
+and the event time
+from the data in our cloudtrail_logs table.
+So that is Athena.
+It's pretty simple to use.
+And if you know how to use SQL,
+then you can run all sorts of queries
+on data that is stored in S3.
+So it's kind of like turning S3 into a database.
+And for the exam,
+be aware that Athena is an interactive query service
+for data stored in S3.
+It allows you to query data stored in S3
+using standard SQL queries.
+It's serverless,
+and you don't need to configure any infrastructure
+to use Athena.
+And use cases include querying log files
+like we did just now,
+or generating reports from S3 data.
+Well, that is it for this lesson,
+and if you're ready to move on,
+I will see you in the next lesson, thank you.

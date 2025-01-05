@@ -1,0 +1,26 @@
+Hi, and welcome back to this lesson,
+which is going to introduce Amazon Athena.
+Now Athena is a really cool service
+that enables you to run standard SQL queries
+on data that is stored in S3.
+It's essentially an interactive query service.
+It's serverless, which means there's nothing to provision,
+and you pay per query and per terabyte scanned.
+When using Athena, there's no need for complex,`
+extract, transform and load or ETL processes.
+Instead, Athena works directly with data stored in S3.
+Use cases include using Athena to query log files
+stored in S3, to analyze AWS cost and usage reports,
+generate business reports on data that's stored in S3,
+and run queries on clickstream data stored in S3.
+So for the exam, know that Athena is an interactive
+query service for data stored in S3.
+It lets you query data using standard SQL queries.
+It's serverless,
+so you don't need to configure any infrastructure,
+and use cases include querying log files
+or generating reports from data stored in S3.
+Well, that's all for this lesson,
+and if you're ready to move on,
+please join me in the next lesson.
+Thank you.

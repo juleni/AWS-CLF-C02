@@ -1,0 +1,30 @@
+Hi, and welcome back to this lesson
+on Simple Email Service, or SES.
+Now, SES is pretty easy to understand.
+It's a cloud-based email service
+that enables your application
+to send richly formatted HTML emails.
+For instance, the confirmation of an order or delivery,
+or a marketing campaign with details
+of new launches, special offers and discounts.
+Here's an example of the kind of richly formatted
+HTML emails that you can send using SES.
+It also allows you to send emails in bulk
+to all the customers in a mailing list.
+It has the ability to track open or click-through rates
+so that you can understand the effectiveness
+of your marketing campaign.
+And that really is all you need to know about SES.
+So for the exam, know that SES allows you
+to send richly formatted HTML emails from your applications.
+Think of marketing campaigns, or confirmation of an order.
+And don't get it confused with SNS,
+the simple notification service that allows you to send
+or push notifications, for instance,
+SMS text messages and plain text emails.
+So if you want to send basic plain text emails,
+you can do that with SNS, however,
+if you're sending richly formatted HTML emails, use SES.
+Well, that is it for this lesson,
+and if you're ready to move on,
+I'll see you in the next one, thank you.

@@ -1,0 +1,66 @@
+Hi, and welcome back to this lesson on RedShift
+and RedShift Serverless.
+Now, RedShift is a data warehousing service,
+which is a system that stores large amounts of data used
+for reporting and analytics,
+and it's designed to be used
+for business intelligence workloads and is able to store
+and query petabytes of data.
+Now, imagine we have a distributed application consisting
+of multiple different components
+like Identity and Access Management, API Gateway, Kinesis,
+Lambda, DynamoDB, S3 and SNS.
+While each of these services are going to emit data,
+and we can use RedShift to combine multiple sources of data
+into one place, allowing you
+to perform analytics on the data.
+So RedShift is a fully managed data warehousing solution.
+It's capable of massively parallel processing or MPP,
+and this just means it's able to run complex queries
+in parallel.
+You get automated data management,
+including automated data backup, replication,
+and scaling without any downtime.
+And it is designed for OLAP
+or Online Analytical Processing, which just means
+that it's great for analytics and reporting.
+So if you see anything in the exam relating
+to a data warehouse or OLAP
+or Online Analytical Processing,
+I want you to think RedShift.
+Now, they also have a serverless option,
+and it's called, you've guessed it, RedShift Serverless.
+And this really simplifies the use of RedShift,
+eliminating the need to manage any infrastructure.
+It automatically provisions and scales everything.
+So it's a great option for unpredictable workloads.
+And as with all of the serverless options, this means
+that you can focus on the task at hand,
+and in this case, analyzing your data
+rather than spending time and effort mnaging infrastructure.
+Use cases include complex querying
+and reporting for businesses that need
+to analyze large volumes of data.
+Data lakes integration means that you can integrate
+with a data lake, which is simply a central repository
+of structured and unstructured data.
+For instance, stored in S3.
+And you can query that data using RedShift,
+and you can also use it for operational analytics.
+For instance, think of a delivery company that needs
+to make time sensitive decisions about where
+to send their drivers based on real-time data,
+like traffic conditions,
+and the number of deliveries left in the queue.
+So for the exam, be sure to know
+that RedShift is a data warehousing service.
+There's also RedShift Serverless,
+which gives you the serverless option
+with no infrastructure to manage.
+Understand that RedShift lets you store huge amounts
+of data, and it is designed
+for Online Analytics Processing, or OLAP.
+Well, that's it for this lesson.
+And if you're ready to move on,
+please join me in the next one.
+Thank you.

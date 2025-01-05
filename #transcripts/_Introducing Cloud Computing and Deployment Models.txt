@@ -1,0 +1,121 @@
+Hey there, gurus.
+Welcome to Introducing Cloud Computing
+and Deployment Models.
+In this lesson, we'll compare CapEx and OpEx.
+Then we'll dive into cloud computing
+and talk about advantages and benefits of the cloud.
+We'll move into cloud computing models
+and then cloud deployment models.
+We'll close out this lesson
+with some specific exam tips on this topic.
+Let's get started.
+So throughout your cloud journey
+you will hear tons of tech jargon and abbreviations.
+Two of these are CapEx and OpEx.
+CapEx, or capital expenditures, are upfront purchases
+towards your fixed assets like equipment,
+property, computers, and software.
+OpEx, or operating expenses,
+are funds used to run day-to-day operations.
+This would include things like employee salaries,
+marketing, rent, and research and development.
+Let's move into the six advantages of cloud computing.
+Now first, you can deploy your applications
+around the world at a click of a button,
+launch whole environments in minutes.
+You can focus on building your applications
+instead of managing hardware
+as you do not own the data center being used.
+With AWS providing to the great masses of the world,
+volume discounts are passed on to you,
+which provides lower pay as you go prices.
+The provided services allow you to innovate more quickly
+and deliver your applications faster as well.
+Because the cloud is elastic,
+your capacity is matched exactly to your demand,
+and finally, you pay for what you use
+instead of making huge upfront investments
+by running a data center.
+The benefits of cloud computing
+begin with high availability.
+Highly available systems are designed
+to operate continuously without failure for a long time.
+These systems avoid loss of service
+by reducing or managing failures.
+With elasticity, you don't have to plan ahead
+of time how much capacity you need,
+which is a huge time saver and cost saver.
+You can provision only what you need
+and then grow and shrink based on demand.
+The cloud gives you increased agility.
+All the services you have access to
+help you to innovate faster,
+giving you faster speed to market.
+And durability is all about long-term data protection.
+This means your data will remain intact without corruption.
+Now these terms are just a few
+that you should become familiar with.
+Check your resources for a blog post with more terms
+to help you really start digging in.
+Let's move into our cloud computing models.
+Our first stop is Infrastructure as a Service or IaaS.
+Think of Infrastructure as a Service as building blocks.
+These blocks can be rented
+and you can choose how to put them together.
+Having a monthly subscription with a hosting company
+that serves your website is an example
+of Infrastructure as a Service.
+Software as a Service, or SaaS,
+is using a complete application on demand
+that someone offers to users.
+Your personal email that you access
+through a web browser is considered SaaS.
+Platform as a Service, or PaaS, is used by developers
+to help develop software using web-based tools
+without worrying about the underlying infrastructure.
+Tools provided to build a storefront application
+that runs on another company's server is an example of PaaS.
+And with that, we are ready
+to move on to cloud deployment models.
+Our first stop in cloud deployment models
+is the private cloud.
+This just means that your resources
+like servers and databases are all on premises.
+Your local network or private cloud
+is your internal data center.
+A private cloud has none of the cloud advantages
+we talked about, but it does offer more security
+of your data as it is not traversing any public space
+and isn't shared with other organizations
+with virtualization.
+Next is the public cloud.
+This is AWS, Azure, and GCP.
+You do not have any hardware responsibility
+as they provide all the hardware
+that provides the services you use.
+This option has all of the advantages of the cloud,
+like going global in minutes,
+no huge investments upfront, et cetera.
+Last, is the hybrid cloud model
+that brings private and public together.
+Hybrid models typically have their sensitive data
+stored locally and securely connect
+to the public cloud or AWS
+using services like VPN and Direct Connect.
+VPNs can create a secure connection into the public cloud
+for, say, creating new resources in AWS,
+and Direct Connect creates a secure connection
+for data to move from the public cloud
+to the private cloud without traversing the public internet.
+We'll talk more about direct connect
+in the network technology and services section.
+With that, we're ready for our exam tips.
+First, understand the six advantages as well as benefits
+and terminology of the cloud.
+Know the computing models, Infrastructure as a Service,
+Software as a Service, and Platform as a Service.
+Know the deployment models.
+They are private cloud, public cloud, and hybrid cloud,
+and that hybrid deployments are supported by Direct Connect.
+That will close out this lesson, gurus.
+I'll see you in the next one when you're ready.

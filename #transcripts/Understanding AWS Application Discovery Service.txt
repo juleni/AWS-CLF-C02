@@ -1,0 +1,74 @@
+Hi, and welcome back to this lesson
+on Application Discovery Service.
+Imagine that you have a bunch of applications and databases
+that you want to migrate to AWS,
+but you don't have a complete inventory
+or up-to-date architecture designs
+to help you plan the migration.
+Well, you can discover your application servers
+and databases using the Application Discovery Service.
+A discovery tool gathers data about your existing setup,
+and the data is collected and sent over to AWS
+over an encrypted connection,
+and it's stored in AWS Migration Hub,
+which we are going to learn all about in another lesson.
+But for now, you just need to know that Migration Hub
+is another tool used to help you coordinate
+migrating your systems to AWS,
+and it's used by the Application Discovery Service
+to store the data that it's gathered.
+So what sort of data is it going to collect?
+Well, first of all, it creates a server inventory.
+It also collects configuration data,
+including operating system versions.
+It collects capacity utilization data
+so that you can rightsize your systems in AWS.
+And inbound and outbound network connections
+between servers.
+And that's going to let you understand the dependencies
+between the different systems.
+How does it collect this data?
+Well, it collects the data
+using the Application Discovery Service agent.
+You install the agent on your virtual machines
+and physical servers,
+and the agent gathers the data
+and sends it all to the Application Discovery Service.
+Now, if you are running VMware,
+there's also the option of using an agentless collector,
+and this is for migrating from VMware only.
+The way it works is that the agentless collector
+is installed as a virtual appliance
+running in VMware vCenter.
+So it's running on a separate virtual appliance
+instead of being an agent
+on your application or database servers.
+The collector then identifies virtual machines and hosts
+that are associated with your vCenter environment.
+And then it sends the collected data
+to the Application Discovery Service.
+And the kind of thing it's collecting
+is host names, IP addresses, MAC addresses,
+disk resource allocations,
+database engine versions, database schemas,
+and capacity utilization metrics,
+like CPU, RAM, and Disk I/O.
+So for the exam,
+remember that the Application Discovery Service
+gathers data about your existing,
+on-premises application servers and databases.
+You install an agent on each server to collect the data.
+And with VMware, you've got the option
+to use an agentless collector,
+which is the virtual appliance
+deployed to VMware vCenter systems to avoid using an agent.
+The data that it collects includes a server inventory,
+configuration information, operating system versions,
+capacity usage, and networking.
+And this data can be used to develop a migration plan
+to help you quickly and easily migrate your workloads
+to AWS.
+Well, that is all for this lesson,
+and if you're ready to continue,
+I'll see you in the next one.
+Thank you.

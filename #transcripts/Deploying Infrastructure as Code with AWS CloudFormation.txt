@@ -1,0 +1,68 @@
+Hi, and welcome back to this lesson
+on Deploying Infrastructure as Code
+with AWS CloudFormation.
+So what is infrastructure as code?
+Well, imagine you needed to quickly build an AWS environment
+for your application and you needed to do it quickly.
+What if you need to provide an identical environment
+for your development team to work in
+and another to conduct performance testing?
+And you need to make sure each environment is identical.
+Well, the easiest way to make sure
+that everything is configured in a consistent way
+is to use infrastructure as code.
+And CloudFormation is the AWS service
+that lets you provision
+and manage AWS infrastructure as code.
+So CloudFormation is used to manage, configure
+and provision your AWS infrastructure as code.
+Resources are defined using a CloudFormation template,
+and that's the code part.
+And you can write the CloudFormation template
+using either YAML or JSON code.
+CloudFormation interprets the template
+and makes the appropriate API calls to create the resources
+that you've defined in your template.
+And the resulting set of resources built by the template
+is known as a CloudFormation stack.
+So this is all of the resources
+that were built by our template.
+Here's an example of a CloudFormation template,
+and don't worry, you don't need to memorize it for the exam.
+But CloudFormation is going to interpret the template
+and deploy the resources
+that are described in this resource section of the template.
+In this example, it's an EC2 instance that we're deploying
+and we want to deploy this instance
+in the us-east-1a availability zone.
+The instance type is t3.micro,
+and we're specifying the ami imageId.
+So that's the Amazon machine image that's gonna be used
+to install the operating system on our EC2 instance.
+So CloudFormation takes the template
+and deploys the resources as they're specified.
+Benefits of using CloudFormation
+are that it's a consistent way to provision infrastructure
+and with fewer mistakes
+because we are automating the process
+instead of trying to do it manually each time.
+So just like a cookie cutter, we can make sure
+that we provision EC2 instances
+and other AWS resources in a consistent way
+each time and not with completely different configurations.
+It's quick and efficient because it involves less time
+and effort than configuring things manually.
+And it's free to use.
+You are only charged for the AWS resources
+that you create using CloudFormation.
+And for the exam,
+know that CloudFormation lets you deploy AWS resources
+using an infrastructure as code approach.
+Resources are defined using a template
+written in either YAML or JSON.
+And this allows you to quickly provision AWS resources
+in a consistent way with fewer errors.
+So that's it for this lesson,
+and if you are ready to move on,
+please join me in the next one.
+Thank you.

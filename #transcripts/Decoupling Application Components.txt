@@ -1,0 +1,98 @@
+Hi, and welcome back to this lesson
+where we'll be exploring what it means
+to decouple the components of an application.
+First, let's consider tight coupling,
+and this is usually a feature of monolithic applications
+where all the components of an application
+are interdependent.
+Now, coupling describes the dependencies
+between the components of an application,
+and with tightly coupled systems,
+there are lots of dependencies between the components.
+Problems can then occur if one part of the system is slower
+or faster than another.
+For instance, if you think of a website
+that sells concert tickets,
+if the sales processing part of the application
+is processing payments faster than the database
+that maintains the number of tickets can be updated,
+then the database could become overloaded
+when there's a rush to purchase tickets.
+For example, if your favorite artist comes to town
+and everyone is rushing to buy tickets at the same time.
+And with tightly coupled systems,
+one failed component can bring the whole system down.
+So in my example, if the database becomes overloaded,
+this can bring the whole system down
+if the application is getting no response from the database.
+However, with loose coupling,
+which is what we typically see
+with microservices-based architectures,
+this is where the components of the application
+can operate independently.
+One component doesn't need to wait
+until another component has finished its work
+before moving on to the next task.
+Data and messages are moved between components
+of the application.
+And a failed or slow component doesn't affect
+the other parts of the system.
+The other components continue their work unaffected.
+And by avoiding dependencies between components,
+the application is more flexible, it's easier to maintain,
+and benefits from increased scalability, resiliency,
+reliability, and elasticity.
+And for that reason, loose coupling is the way forward.
+Let's consider the following scenario.
+World Pizza customers are able
+to order their favorite pizza using a smartphone app.
+First, the customer creates an order using the app,
+and the kitchen is notified of the order
+and the pizza is made.
+When the order is ready, a delivery driver is assigned,
+the route and the delivery time are calculated,
+the customer is notified of the delivery time,
+and a delicious pizza is delivered.
+But if one of the components in this system fails,
+let's say the payment processing part of the application
+goes offline for a few minutes,
+we don't want that to take down the entire system
+and prevent existing orders
+that are already in the system from being fulfilled.
+So we need to find a way to integrate
+the components of an application so that they can interact
+and communicate with each other
+without having them be dependent on one another.
+Now, there are three common approaches
+to integrating applications which involve the use of queues,
+notifications, and events.
+And AWS provides dedicated fully managed services
+that can be used to integrate application components,
+enabling them to operate independently from one another.
+So we've got SQS, which is the Simple Queue Service,
+SNS, which is Simple Notification Service,
+and EventBridge, which is used
+to build event-driven systems.
+But the primary service that is specifically designed
+to help with decoupling is SQS, the Simple Queue Service.
+And later on we're gonna take a closer look
+at each of these technologies in turn,
+and we're gonna discover how they can be used
+to build robust and scalable applications
+that are loosely coupled.
+But for now, the main thing to understand
+is that coupling relates to interdependencies
+or connections between the components of a system.
+Tight coupling is where the different parts of the system
+are highly dependent on each other.
+So if one part fails,
+it can bring the whole system down.
+And loose coupling is where the components
+that make up an application are decoupled.
+They can be connected to each other,
+but they are not dependent on one another.
+So if one part fails or is brought offline,
+it is not gonna bring the whole thing down.
+Well, that is it for this lesson.
+And if you're ready to continue,
+please join me in the next one, thank you.

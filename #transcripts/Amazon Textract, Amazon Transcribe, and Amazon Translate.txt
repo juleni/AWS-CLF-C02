@@ -1,0 +1,71 @@
+Hi, and welcome back to this lesson
+on Textract, Transcribe, and Translate.
+And these are a group of services
+that use machine learning technology
+to process and generate text.
+Now they're three pretty similar sounding services,
+so you'll need to understand
+the differences between these three.
+So Textract extracts information from documents.
+Transcribe is a speech-to-text service,
+and Translate is a language translation service.
+So let's look at each of these
+in a little bit more detail.
+So Textract is all about
+extracting data from documents.
+It can read and process any kind of documents.
+For instance: images, PDFs, tables or forms.
+It's able to deal with printed or handwritten documents
+and it uses optical character recognition
+to read and process the documents.
+For example, think about
+an automated ID processing application
+that's able to review driver's licenses and passports.
+Or what about an intelligent expenses system
+that's able to analyze invoices and review receipts,
+so that you don't have the manual effort
+involved in explaining what the receipts are.
+Onto Amazon Transcribe,
+and this is a speech to text service;
+so speech goes in and text comes out.
+It can deal with streamed audio
+or you can upload audio files,
+for instance, MP3 files.
+And Transcribe is great
+for generating subtitles for videos
+or automatically creating meeting notes.
+Onto Amazon Translate.
+And this is a language translation service
+and it's designed to be accurate,
+and sound completely natural.
+It can handle large scale translation jobs
+using a single API call,
+and it can quickly translate
+large volumes of HTML or text content.
+It supports over 70 languages
+with more being added all the time
+and you can customize it to recognize
+your own brand names, product names
+or industry terminology.
+And use cases include translating
+product documentation,
+support documentation,
+or even real time translation jobs
+for customer support chat bots.
+Now for the exam,
+remember that these three services
+use machine learning to perform
+automated document processing
+that helps reduce manual effort.
+They sound pretty similar,
+but they've got completely different use cases.
+So Textract is used to extract text
+and information from documents.
+Transcribe is a speech-to-text service.
+It takes speech as input and transcribes it to text,
+and Translate is for accurate,
+natural sounding language translation.
+So that is it for this lesson,
+and if you're ready to move on,
+I'll see you in the next one.
+Thank you.

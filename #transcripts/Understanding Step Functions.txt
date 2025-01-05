@@ -1,0 +1,80 @@
+Hi, and welcome back to this lesson
+on step functions.
+And the best way to understand step functions is
+to jump straight in with an example of how it can be used.
+Imagine a store checkout process
+for your favorite online store.
+The high level process might look something like this.
+When you go to checkout, it might check the inventory
+to make sure the product is still available.
+Then hold the product so that nobody else can purchase it,
+and then bill the customer.
+But what if something goes wrong at
+this stage of the transaction?
+What if the customer's credit card has expired
+or if the card was declined,
+or if they simply don't complete the transaction?
+Well, if the customer is not successfully billed, we'll want
+to remove the hold so that the product
+can be sold to the next customer.
+And then only after a customer has successfully been billed,
+can we ship the product.
+Now, imagine that each of these different parts
+of the checkout process is handled
+by a different Lambda function.
+While we can use step functions to manage the logic
+of a distributed workflow like this one.
+So step functions are used to manage the logic
+of a distributed application made up
+of multiple small components,
+and it provides a visual interface
+that lets you visualize the workflow.
+It's used to let you build
+and run serverless applications as a series of steps.
+Each step in your application executes in order, as defined
+by your business logic.
+And the output of one step can be the input into the next.
+Now it can also manage error handling.
+So back to our checkout process.
+Step functions can be used to log and track the success
+or failure of each step in the process.
+And if something fails,
+it can determine the next course of action.
+So if a payment is declined, do we want to ask the customer
+to retry their payment using a different method?
+Or if they don't complete a transaction, do we want
+to send them an email reminding them to finish checking out?
+Well, we can model all
+of this behavior using step functions.
+Now, step functions can be used to handle processes
+that have parallel steps.
+For instance, an image processing application
+that lets you upload a photo, it extracts the metadata,
+resizes the image, and performs facial recognition all
+as parallel tasks that happen concurrently
+and it loads the results into a database.
+While each part of this workflow could be handled
+by a different Lambda function
+and the end-to-end process managed by step functions.
+What about a more complex workflow?
+Let's say we're using code build to
+build and test our software.
+After the test results are available,
+maybe the application support team wants a notification if
+the test was successful.
+But if the test failed, maybe you want to send a message
+to the software development team so
+that they're aware that the test failed.
+And this kind of branching workflow
+can also be handled by step functions.
+So for the exam, know that step functions
+provide a great way to visualize
+your serverless application.
+They automatically trigger
+and track each step in the process,
+and they log the state of each step so you can track
+what went wrong and where.
+Well, that is all for this lesson.
+And if you're ready to move on,
+please join me in the next one.
+Thank you.

@@ -1,0 +1,95 @@
+Hi, and welcome back to this lesson,
+which is going to introduce the AWS Snow Family.
+Imagine that you have large amounts of data
+over 10 terabytes or more stored in your data center,
+and you would like to migrate that data into AWS
+as part of your Cloud transformation.
+Well, it's gonna take a long time
+to transfer everything over the internet,
+and that is where the Snow Family comes in.
+Now the Snow Family are physical devices
+designed to securely and efficiently transfer large amounts
+of data to AWS.
+And you would typically use these devices
+when your network bandwidth can't handle
+an online migration efficiently,
+either because the amount of data is so great
+it would take too long or overload the network,
+or it could be that there simply is no consistent network
+in the location that you're operating in.
+The idea is that you install the device,
+in this example, we're using the Snowball,
+and the Snowball gets installed locally in your data center.
+You then transfer your data to the Snowball
+and then ship the Snowball device to AWS
+so that the data can be uploaded to AWS storage
+of your choice.
+So this is basically a data transfer solution.
+Now with the Snow Family,
+there are a few different variations to know about,
+and Snowball is a great option
+if you've got at least 10 terabytes of data to migrate.
+And it's basically a big box full of discs
+that you connect to your network
+and copy the data onto the device
+before shipping it back to AWS.
+And I found a picture of one online,
+so that you can see exactly what this thing looks like.
+And there it is AWS Snowball.
+Moving on, the Snowball Edge is a great device
+if you've got at least 10 terabytes of data to migrate,
+but in addition, you also need
+to perform some processing on the data.
+So Snowball Edge also provides Onboard Compute Resources
+that allow you to process your data.
+So if you've got a complex use case,
+where you need to migrate a large amount of storage,
+but you also need compute capability,
+then pick Snowball Edge over a Snowball.
+And here's a picture of a Snowball Edge.
+The next option is Snowmobile.
+And this is basically a shipping container full of discs
+that is towed by a truck.
+And this is a great option
+if you've got more than 10 petabytes of data to migrate.
+So this option is for really large data sets.
+Now I really wanted to find you an image
+and I actually had to search extremely hard for it,
+but I did find this video on the AWS website
+so you can see it in action.
+And then finally, we are going from the largest
+to the smallest, which is Snowcone.
+And this is a small portable, military grade disc device.
+The capacity is either eight terabytes of HDD hard disc
+or 14 terabytes of SSD Solid State Disc.
+It weighs in at under five pounds, so it fits in a mailbox
+or in a backpack.
+And it's used to migrate data from locations
+that don't have a proper data center at all,
+or any reliable networking, for instance, military bases.
+And here's the Snowcone image that I found.
+It's standing here next to a water bottle for scale.
+So you can see that this device is pretty small
+and it looks like it's about the size of my yoga block.
+Now for the exam, just remember the four different options
+that are available and what they're used for.
+So there's the basic Snowball,
+used if you have 10 terabytes or more to migrate.
+Snowball Edge is for when you have 10 terabytes or more,
+but you need the device to also process the data
+before it goes to AWS.
+Snowmobile is the shipping container full
+of discs getting towed by a truck,
+and this is for massive data sets, 10 petabytes or more,
+and then going from the largest to the smallest option,
+the cute little Snowcone.
+It's so small, you can even fit it in a backpack.
+It's portable, military grade,
+holds up to 14 terabytes,
+and this one is used to migrate data from locations
+that do not have a proper data center like military bases.
+And the Snow Family is essentially a data transfer solution.
+Well, that is it for this lesson,
+and if you're ready to move on,
+please join me in the next one.
+Thank you.

@@ -1,0 +1,85 @@
+Hi, and welcome back to this lesson,
+which is part one of the summary of all the exam tips
+for the AI, Machine Learning, and Analytic section,
+beginning with Redshift and Redshift Serverless.
+So just remember that Redshift is a data warehousing service
+and Redshift Serverless is just the serverless version
+of Redshift,
+which means there's no infrastructure to manage.
+Redshift is highly scalable
+and can store a huge amount of data,
+so think petabytes of data,
+and it's designed for Online Analytics Processing or OLAP.
+So if you see anything in the exam related to OLAP
+or Data Warehouse, I want you to think Redshift.
+Kinesis enables you to collect, process, and analyze
+streaming data in real time.
+And a couple of examples of streaming data
+are things like website click streams
+or IoT Telemetry data.
+Kinesis streams capture and store streaming video and data.
+So Kinesis data streams deals with streaming data
+and Kinesis video streams deals with streaming video
+and consumer applications consume the data
+and video from Kinesis.
+Whereas Kinesis Firehose captures, transforms,
+and loads the data continuously into data stores.
+So Firehose is all about transforming,
+and loading the data rather than providing it
+directly to a consumer.
+Athena is an interactive query service for data
+that is held in S3,
+and it allows you to query data stored in S3
+using standard SQL.
+It's serverless and you don't need to configure
+any infrastructure to use Athena
+and use cases include querying log files
+or generating reports from your S3 data.
+AWS Glue is a service that's used to prepare your data
+for analytics and machine learning.
+It crawls your data to create a data catalog,
+which includes metadata, like the type of data.
+It then performs, extract, transform, and load,
+so it can extract your data from data sources
+like RDS, S3, or Kinesis, et cetera.
+Transform the data by categorizing it, cleaning it,
+removing duplicates, and joining multiple data sets.
+And then finally, it can load your data
+into data sources like RDS, S3, Redshift, or Athena.
+AWS Data Exchange is a service that lets you subscribe
+to data products that are provided by third parties.
+For instance, data relating to financial services,
+healthcare, weather, manufacturing, and telecommunications.
+An example use case is to analyze customer spending patterns
+based on geographic location,
+using data from companies like MasterCard.
+You can create and publish your own data products
+and let other accounts subscribe.
+And the reason that people subscribe to this kind of service
+is to use the data for analytics, machine learning,
+and decision-making.
+Onto Elastic MapReduce or EMR.
+And this is a fully-managed big data service.
+It supports open source technologies like Apache Spark,
+Apache Hive, Presto, and Hadoop.
+It's used for petabyte scale,
+parallel data processing and analysis,
+for structured, semi-structured, and unstructured data.
+And use cases for a big data solution like EMR
+include finding patterns in genomic data,
+identifying preferences from clickstream data,
+or analyzing application log data.
+Amazon OpenSearch is a fully-managed elastic search service,
+and it's based on open-source technology.
+It's compatible with industry standard elastic search
+open-source APIs,
+as well as Logstash for data collection and processing,
+and Kibana for search and data visualization.
+It can ingest data from AWS services like CloudWatch Logs,
+S3, and DynamoDB,
+and use cases include log analytics, application monitoring,
+security analytics, and business data analytics.
+Well, that is all for part one,
+and if you're ready to continue, please join me
+for part two of this lesson.
+Thank you.

@@ -1,0 +1,103 @@
+Hey there, Gurus.
+Welcome to the Foundations of Cloud Computing Exam Tips.
+In this lesson,
+we'll review our exam tips and important pieces
+from lessons in this section.
+Let's get started.
+Our first stop is knowing the service categories.
+And that means reading the AWS Services Whitepaper.
+It will help to automatically know
+that some of the answers are wrong
+and be able to pick services that fit the description.
+For example, if the question is looking
+for a compute service to migrate to,
+and your answers are RDS, VPC,
+S3, WAF, and EC2,
+knowing that EC2 is a compute service
+and the others are not just gave you the right answer.
+Remember that the six advantages of the cloud are:
+going global in minutes, stop spending money
+on your own data centers,
+stop guessing capacity, increase speed and agility,
+benefit from massive economies of scale,
+and trade fixed expenses for variable expenses.
+Remember cloud benefits, like high availability,
+elasticity, agility, and durability,
+but also understand what they mean in the cloud.
+And that means reading your terminology link
+that I provided.
+Remember the cloud computing models:
+IaaS, or infrastructure as a service,
+which is like having a monthly subscription
+to host your website through a company,
+SaaS, or software as a service,
+which is like your email being available through a browser,
+and PaaS, or platform as a service,
+which is what developers use like tools provided
+by a company to build an application that runs
+on the other company's server.
+Remember the three cloud deployment models.
+They are private, which is everything running
+on your local network in your own data center
+or on premises, public,
+which is utilizing something like AWS to run everything,
+and then there's hybrid,
+which bridges the two together with Direct Connect.
+Understand that Regions are made up of two or more AZs,
+or Availability Zones.
+AZs are made up of multiple data centers.
+And multi-AZ means high availability and fault tolerance.
+Remember that low latency is good,
+and Edge Locations provide that low latency
+by caching content near users,
+as it's a feature of CloudFront.
+Local Zones are an extension of a Region
+that brings AWS services closer to end users,
+providing millisecond latencies
+for things like real-time gaming.
+Remember that the Cloud Adoption Framework has phases:
+envision, align, launch, and scale.
+And it's continuous.
+It includes six foundational capabilities
+and has four transformation domains
+that are all covered throughout that process.
+Using the framework will reduce business risk,
+improve ESG, grow revenue,
+and increase operational efficiency.
+The Well-Architected Framework has six pillars:
+security, cost optimization,
+performance efficiency, operational excellence,
+reliability, and sustainability.
+Know those pillars.
+We talked about different services being examples
+of how each pillar can be applied,
+but really, understand what each pillar focuses on
+so you can pick a service that fits it.
+Let's move on to the AWS Management Console.
+Our biggest point here was understanding
+that the root user is the most powerful user
+and has more power than others,
+so it can do things like delete your account,
+including all of the resources in it.
+Because it is so powerful,
+it needs to be protected,
+and you can do this using MFA,
+or multi-factor authentication.
+You can manage your AWS resources within the Console,
+as well as the AWS CLI, or Command Line Interface,
+through application code, and SDKs,
+or Software Development Kits.
+We know we need to protect the root user with MFA,
+and we can also create a user or group for daily tasks,
+so that's always steps one and two
+when creating your AWS account.
+Remember how to navigate through the Console
+using widgets, clicking the services drop-down menu
+or searching for the service,
+and always remember to check the region you're in
+before creating, terminating, or modifying any resources.
+That was a pretty quick section,
+but a little dense at times.
+Make sure you take the quiz to make sure you've got all
+of this down.
+I'll see you in the next section when you're ready.

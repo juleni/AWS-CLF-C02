@@ -1,0 +1,98 @@
+Hi, and welcome back,
+to this demo of Amazon Rekognition.
+Let's jump straight into a scenario.
+Imagine that you need to analyze some images
+to identify text, objects, and people.
+Well, that is exactly
+what Rekognition is designed to help with.
+So you decide to do this using Amazon Rekognition.
+Let's first explore the Rekognition console
+and see what options are available.
+Next, we can try uploading some images
+and using Rekognition to analyze the images.
+Now, Rekognition is not enabled in the cloud playground.
+So to try this out yourself, you'll need
+to use your own AWS free tier account.
+But if you can't do that, don't worry.
+You will get to understand what it's all about just
+by watching along with me.
+So let's get started.
+From the console,
+I'll search for Rekognition.
+In the left hand menu,
+we can see there are a few different demos available.
+So we can use Rekognition to label elements in an image,
+identify image properties, perform image moderation,
+so to detect offensive content, perform facial analysis,
+facial comparison, face liveness,
+and that's when Rekognition can tell you whether the face
+it's seeing is a live face
+or if it's just an image of a face.
+Celebrity Rekognition,
+identify when text appears in an image
+and detect personal protective equipment like face
+covers or head covers.
+So I'm gonna select celebrity Rekognition,
+and this is designed to recognize celebrities
+in a provided image.
+So first of all, let me find an image I can use,
+and I'm gonna search for an image of my favorite actor.
+And there he is, Idris Elba.
+So I'm just gonna download that image,
+then come back to Rekognition
+and I'll upload my own image,
+select the image, and there we go.
+It's recognized him as Idris Elba.
+Now you might be wondering what use is this?
+Well, a UK TV channel actually used this service
+a few years ago when we had a royal wedding.
+As you can imagine, lots
+of celebrities were invited to the wedding.
+The whole thing was televised.
+And the TV channel created an app that viewers could use
+to help them identify the celebrities
+as they arrived at the wedding.
+Now, the wedding guests included people like George Clooney,
+Elton John, Serena Williams, and Oprah,
+and you probably don't need an app
+to help identify those people,
+but there were also plenty of other not so famous faces
+that the app was able to identify, for instance,
+politicians, and other public figures.
+So that is celebrity Rekognition.
+Next, let's take a look at text in image.
+So I'll select text in image.
+They have some sample images down here
+that you can have a play around with,
+and I'm gonna upload my own one as well.
+It's analyzing, and there we go.
+It's identified the text that appears in the image.
+And I can use this same photo
+to show you label detection as well.
+So I'm gonna select label detection.
+Here's their example.
+Let me upload my own image.
+And there we go.
+It's identified my dog Ralphie as a dog.
+And what I think is funny about this is
+that it's only 99.9% sure.
+And if I select, Show more, scroll down.
+It's over 50% sure that this is a police dog,
+which is quite worrying because I don't really think he's
+gonna be a very good police dog.
+But it's also identified the grass, a tree,
+and other elements in the image.
+Well, that is Rekognition.
+And for the exam, know that Rekognition is used for image
+and video analysis.
+It can perform content moderation
+to identify harmful
+or offensive images, identity verification, for instance,
+if you want to identify celebrities
+or for identification purposes.
+And it can also be used to identify objects
+and text in images.
+Well, that's all for this demo.
+And if you're ready to move on,
+please join me in the next one.
+Thank you.

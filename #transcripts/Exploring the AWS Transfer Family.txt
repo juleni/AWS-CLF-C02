@@ -1,0 +1,70 @@
+Hi, and welcome back to this lesson
+where we'll explore the AWS Transfer Family.
+Beginning with an example.
+Imagine that you have a group of partners.
+They might be customers
+or some external third party that you're working with,
+and this third party needs to transfer some files directly
+to you and save them to your AWS storage.
+Well, to do this, you will need a file transfer solution
+and that's exactly what the AWS Transfer Family provides.
+So with the AWS Transfer Family, you get business
+to business file transfer using protocols like
+SFTP, AS2, FTPS,
+and FTP and files can be transferred into
+and out of AWS storage like S3 or EFS,
+for example, imagine that you work for an investment bank
+and each day you receive data
+and reports relating to stock market activity from a number
+of different partners.
+While the AWS Transfer Family is an option
+that you might use to handle these file transfers.
+And in this example, the partners are using SFTP PUT
+to send the files to a remote location, which is our S3
+or Elastic File System storage.
+And of course the files can be transferred either way.
+So if we have files stored in S3
+or Elastic File System that we want to allow third parties
+to transfer out, for example, they can use SFTP GET
+to transfer the files.
+Now the real benefit of using Transfer Family is
+that you don't need to build
+and manage a secure file transfer solution yourself.
+So AWS will do the heavy lifting for you.
+It's highly available and scalable
+as you'd expect from an AWS service.
+And you can use existing tools like WinSCP,
+FileZilla, CyberDuck, LFTP,
+and OpenSSH,
+and these are all commonly used file transfer tools.
+It supports common protocols that you might've heard about
+or even used yourself.
+So SFTP, which is the Secure Shell file transfer protocol
+that uses SSH Security
+and Authentication, AS2 which stands
+for Applicability statement two, and that uses HTTP
+and HTTPS, FTPS is the file transfer protocol over SSL,
+which uses industry standard
+TLS to encrypt the traffic.
+And it also supports standard FTP,
+which is the file transfer protocol.
+It transfers files in clear text without encryption.
+And for that reason I don't recommend that one
+because all of the other options encrypt your traffic.
+But don't worry, you don't need
+to memorize the details about each protocol,
+just know that these are common file transfer protocols
+and if they're mentioned in the exam, I want you
+to think AWS Transfer family.
+So for the exam, just remember
+that AWS Transfer Family is all about file sharing
+and transfer with external parties.
+External parties can transfer files out of your storage,
+for instance, using SFTP GET
+or they can transfer files in, for instance, using SFTP PUT
+and multiple commonly used file transfer
+protocols are supported.
+While that is it for this one,
+and if you're ready to continue,
+please join me in the next lesson.
+Thank you.

@@ -1,0 +1,166 @@
+*****************************
+* Cloud Guru - AWS CLF-C02  *
+*****************************
+
+
+Chapter 4 - Storage Technology and Services
+===========================================
+
+------ Exploring Amazon EC2 Storage
+- EC2 - Elastic Compute Cloud
+- EBS - Elastic Block Store - Highly available and durable, scalable, snapshot (can take backup and create new volumes)
+                            - Use cases: hosting relationalk / nosql databases
+                                         data warehousing and big data analytics
+                                         ERP and CRM apps
+- EFS - Elastic File System - a scalable file storage solution for EC2 and other AWS services designed to be aqccessed by multiple EC2 instances - fully managed, auto scaling, concurrent access 
+                            - Use cases: content management and web serving
+                                         data analytics apps
+                                         dev and test environments
+_ Instance Stores - temporary storage, high I/O performance, no extra costs (temp storage of cache/buffers)
+
+
+------ Amazon Simple Storage Service (S3): The Bigger Picture (5m 37s)
+- S3 - Simple Storage Service (Buckets -> Objects(data files)) - object storage holding data and metadata
+     - each object stored in S3 has DATA and KEY (unique within a bucket) and METADATA
+     Benefits: Durability, Scalability, Security (bucket policies, access control list), Versatility (can be used for data backup)
+
+
+
+------ Exploring S3 Storage Classes (3m 11s)
+https://aws.amazon.com/s3/storage-classes/
+
+- S3 Standard - high throughput, low latency, designed for durability
+- S3 Intelligent-Tiering - for data with unpredictable access patterns, automatically moves data, saving storage costs without performance impact
+- S2 Standard-Infrequent Access - for data Accessed Less Frequently, but requires Rapid Access when needed (has retrieval fees)
+- S3 One Zone-Infrequent Access - storing data in just one AZ, cost effective but less durable (than multiple AZ) - suitable for secondary backup or easily reproducible data
+- S3 Glacier Instant Retrieval - designed for immediate access to data, delivers lowest cost storage for long-lived data, but requires retrieval in milliseconds, fastest access to archive storage
+- S3 Glacier Flexible Retrieval - designed for archive data accessed one or two times per year (not immediate access)
+- S3 Glacier Deep Archive - arcgive strorage that retain data sets for 7-10 years or longer to meet regulatory compliance. Has longer retrieval times - can take up to 12 hours.
+
+
+
+------ Demo: Exploring Storage Services - S3 in Action (4m 9s)
+- type unique bucket name
+- Object Ownership: ACL's disabled
+- Block all public access
+- Bucket versioning
+- S3 buckets are automatically encrypted by default
+- create bucket
+- lifecycle policies (bucket - management -> Create lifecycle rule)
+
+
+
+------ Hands-on Lab: Creating S3 Buckets with Versioning and Encryption (6m 23s)
+
+
+
+------ Introducing Additional Storage Services (30m)
+- FSx - fully managed Windows File System crafted for Windows specific workloads that require native Windows features
+- Elastic Disaster Recovery - is designed to minimize downtime and data loss offering swift recovery times. Pay only for the servers that are acively replicating to AWS.
+
+
+------ Amazon Elastic Block Store (EBS) (2m 33s)
+Key features:
+ - Persistant Storage - data remains intact after stopping EC2 instance
+ - High available and durable - data is automatically replicated within its AZ
+ - Scalable - volume can be resized as data grows
+ - Encrypted - data at rest and in transit is secure
+ Snapshots - take backups and also use these to create new volumes
+Two types of EBS Volume:
+https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html
+ 1. SSD (Solid State Drive) - faster, more expensive, ideal for high IOPS (read/write operations per second)
+   Types: 
+     a. General Purpose SSD (gp3, gp2, low-latency apps, 16K Max IOPS, multi-attach not supported)
+     b. Provisioned IOPS SSD (io2, io1, io2 block expres, High IOPS, 64K, 256K, Multi-attach supported)
+ 2. HDD (Hard Disk Drive) - slower, less expensive, ideal for throughput tasks
+   Types:
+     a. Throughput Optimized HDD volumes (st1, Big Data (datawarehousing, log processing), 500 Max IOPS, 500 MiB/s max throughput)
+     b. Cold HDD volumes (sc1, Lowest storage costs, 250, 250 MiB/s max throughput)
+  Snapshots key features:
+    a. Incremental Baskups - each snapshot only saves changes since the last one
+    b. Restore & Launch - use snapshots to quickly restore a volume or even launch new ec2 instance with desired data
+    c. Share or Sell - snapshots can be shared with other AWS accounts
+    d. Cost effective - snapshots only stoe block-level changes
+    e. Cross-region Replication - snapshots can be copied across AWS regions
+
+------ AWS Storage Gateway (5m 45s)
+ - Storage Gateway connects onsite data storage with AWS's cloud services. It ensures that data is securely and efficiently transported to the cloud.
+   Key Benefits:
+     - Cost-Effective - reduces on-premise storage infrastructure
+     - Secure - data encryption for safe transfer and storage
+     - Seamless Integration - integrates with existing applications
+   Use Cases:
+     - data backup
+     - disaster recovery
+     - data processing in AWS
+   Four types:
+   1. S3 File Gateway - keeps data in cloud-native format
+   2. Volume Gateway - provides block storage volumes backed by S3; 
+                     - offers two modes: Stored volumes (for entire data sets) and Cached volumes (for frequently accessed data)
+   3. Tape Gateway - for archiving data as a virtual tapes in AWS, data not used everyday but is important to keep them for long-term retention.
+   4. FSx File Gateway - extends on-premises file system to FSx for Windows File Server in the AWS cloud.
+
+------ Overview of AWS Backup (4m 9s)
+- AWS Backup - is an automated tool that carefully copies and stores data, designed to manage backups across various AWS services.
+- AWS Resources:
+   - Elastic Compute Cloud Instances
+   - Elastic Block Store Volumes
+   - Relational Database Service Databases
+   - Dynamo DB Tables
+   - Elastic File System File Systems
+   - FSx File Systems
+   - Storage Gateway Volumes
+  AWS Backup Core Features:
+   - Centralized Backup Management - simplifies overseeing backups across AWS
+   - Automated Backup Scheduling - allows to make policies that dictate automatic backups
+   - Encryption $ Compliance - keeps data secure and compliant
+   - Cross-Region & Account Backup - Enhances disaster recovery by backing up data across regions and accounts
+  AWS Backup Use Cases:
+   - Cloud-Native Backup - ideal for protecting AWS workloads ensuring the cloud-based data is backed up and recoverable
+   - Hybrid Data Protection - AWS backups extends to hybrid environments, offering seamless backup solutions for both on-premises and cloud data
+   - Data Protection Compliance - helps in aligning with data protection policies and regulatory requirements ensuring data are secure
+  Key aspect of AWS backup is Recovery
+   
+
+
+------ Storage Exam Tips (3m 29s)
+EC2 Storage Options:
+  - Elastic Block Store (EBS) - provides persistent block storage, snapshots
+  - Elastic File System (EFS) - scales on demand without disrupting apps
+  - Instance Stores - data is lost if the instance is stopped or terminated
+Amazon S3 Tips:
+ - Durability (99.9999999%)
+ - Scalability (virtually unlimited)
+ - Security (bucket policies/access control list)
+ - Versioning
+ - Life Cycle Policies
+S3 Storage Classes:
+ - S3 Standard (high throughput, low latency) - for frequently accessed data
+ - S3 Intelligent-Tiering (moves data automatically) - for data with unpredicable access pattern
+ - S3 Standard-Infrequent Access (accessed less frequently, rapid access) - for data less frequently accessed, but requires rapid access when needed
+ - S3 One Zone Infrequent Access (One AZ, cost effective) - storing data in just one AZ
+ - S3 Glacier Instant Retrieval (archival storage, instant retrieval)
+ - S3 Glacier Flexible Retrieval (infrequent archival storage, slower retrieval)
+- S3 Glacier Deep Archive (long-term storage, slowest retrieval times)
+Additional Storage Services:
+ - FSx (fully managed Windows File System, supports Windows workloads, build on Windows Server)
+ - Elastic Disaster Recovery (maintains business continuity, protests from data disruptions, flexible and adaptable)
+Amazon EBS Volume Types:
+ - SSD (faster, more wxpensive, ideal for high IOPS)
+ - HDD (slower, less expensive, ideal for throughput tasks)
+AWS Storage Gateway:
+ - S3 File Gateway (keeps data in cloud-native formats)
+ - Volume Gateway (provides block storage volumes, stored/cached volumes)
+ - Tape Gateways (for archiving data)
+ - FSx File Gateway (extends on-premises file systems)
+AWS Backup:
+ - Centralized Backup Management
+ - Automated Backup Scheduling
+ - Encryption & Compliance
+ - Cross-Region & Account Backup
+
+
+
+
+
+

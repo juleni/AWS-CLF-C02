@@ -1,0 +1,66 @@
+Hi, and welcome back to this lesson
+on AWS Data Exchange.
+Now, AWS Data Exchange
+is a service that allows you to securely exchange
+and use data that's provided by third parties
+on a subscription basis,
+and they provide the data
+in the form of data products
+available from a searchable catalog.
+The data format is anything that can be stored in S3.
+For instance, some of the most common formats are CSV,
+Parquet format, or image files.
+Now, there's over 3,500 data products available
+from a range of categories including financial services,
+healthcare, weather, manufacturing,
+and telecommunications.
+Subscriptions last between one and 36 months in duration,
+and many providers make data products available for free.
+And it's designed to be a single central place
+to find and exchange data.
+You can subscribe to data sets or data products
+provided by vendors through the AWS Marketplace.
+For instance, retail data from companies like Experian,
+Equifax, or MasterCard.
+And let's say, for example,
+you want to analyze customer spending patterns
+based on geographic locations,
+when you can get that kind of data,
+anonymized, of course,
+from one of the data products
+that's available from MasterCard in AWS Data Exchange.
+And this data can be used for analytics,
+machine learning workloads,
+and for decision making.
+You can also create and publish your own data products
+so that other users can subscribe using AWS Data Exchange.
+And you might be wondering,
+why should I use this service
+when there's so many other ways to exchange data?
+Well, as a data publisher,
+you can publish data simultaneously
+to all of your customers at once.
+And as a subscriber,
+you can find lots of different types of data available
+and you just paid the subscription fees
+through your AWS account.
+And for the exam,
+know that AWS Data Exchange
+lets you securely exchange and use data
+that's provided by third parties on a subscription basis.
+The data products are available from a variety of suppliers,
+including financial services, healthcare, weather,
+manufacturing, and telecommunications.
+And this data can be used for analytics,
+machine learning workloads, and for decision making.
+And an example use case
+is to analyze customer spending patterns
+based on geographic location
+using data products provided by companies like MasterCard,
+Experian, and Equifax.
+And you can also create your own data products
+so you can publish your own product
+and let other accounts subscribe.
+Well, that is all for this lesson,
+and if you'd like to continue,
+I will see you in the next one, thank you.

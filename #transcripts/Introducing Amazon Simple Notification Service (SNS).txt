@@ -1,0 +1,54 @@
+Hi, and welcome back to this lesson,
+which is going to introduce
+Simple Notification Service, or SNS.
+Now, SNS is a service that enables you to easily set up,
+operate, and send notifications.
+The type of notifications that it supports
+are SMS text message or email.
+And if I check my smartphone right now,
+over the past few days,
+I've received a few automated SMS notifications.
+So there's one from the car repair people letting me know
+that my car is now booked in for a repair,
+and I've got some marketing messages,
+one about a new product launch from a skincare brand
+that I use, and a message giving me
+25% off my favorite coffee.
+And these are all examples of the kind of messages
+that you can send using SNS.
+So messages sent from an application
+can be immediately delivered to subscribers like you and me,
+or to other applications.
+Now, SNS uses a pub-sub model,
+which means publish and subscribe.
+Applications publish or push messages to a topic,
+whereas subscribers receive messages from the topic.
+And a topic is simply an access point,
+allowing recipients to subscribe to
+and receive identical copies of the same notification.
+For example, after ordering a pizza from World Pizza,
+customers are notified with an estimated delivery time
+for their order, and they could receive an email,
+an SMS, or even both.
+Another use case could be that if something goes wrong
+in the World Pizza application,
+let's say an EC2 instance crashes,
+an alert can be sent to CloudWatch,
+which is a service used to monitor the health
+of your EC2 instances, and in turn,
+CloudWatch can use SNS to send an email
+to the application support team at World Pizza.
+And if you're not familiar with CloudWatch yet, don't worry,
+we'll be learning all about how CloudWatch can be used
+to monitor your systems later in the course.
+But for now, the main thing that I want you to take away
+is that SNS allows you to send or push notifications,
+for instance, SMS text messages and emails.
+It uses a pub-sub model,
+and subscribers must subscribe to a topic
+in order to receive the notifications.
+And a topic is simply an access point,
+allowing subscribers to receive the notifications.
+Well, that is it for this lesson,
+and if you're ready to move on,
+please join me in the next one, thank you.
