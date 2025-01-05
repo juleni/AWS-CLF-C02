@@ -1,0 +1,1348 @@
+*****************************
+* Cloud Guru - AWS CLF-C02  *
+*****************************
+
+
+Chapter 3 - Compute Technology and Services
+===========================================
+
+Additional Compute Services:
+----------------------------
+- Outpost - allows to run cloud services in internal data centre (on-premises)
+- Amazon Lightsail - not on-premises. Allows to quickly launch all the resources needed for small projects. Quick deployment of simple workloads, scales as they evolve.
+- AWS Batch - allows to process large workloads into smaller chunks or batches. Used for longer running jobs.
+- AWS Wavelength - delivers ultra-low latency applications for devices using 5G networking. Reaching applications super fast on mobile network.
+
+
+
+Chapter 4 - Storage Technology and Services
+===========================================
+
+------ Exploring Amazon EC2 Storage
+- EC2 - Elastic Compute Cloud
+- EBS - Elastic Block Store - Highly available and durable, scalable, snapshot (can take backup and create new volumes)
+                            - Use cases: hosting relationalk / nosql databases
+                                         data warehousing and big data analytics
+                                         ERP and CRM apps
+- EFS - Elastic File System - a scalable file storage solution for EC2 and other AWS services designed to be aqccessed by multiple EC2 instances - fully managed, auto scaling, concurrent access 
+                            - Use cases: content management and web serving
+                                         data analytics apps
+                                         dev and test environments
+- Instance Stores - temporary storage, high I/O performance, no extra costs (temp storage of cache/buffers)
+
+
+------ Amazon Simple Storage Service (S3): The Bigger Picture (5m 37s)
+- S3 - Simple Storage Service (Buckets -> Objects(data files)) - object storage holding data and metadata
+     - each object stored in S3 has DATA and KEY (unique within a bucket) and METADATA
+     Benefits: Durability, Scalability, Security (bucket policies, access control list), Versatility (can be used for data backup)
+
+
+
+------ Exploring S3 Storage Classes (3m 11s)
+https://aws.amazon.com/s3/storage-classes/
+
+- S3 Standard - high throughput, low latency, designed for durability
+- S3 Intelligent-Tiering - for data with unpredictable access patterns, automatically moves data, saving storage costs without performance impact
+- S3 Standard-Infrequent Access - for data Accessed Less Frequently, but requires Rapid Access when needed (has retrieval fees)
+- S3 One Zone-Infrequent Access - storing data in just one AZ, cost effective but less durable (than multiple AZ) - suitable for secondary backup or easily reproducible data
+- S3 Glacier Instant Retrieval - designed for immediate access to data, delivers lowest cost storage for long-lived data, but requires retrieval in milliseconds, fastest access to archive storage
+- S3 Glacier Flexible Retrieval - designed for archive data accessed one or two times per year (not immediate access)
+- S3 Glacier Deep Archive - arcgive strorage that retain data sets for 7-10 years or longer to meet regulatory compliance. Has longer retrieval times - can take up to 12 hours.
+
+
+
+------ Demo: Exploring Storage Services - S3 in Action (4m 9s)
+- type unique bucket name
+- Object Ownership: ACL's disabled
+- Block all public access
+- Bucket versioning
+- S3 buckets are automatically encrypted by default
+- create bucket
+- lifecycle policies (bucket - management -> Create lifecycle rule)
+
+
+
+------ Hands-on Lab: Creating S3 Buckets with Versioning and Encryption (6m 23s)
+
+
+
+------ Introducing Additional Storage Services (30m)
+- FSx - fully managed Windows File System crafted for Windows specific workloads that require native Windows features
+- Elastic Disaster Recovery - is designed to minimize downtime and data loss offering swift recovery times. Pay only for the servers that are acively replicating to AWS.
+
+
+------ Amazon Elastic Block Store (EBS) (2m 33s)
+Key features:
+ - Persistant Storage - data remains intact after stopping EC2 instance
+ - High available and durable - data is automatically replicated within its AZ
+ - Scalable - volume can be resized as data grows
+ - Encrypted - data at rest and in transit is secure
+ Snapshots - take backups and also use these to create new volumes
+Two types of EBS Volume:
+https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html
+ 1. SSD (Solid State Drive) - faster, more expensive, ideal for high IOPS (read/write operations per second)
+   Types: 
+     a. General Purpose SSD (gp3, gp2, low-latency apps, 16K Max IOPS, multi-attach not supported)
+     b. Provisioned IOPS SSD (io2, io1, io2 block expres, High IOPS, 64K, 256K, Multi-attach supported)
+ 2. HDD (Hard Disk Drive) - slower, less expensive, ideal for throughput tasks
+   Types:
+     a. Throughput Optimized HDD volumes (st1, Big Data (datawarehousing, log processing), 500 Max IOPS, 500 MiB/s max throughput)
+     b. Cold HDD volumes (sc1, Lowest storage costs, 250, 250 MiB/s max throughput)
+  Snapshots key features:
+    a. Incremental Baskups - each snapshot only saves changes since the last one
+    b. Restore & Launch - use snapshots to quickly restore a volume or even launch new ec2 instance with desired data
+    c. Share or Sell - snapshots can be shared with other AWS accounts
+    d. Cost effective - snapshots only stoe block-level changes
+    e. Cross-region Replication - snapshots can be copied across AWS regions
+
+------ AWS Storage Gateway (5m 45s)
+ - Storage Gateway connects onsite data storage with AWS's cloud services. It ensures that data is securely and efficiently transported to the cloud.
+   Key Benefits:
+     - Cost-Effective - reduces on-premise storage infrastructure
+     - Secure - data encryption for safe transfer and storage
+     - Seamless Integration - integrates with existing applications
+   Use Cases:
+     - data backup
+     - disaster recovery
+     - data processing in AWS
+   Four types:
+   1. S3 File Gateway - keeps data in cloud-native format
+   2. Volume Gateway - provides block storage volumes backed by S3; 
+                     - offers two modes: Stored volumes (for entire data sets) and Cached volumes (for frequently accessed data)
+   3. Tape Gateway - for archiving data as a virtual tapes in AWS, data not used everyday but is important to keep them for long-term retention.
+   4. FSx File Gateway - extends on-premises file system to FSx for Windows File Server in the AWS cloud.
+
+------ Overview of AWS Backup (4m 9s)
+- AWS Backup - is an automated tool that carefully copies and stores data, designed to manage backups across various AWS services.
+- AWS Resources:
+   - Elastic Compute Cloud Instances
+   - Elastic Block Store Volumes
+   - Relational Database Service Databases
+   - Dynamo DB Tables
+   - Elastic File System File Systems
+   - FSx File Systems
+   - Storage Gateway Volumes
+  AWS Backup Core Features:
+   - Centralized Backup Management - simplifies overseeing backups across AWS
+   - Automated Backup Scheduling - allows to make policies that dictate automatic backups
+   - Encryption $ Compliance - keeps data secure and compliant
+   - Cross-Region & Account Backup - Enhances disaster recovery by backing up data across regions and accounts
+  AWS Backup Use Cases:
+   - Cloud-Native Backup - ideal for protecting AWS workloads ensuring the cloud-based data is backed up and recoverable
+   - Hybrid Data Protection - AWS backups extends to hybrid environments, offering seamless backup solutions for both on-premises and cloud data
+   - Data Protection Compliance - helps in aligning with data protection policies and regulatory requirements ensuring data are secure
+  Key aspect of AWS backup is Recovery
+   
+
+
+------ Storage Exam Tips (3m 29s)
+EC2 Storage Options:
+  - Elastic Block Store (EBS) - provides persistent block storage, snapshots
+  - Elastic File System (EFS) - scales on demand without disrupting apps
+  - Instance Stores - data is lost if the instance is stopped or terminated
+Amazon S3 Tips:
+ - Durability (99.9999999%)
+ - Scalability (virtually unlimited)
+ - Security (bucket policies/access control list)
+ - Versioning
+ - Life Cycle Policies
+S3 Storage Classes:
+ - S3 Standard (high throughput, low latency) - for frequently accessed data
+ - S3 Intelligent-Tiering (moves data automatically) - for data with unpredicable access pattern
+ - S3 Standard-Infrequent Access (accessed less frequently, rapid access) - for data less frequently accessed, but requires rapid access when needed
+ - S3 One Zone Infrequent Access (One AZ, cost effective) - storing data in just one AZ
+ - S3 Glacier Instant Retrieval (archival storage, instant retrieval)
+ - S3 Glacier Flexible Retrieval (infrequent archival storage, slower retrieval)
+- S3 Glacier Deep Archive (long-term storage, slowest retrieval times)
+Additional Storage Services:
+ - FSx (fully managed Windows File System, supports Windows workloads, build on Windows Server)
+ - Elastic Disaster Recovery (maintains business continuity, protests from data disruptions, flexible and adaptable)
+Amazon EBS Volume Types:
+ - SSD (faster, more wxpensive, ideal for high IOPS)
+ - HDD (slower, less expensive, ideal for throughput tasks)
+AWS Storage Gateway:
+ - S3 File Gateway (keeps data in cloud-native formats)
+ - Volume Gateway (provides block storage volumes, stored/cached volumes)
+ - Tape Gateways (for archiving data)
+ - FSx File Gateway (extends on-premises file systems)
+AWS Backup:
+ - Centralized Backup Management
+ - Automated Backup Scheduling
+ - Encryption & Compliance
+ - Cross-Region & Account Backup
+
+
+
+Chapter 5 - Content Delivery and Networking Technology and Services (1h 38m 34s)
+================================================================================
+
+------ Content Delivery: The Bigger Picture (4m 46s)
+- CDN - Glogal network of interconnected servers that ensures website's content reaches users quickly
+  CDN Benefites: 
+  - Speed - removes the complexity if deploying and maintaining file systems, dramatically speed up website's content. Reduces physical distance between user and content.
+  - Reliability - Automatically scales on demand without disrupting apps. (Like backup plan if one server is overwhelmed the CDN automatically reroutes requests to the next closest server
+  - Global Reach - multiple EC2 instances can access an EFS systems simultaneously)
+- Amazon CloudFront - delivers content such as video, apps or data. It delivers content securely and swiftly to anyone anywhere in the world. 
+  - Charges for first TB is free and it is included in aws free tier account.
+  - Works by caching content in multiple data centers, known as edge locations all over the world.
+  - When user requests content, CloudFront serves it from the edge location nearest the user.
+  - CloudFront enhances Security - integrates with AWS Shield for DDoS protection, and AWS Web Application Firewall (WAF) to safeguard site from common web exploits
+  - CloudFront is deeply integrated with AWS, optimizes other Services - such as S3, EC2 and Route 53
+  - CloudFront is useful for:
+    - streaming videos
+    - secure transactions in e-commerce
+    - entering traffic spikes (such as black friday or when launching a new product)
+    - offers detailed analytics and reporting features
+
+
+------ AWS Global Accelerator (4m 28s)
+- AWS Global Accelerator is a anetworking service thet sends user traffic through AWS's global network infrastructure, enhancing app's performance and availability
+  - uses edge locations to find an optimal pathway to the nearest regional endpoint
+  Global Accelerator Benefits:
+  - Improved performance - increases throughput by up to 60% (smoother and faster user experience)
+  - Simplified traffic management - users can access app endpoints through static IP addresses. Global Accelerator provides two global static public IPs that act as a fixed entry point to app endpoints
+  - Security and reliability - DDoS Resiliency; automatic reroute traffic to the nearest available regional endpoint
+  - Consistent global user experiance - intelligent routing sends user traffic to the endpoint that provides the best performance
+  Global Accelerator Use Cases:
+  - Global user base - Global Accelerator helps maintain fast, reliable access to the content
+  - High traffic events - Global Accelerator acts like an additionalexpress lane during rush hour helping manage influx smoothly
+  - Multi-regional apps - Global Accelerator simplifies by acting as a single entry point for all traffic
+  - Latency sensitive apps - Global Accelerator minimizes latency by routing user traffic through AWS's high-speed network
+
+
+------ Networking: The Bigger Picture (7m 2s)
+- Amazon Virtual Private Cloud (VPC)  - is private space in AWS cloud. Has complete control over virtual networking env. It includes the arrangement of workstations or subnets, access rules or security groups and connections to the outside world, like internet gateways.
+  VPC key components:
+  - VPC has subnets which further segments VPC allowing to organize resources and add layers of security
+  - have AZ within VPC that contain: 
+    - Subnets - mainly 2 types:
+      - Public subnet - (frontend areas) resources here can be accessed from the internet
+      - Private subnet - (backend areas) not directly accessible from the outside world (could be reserved for a DB, for example only accessible by organization)
+    - Route table - each associated with a subnet. Route tables have entries (routes) that determine where network traffic from subnets should go. Each subnet must be associated with a route table.
+    - Internet gateway - acts like a bridge between VPC in the internet. Responsible for routing outgoing requests and incoming traffic.
+    - Internet gateway & Route tables work together to manage traffic
+    - Security groups and network access control lists or NACLs, control inbound and outbound access to resources like an EC2 instance. NACLs are an extra layer of security, thay control traffic moving in and out of the subnets, much like checkpoint security guards at the entrances of different zones. 
+      - Security groups act like the guidelines for what is allowed in and out each area. Make decisions about who can enter and exit. On instance level SG are like virtual firewalls that control inbound and outbound traffic for each instance. They allow to specify allowable protocolsm ports and source or destination IP ranges. SG are stateful - if thay allow traffic in one direction, the return traffic is automatically allowed regardless on the inbound rules. 
+      - Network access control list (ACLS) - extra layer of security providing a set of rules that control traffic in and out of the subnet. They operate at the subnet level. NACLs are stateless - they don't remember previous interactions. Inbound and outbound rules must be set separately to control the traffic entering and leaving the subnet. They can allow or deny traffic based on protocol, port and source or destination IP addresses.
+      SG are more granular controlling access to individual instances and maintaining state while NACLs provide a broader layer of defense for subnets without maintaining state.
+
+
+
+------ Demo: Exploring Networking Services - VPC in Action (6m 58s)
+
+------ Hands-on Lab: Launch an EC2 Instance in a Virtual Private Cloud (VPC) (45m)
+
+
+
+------ DNS: The Bigger Picture (5m 33s)
+- Domain Name System (DNS) - globally distributed service that translates human readable names (like amazon.com) into the numeric IP address.
+- Amazon Route 53 - specific AWS version of DNS
+  Amazon Route 53 Features:
+  - Sophisticated traffic routing - geolocation routing, latency-based routing and weighted round-robin routing
+  - Health Checks - performs health checks on resources (automatically away from failed or unhealthy edpoints)
+  - DNS Failover - automatically redirect users to a secondary location
+  - Scalability and integration - scales automatically with demand. Integrates seamlessly with other AWS services (EC2, Load Balancing, S3).
+  Amazon Route 53 Practical Uses:
+  - Web app routing
+  - Load balancing - distribute incoming app traffic across multiple targets such as EC2 instances, containers and IP addresses
+  - Global traffic management - managing traffic across different geographical regions
+  - Domain name registration and management - purchase and manage domain names
+  - Private DNS for amazon VPC - manage internal DNS names of the EC2 instance
+
+
+------ Applying Hybrid Models with Networking Services (5m 13s)
+- This models allow to connect on-prem infrastructure to Amazon VPC.
+- AWS Direct Connect - provides direct connection from data center to AWS bypassing the public internet
+  AWS Direct Connect Benefits:
+  - High-Speed Data Transfer - provides dedicated network capacity, significantly boosting the speed of data transfer. Ideal for transferring large volumes of data quickly and consistently.
+  - Reduced Bandwidth Costs - more cost-effective for extensive data transfer compared to internet-based transfers.
+  - Reliable Connection - free from public internet disruptions.
+- AWS VPN - encrypts data safeguarding as it travels over the internet to AWS
+  Two types of VPNs:
+  1. Site-to-site VPN - creates a secure connection between data center or branch office and AWS. It allows network to extend to the AWS Cloud as if it were part of own data center. Ideal for connecting entire networks.
+  2. Client VPN - is a managed client-based VPN Service. Allows to securely access to AWS resources or private network from any location. Designed for individual remote access.
+- VPN vs Direct Connect:
+  a. Direct Connect - when large-scale data transfer is needed
+                    - if consistent network performance is crucial (eg. real-time data analytics apps or high-speed stock trading)
+                    - enhanced security for sensitive data or regulated data
+  b. VPN - used when flexible remote access is required
+         - ideal for providing secure encrypted connections for remote access to AWS account (suitable for emploees working from home or remote locations)
+         - provides cost-effective solution for smaller data loads
+         - quick and easy setup, especially for temporary or urgent requirements
+
+
+------ Content Delivery and Networking Exam Tips (4m 34s)
+
+
+Chapter 6 - Database Technology and Services (35m 32s)
+=======================================================
+
+------ Databases: The Bigger Picture (5m 12s)
+- Database = systematic collection of data
+  1. relational databases (Amazon RDS)
+     - structured, data are organized into rows and columns, like a table
+     - usage: e-commerce, mobile backend, healthcare apps
+  2. in-memory databases (Amazon MemoryDB for Redis, Amazon ElastiCache)
+     - provide speed
+     - data are stored in the main memory or RAM
+     - can read and write data much faster than traditional DBs
+     - Amazon ElastiCache - fully managed in-emory data store and cache service
+     - Amazon MemoryDB for Redis - highly scalable and durable in-memory DB
+  3. NoSQL databases (DyanmoDB)
+     - offers flexibility
+     - key value pairs allow for flexible and intuitive way to store and retrieve data
+  4. graph database (Amazon Neptune)
+     - handling data with complex relationships and interconnections
+     - usage: fraud detection, recommendation systems, drug discovery
+
+
+
+
+------ Understanding AWS Database Migration Services (4m 51s)
+- AWS Database Migration Services (DMS) - helps migrate DB to AWS quickly and securely
+  - moving service for databases
+  - can handle more data sources as Oracle, MySQL, PostgreSQL and MS SQL Server
+  - Simple to use - no need to install any drivers or apps and does not require changes to the source DB needed
+  - Minimal Downtime - continuously replicate data during migration, keeping the source DB operational
+  - Reliable - self-healing with constant monitoring. It restarts automatically after interruptions and offers Multi-AZ for high availability.
+  - Database consolidation - consolidate multiple DBs into one, include:
+    - Homogenous - meaning the source and target DBs are of the same DB management system 
+    - Heterogenous - meaning the source and target DBs are of different DB management system 
+- AWS Schema Conversion Tool (SCT) - powerful tool that helps convert the DB schema (blueprint of how the DB is constructed) of the source DB into a format compatible with AWS target DBs
+  - Schema and Code Conversion - automatically converts source DB schema for AWS compatibility
+                               - converts DB code including stored procedures, functions and views to be AWS compatible
+  - Handling Conversion Challenges - provides solutions for potentional migration challenges
+                                   - identifies and addresses issues like incompatible data types or features unsupported in the target DB
+  Use cases:
+  - migrating between different DB platforms - supports both types of migrations (Homogenous and Heterogenous)
+  - consolidationg multiple DBs into single DB - enhancing manageability and reducing costs
+  - continuous data replication - ideal for disaster recovery
+  - migrating data to the cloud for analytics (can be used to move data into AWS data warehouse like Amazon Redshift enabling enhanced data analytics capabilities in the cloud)
+  - data center decommision (migrating DBs from on-prem data centers to the cloud to decommision physical data centers)
+
+
+------ Amazon DynamoDB (3m 46s)
+- DynamoDB = fully managed NoSQL database service. 
+  - It allows to store and retrieve any amount of data and serve any level of request traffic. 
+  - It automatically scales up and down to adjust for capacity and to maintain performance
+  Key Features:
+    - Performance at Scale - maintains consistent, single-digit millisecond response time
+    - Fully Managed - no server management or maintenance required
+    - Built-in Security - data is encrypted at rest and transit
+    - Backup and Restore - supports on-demand and continuous backups (can create backups at any time and restore DB to any specific point)
+  Use Cases:
+    - Web and Mobile Apps - can efficiently handle large volumes of traffic and data making it ideal for apps with variable user loads
+    - Gaming Apps - for gaming leaderboards and session data offers low latency data access, crucial for real-time gaming experiences
+    - IoT Apps - ability to handle massive volumes of data. Can process large streams of data from IoT devices efficiently, providing real time analytics and responses
+    - e-commerce PLatforms - high scalability and performance especially during peak times like sales or holiday seasons
+
+
+------ Overview of Memory-Based Databases in AWS (3m 33s)
+- store data in RAM instead of traditional storage
+- Amazon MemoryDB for Redis - fully managed in-memory DB service designed for modern apps that require ultra fast data access
+                            - Redis is an open source in-memory data store
+  Key Features:\
+   - Performance - delivers data with ultra-fast response times (in microseconds), Can handle more than 13 trillion requests per day and supports peaks of 160 million requests per second
+   - Data Durability - automatically replicates data across multiple AWS AZ ensuring data durability and high availability
+  Use Cases:
+   - Caching for Web Apps - ideal for webapps with high traffic ensuring quick load time and improved user experiance
+   - Real-Time Analytics - excels in real-time data processing making it perfect for analyzing streaming data from various sources instantly, and providing immediate insights
+   - Session Store for Apps - quicker session management than disc-based DBs.
+   - Leaderboards and Gaming - fast read and write capabilities than relational DB, enabling real time updates of player scores and ranks
+   - Geospatial Data Processing - supports complex data structures like geospatial indexes, providing faster querying and data manipulationmanipulation for location-based services than traditional DBs
+
+------ Database Exam Tips (3m 10s)
+
+
+
+Chapter 7 - Development, Messaging, and Deployment Technology and Services (2h 31m 38s)
+=======================================================================================
+
+
+------ What Is CI/CD? (3m 18s)
+- Continuous Integration/Continuous Deployment (CI/CD)
+  - Continuous Integration - is all about integrating or merging small code changes frequently, at least once a day.
+  - Continuous deployment - is all about automating the build, test and deployment functions, which means that bugs are caught early, while they are still small and easy to fix.
+  - Software development best practice essential for implementing DevOps
+  - Automate everything, eg. code integration, build, test and deployment - simple means integrating code changes for multiple developers as well as automating the build, test and deployment functions
+  - Makes change easy. Apply multiple small changes each day. This helps to reduce the risk of breaking something,
+and allows developers to make small incremental changes to an application and quickly make new features available to customers.
+  - Benefits:
+    - Automation is Good - it means that everything that you do is fast, repeatable, and scalable.
+    - Manual Effort Avoided - which is ideal because of course when we do things manually,
+it's often slow, error prone and inconsistent.
+    - Small Changes Applied Frequently - which means that developers can catch bugs while they're small and simple to fix.
+ - Continuous Integration Workflow:
+   - Developers build and test their code locally. And if no bugs are found, then the code is committed to the shared code repository. 
+   - In this way, multiple developers are able to work on the code and commit their changes.
+ - Continuous Deployment Workflow:
+   - After the code has been successfully tested, it is merged with the master repository. 
+   - Next, the code is prepared, so it's built, tested again, and packaged for deployment. 
+   - The final step is to automatically deploy the code as soon as it's ready.
+
+
+------ AWS Development Tools (3m 50s)
+- development tools that are available from AWS that help you quickly and easily implement CI/CD processes
+- four main development tools that you will need to be aware of:
+  1. CodeCommit - central code repository
+  2. CodeBuild - fully managed build service
+  3. CodeDeploy - automated deployment service
+  4. CodePipeline - automated CI/CD pipeline
+
+1. CodeCommit:
+   - central code repository just like a private Git repository in the cloud
+   - place to centrally store source code, binaries, images, and software libraries
+   - it manages updates from multiple sources, so from multiple developers, enables collaboration, tracks and manages code changes, and maintains version history
+   - used to merge or integrate code
+   - a source control service enabling teams to collaborate on code, HTML pages, scripts, images, and binaries
+2. CodeBuild:
+   - fully managed build service that runs a set of commands that you define, for instance, to compile code, run tests,
+and produce artifacts that are ready to deploy
+   - it can reference code stored in your CodeCommit repository and use the code to build deployable artifacts, like packages or Docker images, and a package is simply a bundle of code that's ready to deploy
+   - used to build, test, and package the code ready for deployment
+   - compiles the source code, runs tests, and produces packages that are ready to deploy
+3. CodeDeploy:
+   - automated deployment service allowing you to automatically deploy software to EC2 instances, on-premises systems, and Lambda
+   - by automating the deployment service developers can quickly release new features, avoid downtime during deployments, and avoid the risks associated with manual processes
+   - used to automatically deploy the code in a repeatable way
+   - automates code deployments, for instance to EC2 instances, Lambda functions, and on-premises servers
+4. CodePipeline:
+   - automated CI/CD pipeline, so it orchestrates the CI/CD process, and the pipeline is triggered every time there's a change to your code
+   - the code is then built, for instance, using CodeBuild, and when the deployable packages are ready, they can be deployed using CodeDeploy
+   - like a conductor in an orchestra, CodePipeline orchestrates the software release process making it fast, consistent, and with fewer mistakes
+   - it integrates with lots of other services, including CodeCommit, CodeBuild, and CodeDeploy
+   - used to orchestrate the entire process managing the end-to-end CI/CD workflow
+   - manages the workflow, so it orchestrates the end-to-end solution, the build, test, and deployment of your application
+automatically every time there's a code change
+   
+
+
+------ Demo: Working with AWS CloudShell and the AWS Command Line Interface (AWS CLI) (5m 22s)
+- CloudShell - a browser-based shell that we can use to interact with our AWS account, using the AWS Come Online Interface
+             - it has the AWS CLI pre-installed and pre-configured, so it's the easiest way to use the CLI
+             - used to manage AWS services 
+  -> aws --version - that will show that the AWS CLI is installed in your CloudShell terminal
+  -> aws s3 mb s3://mybucket-01234 - create an S3 bucket (mb=make bucket). All S3 buckets need to have a globally unique name
+  -> aws s3 ls - list the buckets available in our account
+  -> echo "My new file" >>file.txt - creates file.txt
+  -> aws s3 cp file.txt s3://mybucket-01234 - upload file to bucket (cp=copy)
+  -> aws s3 ls s3://mybucket-01234 - show the bucket
+  -> aws s3 mb help - displays the help how to use this command MB()
+
+------ Demo: Using AWS Cloud9 (5m 40s)
+- Cloud9 - integrated development environment or IDE that you can use inside your browser, that means that you can write, run, and debug code without having to install anything on your own local machine
+         - it comes with many pre-installed tools, including the AWS CLI, and support for the most popular programming languages like JavaScript, Python, Ruby, and C++, as well as development tools like Git and Docker
+- Create our own Cloud9 environment:
+  - from the console, search for Cloud9
+  - select Create environment
+  - environment name will be My-IDE
+  - Environment type is gonna be New EC2 instance
+  - Instance type will be t3.small
+  - Under Platform, select the Amazon Linux option
+  - Under Network settings, we can stick with the defaults
+  - scroll to the bottom and hit Create
+  - under the hood, your Cloud9 environment is basically a Linux server, it has the AWS CLI pre-configured and it includes other popular tools that developers commonly use, including runtimes for popular programming languages like Python and Node.js, and development tools like Git and Docker.
+  - After the environment is created, we can connect to it. So select Open
+  - select Create File
+  - type print("Hello !")
+  - save file as hello.py
+  - write in the terminal: python hello.py
+  -> aws s3 mb s3://mycode-123456 - create bucket
+  -> aws s3 cp hello.py s3://mycode-123456 - upload code to the bucket
+
+
+
+------ Understanding AWS CodeArtifact (3m 27s)
+- CodeArtifact - it's an artifact repository that lets developers securely store, publish, and share software packages that are needed for your software development process. Examples of packages include Maven, NPM, or Python packages.
+               - an artifact repository makes easy for developers to find the software packages that they need
+               - package is simply a bundle of software and CodeArtifact supports open-source software from public repositories
+as well as software developed in-house, so developers can add software that they've developed and created themselves
+               - enables all of your developers to easily get the correct version of the software packages needed for their projects
+- Artifact - used to describe a lot of different things, including documentation, compiled applications, deployable packages, and libraries. IT leaders can make approved packages available and developers will know where to find the approved packages
+
+
+
+------ Decoupling Application Components (4m 51s)
+https://docs.aws.amazon.com/prescriptive-guidance/latest/modernization-integrating-microservices/decouple-messaging.html
+- Tight Coupling - this is usually a feature of monolithic applications where all the components of an application are interdependent. Coupling describes the dependencies between the components of an application, and with tightly coupled systems,
+there are lots of dependencies between the components. Problems can then occur if one part of the system is slower or faster than another. With tightly coupled systems, one failed component can bring the whole system down.
+- Loose Coupling - is what we typically see with microservices-based architectures, this is where the components of the application can operate independently. 
+                 - One component doesn't need to wait until another component has finished its work before moving on to the next task. Data and messages are moved between components of the application.
+                 - A failed or slow component doesn't affect the other parts of the system. The other components continue their work unaffected.
+                 - by avoiding dependencies between components, the application is more flexible, it's easier to maintain,
+and benefits from increased scalability, resiliency, reliability, and elasticity.
+                 - for that reason, loose coupling is the way forward
+- Need to find a way to integrate the components of an application so that they can interact and communicate with each other
+without having them be dependent on one another. There are three common approaches to integrating applications which involve the use of:
+  1. queues
+  2. notifications
+  3. events
+- AWS provides dedicated fully managed services that can be used to integrate application components, enabling them to operate independently from one another:
+  1. Simple Queue Service (SQS) - primary service that is specifically designed to help with decoupling
+  2. Simple Notification Service (SNS)
+  3. EventBridge - used to build event-driven systems
+
+
+------ Introducing Amazon Simple Notification Service (SNS) (2m 49s)
+- Simple Notification Service (SNS) - service that enables you to easily set up, operate, and send notifications
+                                    - the type of notifications that it supports are SMS text message or email
+                                    - messages sent from an application can be immediately delivered to subscribers like you and me, or to other applications
+  - SNS uses a pub-sub model, which means publish and subscribe
+    - Applications publish or push messages to a topic, whereas subscribers receive messages from the topic. Topic is simply an access point, allowing recipients to subscribe to and receive identical copies of the same notification.
+  Use Case:
+  - after ordering a pizza from World Pizza, customers are notified with an estimated delivery time for their order, and they could receive an email, an SMS, or even both
+  - if something goes wrong in the World Pizza application, let's say an EC2 instance crashes, an alert can be sent to CloudWatch, which is a service used to monitor the health of your EC2 instances, and in turn, CloudWatch can use SNS to send an email to the application support team at World Pizza
+
+------ Hands-on Lab: Create and Subscribe to an AWS SNS Topic (30m)
+
+
+
+------ Introducing Amazon Simple Queue Service (SQS) (4m 26s)
+- Simple Queue Service (SQS) - is a distributed message queue service
+  - It enables web applications to quickly and reliably queue messages that one component in the application produces
+for another component to consume.
+  - A queue is a temporary repository for messages that are awaiting processing.
+  - Messages wait in the queue until the consumer is ready to process them.
+  - No component gets overloaded by too many requests, and the system is not gonna crash if a single component goes offline.
+  - this approach is known as decoupling. So, the component that creates the customer order and the component that notifies the kitchen to do something are not dependent on each other. Instead, they have the queue in between them, like a middleman, keeping the messages in the queue until they're ready to be processed.
+  - this resolves the issues that can arise if the producer is producing work faster than the consumer can process it, or if the producer or consumer are only intermittently connected to the network.
+  Key features:
+  - SQS is pull-based - that means that consumers pull messages from the queue when they are ready to process the next message
+  - Multiple components can add and consume messages from the same queue
+  - Messages are processed asynchronously, which means that you don't just sit there and wait for a response because you don't know how long it's gonna take for a request to be processed
+  - Messages are guaranteed to be processed at least once
+  - SQS improves performance and the ability for this application to scale and support millions of concurrent requests because the requests can be held in the queue until we're ready to process them.
+  - SQS is pull base, not push base - that means that consumers pull the messages from the queue when they're ready. The queue does not send out any messages to consumers.
+
+------ Standard And FIFO Queues (2m 15s)
+- Standard queues - are the default queue type, and with standard queues, they guarantee that a message is delivered at least once
+                  - best-effort ordering, which means that messages are generally delivered in the same order as they're sent
+                  - occasionally, more than one copy of a message might be delivered or the message might be delivered out of order
+- FIFO queues - FIFO stands for first-in-first-out ordering, and this means that the order in which messages are sent and received is strictly preserved
+              - get exactly once processing, which means that duplicates are not introduced
+              - this is a much more predictable option if you need to preserve the order of messages and ensure that there are no duplicates
+              - this is a great option for financial transactions, where things need to happen in strict order, and a duplicate transaction is gonna cause a problem
+
+
+------ Short Polling vs Long Polling (1m 49s)
+- Short Polling and Long Polling are settings that you can configure, which define how frequently the consumers of your messages check or poll the queue
+- Short polling returns a response immediately, even if the message queue being polled is empty. And this can result in a lot of empty responses if nothing is in the queue, and you will still pay for these responses, even though they're empty.
+Long Polling - this is where each consumer periodically polls the queue. And the queue doesn't return a response until a message arrives or the long poll times out, so you get fewer empty responses, which can save you money. And for that reason, long polling is generally preferable to short polling.
+
+
+------ What Is Amazon Simple Email Service (SES)? (1m 37s)
+- Simple Email Service (SES) - it's a cloud-based email service that enables your application to send richly formatted HTML emails.
+                             - Think of marketing campaigns, or confirmation of an order. And don't get it confused with SNS. if you want to send basic plain text emails, you can do that with SNS, however, if you're sending richly formatted HTML emails, use SES.
+
+
+
+------ Introducing Amazon EventBridge (2m 55s)
+- EventBridge - is a service that allows you to easily configure event-driven systems
+              - you can also use it to define tasks that you need to run on a predefined schedule
+              - is all about event-driven architecture
+              - can also be used to handle scheduled events. And these are EventBridge rules that run on a schedule.
+- Event - is simply a change in state
+        - events, or state changes, can be generated byAWS services like:
+          - EC2, CloudWatch: which is a monitoring service,
+          - or CloudTrail: which is a service used to track user activity in your AWS account
+        - Rules match events and then route them to the correct target.
+        - Targets can be services like EC2, Lambda or SNS. And targets respond to the event by taking some predefined action, like sending an SNS notification to let you know that an event has occurred.
+
+
+
+------ Understanding Step Functions (3m 50s)
+- Step Functions - are used to manage the logic of a distributed application made up of multiple small components, and it provides a visual interface that lets you visualize the workflow
+                 - it's used to let you build and run serverless applications as a series of steps. Each step in your application executes in order, as defined by your business logic
+                 - the output of one step can be the input into the next
+                 - it can also manage error handling
+                 - can be used to handle processes that have parallel steps
+                 - automatically trigger and track each step in the process
+                 - log the state of each step so you can track what went wrong and where
+
+
+
+------ Deploying Infrastructure as Code with AWS CloudFormation (3m 42s)
+- CloudFormation - is the AWS service that lets you provision, configure and manage AWS infrastructure as code
+                 - Resources are defined using a CloudFormation template, and that's the code part (using either YAML or JSON code)
+                 - interprets the template and makes the appropriate API calls to create the resources that you've defined in your template. And the resulting set of resources built by the template is known as a CloudFormation stack
+                 - this is all of the resources that were built by our template
+  Benefits:
+  - it's a consistent way to provision infrastructure and with fewer mistakes because we are automating the process instead of trying to do it manually each time
+  - it's quick and efficient because it involves less time and effort than configuring things manually
+  - it's free to use - only charged for the AWS resources that you create using CloudFormation
+
+
+
+
+------ Hands-on Lab: Create a DynamoDB Table Using CloudFormation (30m)
+
+
+
+------ What Is AWS Elastic Beanstalk? (2m 59s)
+- Elastic Beanstalk - As a developer, you can simply upload your application code, and Elastic Beanstalk will provision the infrastructure needed to run your application in production,
+including the installation and management of the application stack needed to run your application.
+                    - it's gonna take care of capacity provisioning, load balancing, auto-scaling, and application health monitoring using CloudWatch
+                    - allows developers to focus on their code.
+                    - there's no need to worry about configuring the underlying infrastructure needed to run the application
+                    - it's the fastest and simplest way to deploy your application in AWS
+                    - also handles operating system patches and updates, as well as updates to whatever web server application platform you're using as well, like Apache Tomcat or HTTP Server
+                    - in summary, Elastic Beanstalk deploys and scales your web applications, including the web application server platform
+                    - it provisions the AWS resources for you, so everything that your application needs to run, for instance, EC2 instances, RDS databases, S3 Storage, Elastic Load Balancers, and it will even configure Auto Scaling Groups as well
+                    - it supports programming languages like Java, .NET, PHP, node.js, Python, Ruby, and Go
+                    - it supports application server platforms like Apache Tomcat, Microsoft IIS, Nginx, and Docker
+                    - monitoring, metrics, and health checks are also included
+
+
+
+------ Demo: Deploying an Application Using Elastic Beanstalk (7m 31s)
+- save application .zip file to local machine
+- from AWS console first create a service role for Elastic Beanstalk and this is gonna allow the Elastic Beanstalk service to deploy AWS services on our behalf
+- search for IAM, then select roles, create role
+- trusted entity type is AWS service. Under use cases, search for Elastic Beanstalk and make sure that Elastic Beanstalk customizable is selected, Then hit next
+- it's automatically selected the permissions that we need. So click next
+- under the role name, we'll call it CustomServiceRoleForElasticBeanstalk, then scroll down to the bottom and create role
+- next, we'll create an EC2 instance profile for Elastic Beanstalk. And this is gonna give our EC2 instance the required permissions to interact with Elastic Beanstalk
+- once again, select create role
+- trusted entity type is AWS service, under use case, select EC2 under commonly used services. Then select next.
+- Under permissions, we're gonna search for the AWSElasticBeanstalkReadOnly policy name, So select that one. Hit next
+- Under role name, we'll call it, CustomEC2InstanceProfileForElasticBeanstalk
+- Scroll down to the bottom and create role
+- now finally, we can create our application
+- in the search bar, search for Elastic Beanstalk, then select create application
+- We're creating a web server environment under application name enter, "Hello Cloud Gurus."
+- Scroll down to platform. It's gonna be a managed platform. We'll choose a platform and it's gonna be PHP.
+- Then under application code, we're gonna upload our code. So select upload your code
+- type V1, we're using a local file, select choose file, select the file that we downloaded earlier and select open, hit next.
+- under service role, we're gonna use an existing service role
+- using the dropdown, select CustomServiceRoleForElasticBeanstalk.
+- We don't need to provide an EC2 key pair
+- under EC2 instance profile, select the dropdown and select your CustomEC2InstanceProfileForElasticBeanstalk, hit next
+- next page is optional, allows you to optionally configure VPC, instance and database settings and we don't need to change anything here, scroll to the bottom and hit next
+- On the configure instance traffic and scaling page, these settings are also optional, so scroll to the bottom and hit next
+- On the configure updates, monitoring and logging page under system, we're just gonna select basic health reporting
+- then onto managed platform updates, for now, I'm gonna deactivate the managed updates. Then scroll down to the bottom and hit next.
+- review page displays a summary of all your choices. You can scroll to the bottom and hit submit.
+- Now it's gonna take a few minutes to complete everything because it's creating our EC2 instance, configuring the required networking, installing the PHP platform on there, copying our code and starting our application
+- After your environment has successfully launched, select the domain URL available under the environment overview. Click on this link, it will take you straight to your application and it's just a website
+
+
+
+------ Demo: Using AWS X-Ray to Identify Performance Issues (8m 6s)
+- X-Ray - is a tool that helps developers to analyze and debug distributed applications that are made up of multiple different components
+        - it allows you to troubleshoot the root cause of performance issues and errors
+        - provides a visualization of your application's underlying components
+
+- From the Console search for X-Ray. Select, X-ray, and it's gonna take us to the CloudWatch Console
+- On the right hand side select, Set Up Demo App and it's going to create a sample application for us using CloudFormation
+- select, Create Sample Application with CloudFormation and CloudFormation is gonna create the entire stack for us
+- It's pre-populated everything, so we don't need to change any of the settings. And down here is the reference to our CloudFormation template. So we can go ahead and hit Next
+- All the settings are pre-populated, so scroll down to the bottom, Hit Next
+- Once again, scroll down to the bottom and hit Next.
+- On this page we can review the options, so just scroll down to the bottom. We need to check this box to say that we acknowledge that identity and access management resources might be created, and then hit Submit.
+- it's going to take a few minutes for the CloudFormation stack to be ready, because it's creating a lot of things for us in the background
+- it's gonna create an EC2 instance, an Elastic Container Service cluster, DynamoDB tables, Elastic Load Balancer. Networking components like, routing table and subnets, an SNS topic, and identity and access management roles. And it's creating everything needed to run this distributed application, so expect it to take up to 10 minutes to complete everything
+- After the stack is completed, select the Outputs tab and this is where you'll find the URL for the load balancer of our application
+
+
+
+------ Development, Messaging, and Deployment Exam Tips - Part 1 (3m 28s)
+- Continuous integration - which is all about integrating or merging small code changes frequently, at least once a day
+- Continuous deployment - is all about automating the build, test, and deployment functions in your software release process
+- it means bugs are caught early, while they are small and easy to fix
+
+- AWS provides a range of developer tools that help with software development:
+  1. CodeCommit - the source control service that enables teams to collaborate on code, HTML, pages, scripts, images, and binaries
+  2. CodeBuild - is the automated build service that compiles source code, runs tests, and produces packages that are ready to deploy, and a package is simply a bundle of software
+  3. CodeDeploy - automates code deployments, for instance, to EC2 instances, Lambda and on-premises servers as well
+  4. CodePipeline - manages the workflow
+- it's the end-to-end solution that handles build, test and deployment of your application every time there's a code change
+
+- AWS CloudShell - which is a browser-based shell with the AWS CLI pre-installed
+- AWS CLI - is of course a command line tool that is used to manage AWS services
+- Cloud9 - which is a browser-based IDE that lets developers write, run, and debug their code. It comes with lots of popular tools pre-installed, like the AWS CLI and support for the most popular programming languages
+- CodeArtifact - is an artifact repository that makes it easy for developers to find the software versions that they need 
+               - artifacts like documentation, compiled applications, deployable packages, and libraries
+               - can be third party or in-house developed
+               - it's a great way for developers to find approved packages and they can also publish their own
+
+- coupling - relates to interdependencies or connections between the components of a system
+- tight coupling - different parts of the system are highly dependent on one another, so if one part fails, it can bring the whole system down, which is why tight coupling is to be avoided
+- loose coupling - decoupled components can be connected to each other, but they are not dependent on one another
+
+- SNS - is a service that allows you you to send or push notifications, for instance, SMS text messages and emails
+      - It uses a pub-sub model, so subscribers must subscribe to a topic in order to receive the messages
+      - a topic is like an access point, allowing subscribers to receive notifications
+
+
+
+------ Development, Messaging, and Deployment Exam Tips - Part 2 (4m 43s)
+- SQS - which is a distributed message queuing system.
+      - It allows us to decouple the components of an application so they're independent from each other, and it's the most commonly used mechanism for implementing loosely coupled applications
+      - It's pull based, not push-based, which means that consumers pull the messages from the queue rather than messages being pushed out.
+
+- standard queues - give you best effort ordering.
+                  - Messages are delivered at least once.
+                  - occasionally see duplicates
+                  - is the default queue type.
+- FIFO queues - the first in first out message order is strictly preserved.
+              - Messages are delivered once only. 
+              - There are no duplicates.
+              - great for banking transactions that need to happen in a strict order and you don't want any duplicates
+
+- short polling - a response is returned immediately even if there are no messages in the queue.
+                - There's a cost per response even when the response is empty
+- long polling - the consumer periodically polls the queue and the queue only returns a response either when a message is in the queue or when the long polling timeout is reached.
+               - This is the most cost-effective option and it saves you money because you don't pay for empty responses.
+               - is generally the preferred option
+
+- SES - Simple email service - allows you to send richly formatted HTML emails from your applications
+      - think marketing campaigns or the confirmation of an order
+- SNS - allows you to send SMS text messages and plain text emails
+
+- Event Bridge - is a service that lets you build event-driven systems and events are state changes generated by services like EC2
+               - rules - match events, and then route them to the correct target
+               - targets - respond by taking some action, like sending an SNS notification
+               - scheduled events - which lets you schedule and action in advance
+
+- Step functions - are a great way to visualize your serverless application
+                 - automatically trigger and track each step in a workflow and they log the state of each step so you can track what went wrong and where
+- CloudFormation - is a service that lets you deploy AWS resources using an infrastructure as code approach
+                  - resources are defined using a template written in YAML or JSON, and this allows you to quickly provision AWS resources in a consistent way with fewer errors
+
+- Elastic Beanstalk - is a service that deploys and scales your web applications, including the web application server platform like Apache Tomcat or IIS.
+                    - It provisions all the AWS resources for you
+                    - It supports technologies like java, .NET, PHP, et cetera,
+                    - it can also take care of operating system and application server updates
+                    - monitoring metrics and health checks are also included
+- X-Ray - gives you a service map that provides an end-to-end view of requests as they travel through your application.
+        - this information can be used to troubleshoot connectivity and performance issues.
+
+
+
+Chapter 8 - Migration and Transfer Technology and Services (42m 39s)
+====================================================================
+
+------ Introducing the AWS Snow Family (4m 40s)
+- Snow Family - are physical devices designed to securely and efficiently transfer large amounts of data to AWS
+              - typically use these devices when your network bandwidth can't handle an online migration efficiently, either because the amount of data is so great it would take too long or overload the network,
+              - it could be that there simply is no consistent network in the location that you're operating in
+- 1. Snowball - gets installed locally in your data center.
+           - transfer your data to the Snowball and then ship the Snowball device to AWS so that the data can be uploaded to AWS storage
+of your choice
+           - Snowball is a great option if you've got at least 10 terabytes of data to migrate
+           - it's basically a big box full of discs that you connect to your network and copy the data onto the device before shipping it back to AWS
+- 2. Snowball Edge - is a great device if you've got at least 10 terabytes of data to migrate, but in addition, you also need to perform some processing on the data
+                - provides Onboard Compute Resources that allow you to process your data
+                - if you've got a complex use case, where you need to migrate a large amount of storage, but you also need compute capability, then pick Snowball Edge over a Snowball
+- 3. Snowmobile - is basically a shipping container full of discs that is towed by a truck
+             - this is a great option if you've got more than 10 petabytes of data to migrate
+             - this option is for really large data sets
+- 4. Snowcone - is a small portable, military grade disc device
+           - capacity is either eight terabytes of HDD hard disc or 14 terabytes of SSD Solid State Disc
+           - It weighs in at under five pounds, so it fits in a mailbox or in a backpack
+           - it's used to migrate data from locations that don't have a proper data center at all, or any reliable networking, for instance, military bases
+           - this device is pretty small and it looks like it's about the size of my yoga block
+
+
+------ Identifying Database Migration Tools (2m 44s)
+- Database Migration Service (DMS) - is used to migrate your database and analytics workloads to AWS
+                                   - workloads could be on-premises, running on EC2 instances, or in RDS
+- Schema Conversion Tool (SCT) - simply converts from one database schema to another
+  Use Cases Example:
+  - convert Oracle -> Aurora MySQL
+  - convert MySQL -> RDS MySQL
+  - convert SQL Server -> Aurora PostgreSQL
+
+
+
+------ Exploring the AWS Transfer Family (3m 43s)
+- Transfer Family - you get business to business file transfer using protocols like SFTP, AS2, FTPS, and FTP and files can be transferred into and out of AWS storage like S3 or EFS
+                  - you don't need to build and manage a secure file transfer solution yourself
+                  - is all about file sharing and transfer with external parties
+                  - External parties can transfer files out of your storage, for instance, using SFTP GET
+                  - External parties can transfer files in, for instance, using SFTP PUT
+                  - multiple commonly used file transfer protocols are supported (SFTP / AS2 / FTPS / FTP)
+  Benefits:
+  - AWS will do the heavy lifting for you
+  - It's highly available and scalable as you'd expect from an AWS service
+  - you can use existing tools like WinSCP, FileZilla, CyberDuck, LFTP, and OpenSSH, and these are all commonly used file transfer tools
+  - It supports common protocols that you might've heard about or even used yourself
+    1. SFTP - which is the Secure Shell file transfer protocol that uses SSH Security and Authentication
+    2. AS2 - which stands for Applicability statement two, and that uses HTTP and HTTPS
+    3. FTPS - is the file transfer protocol over SSL, which uses industry standard TLS to encrypt the traffic
+    4. FTP - which is the standard file transfer protocol
+
+------ AWS DataSync (3m 6s)
+- DataSync - is designed to let you move large amounts of data over the network
+           - securely transfer terabytes of data to S3, EFS, or FSX
+           - it will also encrypt the data as it transfers it over the network
+           - It enables high data throughput
+           - it's automated, which helps avoid human error
+           - supports NFS or network file system, SMB shared file systems used by Windows servers, and object stores as well
+           - Data can originate on premises in another cloud provider or in AWS storage in a different account or region
+           - you only pay per gigabyte of storage that you transfer
+  Use Cases:
+  - securely migrating all of your data into AWS
+  - cost effectively replicating your data using AWS Storage (replicating for disaster recovery purposes)
+  - Archiving historical data to low cost AWS Storage (eg. if you have financial data that needs to be archived for a number of years)
+  - hybrid or multi-cloud workflow (situations where you need the data to exist in your data center or in another cloud provider, and you also want a copy in AWS as well)
+
+
+------ Understanding AWS Application Discovery Service (3m 30s)
+- Application Discovery Service - used to discover your application servers and databases
+                                - gathers data about your existing, on-premises application servers and databases, and the data is collected and sent over an encrypted connection, and it's stored in AWS Migration Hub
+                                - You install an agent on each server to collect the data. 
+                                - with VMware, you've got the option to use an agentless collector, which is the virtual appliance
+deployed to VMware vCenter systems to avoid using an agent
+                                - The data that it collects includes a server inventory, configuration information, operating system versions, capacity usage, and networking.
+                                - this data can be used to develop a migration plan to help you quickly and easily migrate your workloads to AWS.
+
+- Migration Hub - is another tool used to help you coordinate migrating your systems to AWS,
+                - it's used by the Application Discovery Service to store the data that it's gathered
+  What sort of data is it going to collect?
+  - it creates a server inventory
+  - it collects configuration data, including operating system versions
+  - it collects capacity utilization data so that you can rightsize your systems in AWS
+  - inbound and outbound network connections between servers
+  How does it collect this data?
+  - it collects the data using the Application Discovery Service agent
+  - you install the agent on your virtual machines and physical servers, and the agent gathers the data and sends it all to the Application Discovery Service
+  Running VMware?
+  - here's also the option of using an agentless collector, and this is for migrating from VMware only
+  - The way it works is that the agentless collector is installed as a virtual appliance running in VMware vCenter
+  - it's running on a separate virtual appliance instead of being an agent on your application or database servers. The collector then identifies virtual machines and hosts that are associated with your vCenter environment. And then it sends the collected data to the Application Discovery Service.
+  - the kind of thing it's collecting is host names, IP addresses, MAC addresses, disk resource allocations, database engine versions, database schemas, and capacity utilization metrics, like CPU, RAM, and Disk I/O
+
+
+
+------ Introducing AWS Application Migration Service (MGN) (3m 6s)
+- Application Migration Service - simplifies and accelerates migrating applications to AWS
+                                - It automates the process of replicating servers (physical, virtual, or cloud-based) to AWS, so you can avoid doing things manually
+                                - minimizing downtime
+                                - is an automated lift and shift service, so it automatically migrates applications to AWS without modifying them in any way (the application is simply migrated as is, and it's not altered in any way or redesigned or refactored)
+                                - windows and linux are supported
+  How it works?
+  - You install an replication agent on the source server, and MGN continuously replicates the data to AWS
+  - the traffic is encrypted to keep all of your data private
+  - While the replication is happening, you can continue to use your systems normally, and there's no performance impact
+  - You pay for the AWS infrastructure that you build, but the application migration service, including the data replication element,
+is free to use for up to 90 days. And after that, they're gonna charge you for using the service
+  - It supports various operating systems and migration scenarios
+
+
+
+------ Discovering AWS Migration Hub (2m 12s)
+- Migration Hub - 1. is essentially a central location to gather application and server inventory information
+                - 2. It enables you to assess, plan, and track migrations into AWS
+                - 3. It also allows you to logically group servers together for migration
+                - 4. it's used as a central place to manage the migration of your applications and data into AWS
+                - it integrates with the other migration services, including:
+                  - Application Discovery Service (which is used to discover your existing applications and databases,
+build out an inventory, and gather configuration information, which is saved in Migration Hub)
+                  - Application Migration Service (automated lift and shift service)
+                  - Database Migration Service (which is used to migrate existing databases, for instance, Oracle databases hosted in your own data center into AWS)
+  Features:
+  - make recommendations about modernizing your applications (eg. you might want to re-platform your Java or .Net applications to run as docker containers in Elastic Container Service)
+  - it can provide an estimate for the cost of running your existing workload on EC2 instances in AWS
+
+------ Migration and Transfer Exam Tips (4m 38s)
+- Snow Family - which is the solution to use if you have large amounts of data, 10 terabytes or more, that needs to be transferred to AWS and you cannot do it over the network
+              - is all about file sharing and transfer with external third parties
+                External parties can transfer:
+                - files out of your storage for instance, using SFTP GET
+                - files in, for instance, using SFTP PUT
+                - multiple commonly used file transfer protocols are supported (SFTP / AS2 / FTPS / FTP)
+              - four different options:
+                1. Snowball - used if you have 10 terabytes or more to migrate
+                2. Snowball Edge - is for when you have 10 terabytes or more, but you need the device to also process the data before it goes to AWS
+                3. Snowmobile - is the shipping container full of discs getting towed by a truck, and this is for moving massive data sets, 10 petabytes or more.
+                4. Snowcone - it's so small, you can fit it in a backpack. It's portable, military grade and holds up to 14 terabytes.
+And this is the one used to migrate data from locations that do not have proper data centers like military bases.
+
+
+-  Database migration service - is used to migrate databases and analytics workloads to AWS, and you can migrate from EC2, on-premises or from RDS.
+- Schema conversion tool - converts your database from one type to another. (eg. converting Oracle to Aurora MySQL, MySQL to RDS MySQL,
+or SQL Server to Aurora PostgreSQL).
+                         - it is basically converting the database to a different database technology or schema.
+
+
+- DataSync - lets you securely transfer terabytes of data to S3, EFS or FSX.
+           - It supports NFS, SMB, or object stores.
+           - Data can be transferred from on-premises locations from another cloud provider or from AWS storage and use cases include: 
+             - migration, 
+             - replication to low-cost storage, 
+             - archiving in AWS ,
+             - hybrid or multi-cloud workflows
+
+- Application discovery service:
+  1. Gathers Data -  gathers data about existing on-premises application servers and databases
+  2. Uses an Agent -  An agent is installed on each server, which collects the data.
+  3. Agentless - Alternatively, there's also an agentless option as well. And with this option, a virtual appliance can be deployed
+to VMware vCenter to avoid using an agent.
+  4. Data Includes - The data collected includes server inventory, configuration, operating system information, capacity usage, and networking.
+  5. Migration Plan - And this data can be used to develop a migration plan to move your applications and data to AWS.
+
+
+Application migration service - Automated lift and shift service - which automatically migrates applications to AWS without modifying them in any way.
+                              - AWS replication agent - is installed on the source server and replicates everything to a new server in AWS.
+                              - Migrate Applications - running on physical servers, on virtual servers, from other cloud providers and other AWS accounts or regions.
+
+
+- Migration Hub - combines all of these migration related tools in one place.
+                - it's a central place to manage the migration of applications and data into AWS
+                - It's integrated with - application discovery service,
+                                       - application migration service,
+                                       - database migration service
+                - group service together logically so that you can plan and track the progress of your migration
+                
+
+
+
+Chapter 9 - Artificial Intelligence, Machine Learning, and Analytics Technology and Services (1h 33m 51s)
+=========================================================================================================
+
+------ Amazon Redshift and Redshift Serverless (3m 28s)
+- RedShift - is a Data Warehousing Service, which is a system that stores large amounts of data used for reporting and analytics
+           - it's designed to be used for business intelligence workloads 
+           - is able to store and query petabytes of data
+           - combines multiple sources of data into one place, allowing you to perform analytics on the data
+  Features:
+  - Data Warehouse - is a fully managed data warehousing solution
+  - Massively Parallel Processing (MPP)  - it's able to run complex queries in parallel
+  - Automated Data Management - automated data backup, replication, and scaling without any downtime
+  - Designed for OLAP suitable for Online Analytical Processing, which just means that it's great for analytics and reporting
+
+- RedShift Serverless - a serverless option of RedShift with no infrastructure to manage
+                      - this really simplifies the use of RedShift, eliminating the need to manage any infrastructure
+                      - It automatically provisions and scales everything
+                      - it's a great option for unpredictable workloads
+                      - you can focus on the task at hand, and in this case, analyzing your data rather than spending time and effort mnaging infrastructure
+
+  RedShift Use Cases:
+  - Complex Querying and Reporting - for businesses that need to analyze large volumes of data
+  - Data Lakes Integration - you can integrate with a data lake, which is simply a central repository of structured and unstructured data (eg. stored in S3), and you can query that data using RedShift
+  - Operational Analytics
+
+
+------ What Is Amazon Kinesis? (5m 34s)
+- Kinesis - it's a family of services that enables you to collect, process and analyze streaming data in real time 
+          - it allows you to build custom applications for your own business needs and make decisions or take actions based on the data that you're streaming
+          - is originally a Greek word and it means movement or motion, and it's actually a really good name for this service
+because Kinesis deals with data that is in motion, moving from one place to another (with streaming data rather than data that's static or stored on disc or in S3 or in a database)
+          - is all about handling streaming data, which is essentially data generated continuously by thousands of data sources
+or producers that typically send data records simultaneously in small sizes of just a few kilobytes
+            For example stream of:
+            - financial transactions
+            - stock prices
+            - in-game data created as the player progresses through the game
+            - social media feeds
+            - location tracking data (Uber, Google maps)
+            - IoT sensors
+            - clickstream data
+            - application log files
+  Core Services:
+  - Kinesis isn't just one service, it's actually a few different services, but the one thing they all have in common is that they're all dealing with streaming data.
+    - Kinesis streams - enables you to stream data or video to allow you to build custom applications that process the data in real time. Here are two different options available:
+      1. Kinesis Data Streams - deals with data, so it lets you process streaming data
+      2. Kinesis Video Streams - which is designed to be used with video data, so it lets you stream video into AWS for storage and processing
+
+- Kinesis Data Streams - capture and store streaming video and data
+                       - is basically facilitating whole architecture (Producers -> Kinesis Streams (Shards) -> Consumers -> Storage) by making it easy to collect and stream the data so
+that your application can then consume and process it as you wish
+  - data producers - all the devices that are producing the data (EC2 instances, mobile devices, laptops, and IOT devices)
+  - retains the data by default for 24 hours with a maximum of 365 days retention
+  - data is stored in these things called Shards - is basically a sequence of data records, each data record has a unique sequence number and a Kinesis stream is made up of one or more shards
+  - data consumers - ould be EC2 instances or Lambda functions, for example, which consume the data from Kinesis shard and process it
+  - After the data consumers have completed their calculations, they can then send the data to permanent storage, for example, to DynamoDB, S3, Elastic Map Produce or Redshift
+
+
+------ Exploring Kinesis Data Firehose (2m 48s)
+- Kinesis Data Firehose - captures, transforms and loads data continuously into data stores
+                        - allows you to capture, transform, and load data streams into AWS data stores, enabling near real-time analytics using business intelligence (BI) tools
+                        - is all about capturing, transforming, and loading the data
+  Features:
+  - Easy to Use - dynamically adjusts the resources to handle varying data volumes, so it scales automatically
+  - Real-Time Processing - it processes and delivers data within 60 seconds for timely insights
+  - Transform the Data - customize and enhance it using Lambda before you load it into permanent storage
+  - Monitoring - integrated monitoring with CloudWatch, as well as automatic error retries if something goes wrong
+  Example:
+  - data producers - they're producing data that's being collected by Kinesis Firehose
+  - Optionally, we can perform some transformation using Lambda (eg. change the format of our data)
+  - after processing or transforming, if we want to store the data permanently, then we can load it into permanent storage (S3,  Redshift or Opensearch)
+  - there are no shards
+  - It doesn't retain the data, not even temporarily
+  - There's no consumers
+  - after the data is loaded into its final destination, you can perform analytics using business intelligence (BI) tools
+  Use Cases:
+  - Real-Time Analytics
+  - Data Lake Feeding - loading streaming data into a data lake
+                      - data lake is simply a large scale data repository
+  - Log Data Management
+  - IoT Data Integration
+
+
+
+------ What Is Amazon Athena? (1m 28s)
+- Amazon Athena - Interactive Query service for data stored in S3
+                - Standard SQL - allows to query data stored in S3 using standard sql
+                - It's Serverless, which means there's nothing to provision, and you pay per query and per terabyte scanned
+                - there's no need for complex, extract, transform and load or ETL processes
+                - works directly with data stored in S3
+  Use Cases:
+  - Query log files stored in S3
+  - Analyze AWS Cost and Usage reports
+  - Generate business reports on data that's stored in S3
+  - Run queries on clickstream data stored in S3
+
+
+------ Demo: Using Athena to Query Data (8m 52s)
+- 1. configure a CloudTrail to create some log data that we can query
+     - CloudTrail - is simply a service that creates an audit log of all user activity in our account
+- 2. create an S3 bucket to store the Athena results
+- 3. finally, we'll be able to query our data using Athena
+
+- From the console, first search for CloudTrail
+- select Create a Trail, and we can accept all the defaults
+- trail name will be management-events
+- it's automatically gonna create an S3 bucket where it's going to store our data
+- scroll down and Create Trail
+
+- Next, search for S3
+- Create Bucket. And this bucket will be used to store the Athena Query results
+- croll down to bucket name, and I'll call it my-athena-results-01236
+- scroll down to the end and Create Bucket
+
+- now we are ready to use Athena, so search for Athena
+- open the link in a new tab
+- using the menu on the left, select the Query Editor
+- before we run our first query, we need to set up our query result location
+- select Settings, Manage, then Browse S3
+- Select your Athena results bucket
+- click Choose
+- scroll down to the bottom and select Save
+- that's our query results location setup
+- now we are good to go to start querying with Athena
+- select Editor - this is where we're gonna type our query
+- Click the query box and type the following commands:
+  - CREATE DATABASE athenadb
+- Then scroll down to the bottom and select Run
+- if you scroll down, you should see a message saying that our query has been successful
+- on the left-hand side under Database, you should see that your database has appeared
+- hit the plus sign on the Query Editor to create a new query
+- paste our code in here (this is a really long piece of SQL code. All it does is create our table)
+- before we run this query, come down to the end. And then right at the bottom, this is where we need to specify the location of our data
+- head back to the S3 console, select the cloudtrail-logs bucket, then go into the AWSLogs folder, and then into the next folder, which is named after your account number
+- just copy the S3 URI using this button. And this URI is what we use to reference the location in S3
+- come back to our Athena Query Editor, and we need to replace this section of the query with your URI
+- After you've done that, it should look like this: So here's my bucket name, followed by the AWSLogs folder, followed by my account number - And then make sure you don't remove this forward slash at the end
+- After you've done that, hit Run
+- you should see a message at the bottom like this saying query successful
+- if it wasn't successful this time, just make sure that you specified your location correctly, because if you don't get this part right, then Athena will not be able to find your data
+- now under the Tables section on the left, you should see there's a new table called cloudtrail_logs
+- Expand the table, and here's all the data attributes that our query just created
+- come back up to the top, hit the plus sign to create our third query selecting user data
+- Scroll down and select Run
+- if you scroll further down, you can see the results of the query
+
+
+------ Introducing AWS Glue (3m 21s)
+- Glue - is a serverless data preparation and integration service for analytics and ML
+       - It discovers and catalogs your data and performs ETL, Extract, Transform, and Load
+       - data could be stored in S3, DynamoDB, in RDS, Redshift, or it could even be streamed data ingested in real-time using Kinesis
+       - is then used to discover and categorize and then transform your data (clean, remove duplicates, or enrich the data)
+       - then load it into another service (like RDS, Athena, S3, or Redshift)
+       - using a service like AWS Glue to extract, transform, and load your data allows you to easily use your data for analytics and machine learning
+  Example 1 - create a centralized data catalog:
+  - have different types of data, stored in a few different locations
+  - Glue can use a crawler to make sense of your data and classifies it to determine a schema for your data
+  - then creates metadata (data about data) tables in a data catalog
+  - use AWS Glue to manage the metadata in this central repository, and you can then access the data catalog to support ETL and analytics
+  Example 2 - joining data for a data warehouse
+  - you have clickstream data in RDS, and customer data stored in S3
+  - you can use AWS Glue to join and enrich your data and then load the results into Redshift so that it can be queried by your applications
+  - it's performing extract and transform before loading the data into its final destination, where it can be used for analytics
+
+- AWS Glue - is used to prepare your data for analytics and machine learning.
+           - It crawls your data and creates:
+             - Data Catalog - which is the central repository containing the metadata (eg. JSON, CSV, XML, ...)
+             - Extract - data from various sources (eg. RDS, S3, Kinesis, ...)
+             - Transform it (eg. categorize it, clean it, remove duplicates, or even join multiple datasets)
+             - Load - into other AWS services (eg. RDS, Redshift, S3, or Athena, for use by analytics applications and machine learning)
+
+------ Exploring AWS Data Exchange (3m 16s)
+- Data Exchange - is a service that allows you to securely exchange and use data that's provided by third parties on a subscription basis, and they provide the data in the form of data products available from a searchable catalog
+                - data format is anything that can be stored in S3 (some of the most common formats are CSV, Parquet format, or image files)
+                - 3,500+ Data Products - available from a range of categories including financial services, healthcare, weather, manufacturing, and telecommunications
+                - Subscriptions between 1 - 36 months, some are paid but many providers make data products available for free
+                - Find and Exchange - it's designed to be a single central place to find and exchange data
+  Example Use Cases:
+  - can subscribe to data sets or data products provided by vendors through the AWS Marketplace (eg. retail data from companies like Experian, Equifax, or MasterCard)
+  - if you want to analyze customer spending patterns based on geographic locations, when you can get that kind of data, anonymized, of course,
+from one of the data products that's available from MasterCard in AWS Data Exchange
+  - this data can be used for analytics, machine learning workloads, and for decision making
+
+  - can also create and publish your own data products so that other users can subscribe using AWS Data Exchange
+  - as a data publisher, you can publish data simultaneously to all of your customers at once
+  - as a subscriber, you can find lots of different types of data available and you just paid the subscription fees through your AWS account
+
+
+
+------ Understanding Amazon Elastic Map Reduce (EMR) (3m 1s)
+- Elastic Map Reduce - is a big data platform
+                     - it's usually petabytes of data that requires large-scale parallel data processing
+                     - it's used for petabyte scale interactive analysis
+                     - supports multiple different types of data:
+                       - Structured Data - like financial transaction data
+                       - Semi-structured Data - could be text or documentation
+                       - Unstructured Data - could be application logs or click-stream data
+  Example Use Case:
+  - include data analysis and processing
+  - processing genomic data - using statistical algorithms and predictive models to discover hidden patterns and find correlations
+  - analyzing click-stream data - to understand customer preferences or market trends
+  - performing log processing - on log data generated by your applications
+
+                    - EMR can extract data from a variety of sources like S3, DynamoDB, or Redshift
+                    - it can be used to analyze events from streaming data sources in real time using Kinesis
+                    - It supports popular open-source frameworks like Apache Spark, Apache Hive, Presto, or Hadoop
+                    - EMR is essentially a fully managed big data solution, and AWS is gonna do all the heavy lifting for you. So that means there's no need to worry about provisioning and managing infrastructure, or configuring and managing open-source applications
+                    - don't need to worry about capacity planning, and it can scale dynamically out and in as required by your workload, and it's optimized for performance
+                    - AWS claim that it's faster and less than 50% of the cost of deploying your own big data solution on-premises
+
+
+------ What is Amazon OpenSearch? (2m 58s)
+- Elasticsearch - open-source data analysis technology, allowing you to get real-time insights from your data
+                - use it to analyze business data, to gain insights and make better business decisions
+                - another common use case is to search your log data so you can use it to search application, infrastructure,
+and security logs to better understand how your systems are operating
+
+- OpenSearch - is a fully-managed Elasticsearch service
+             - The reason it exists is because deploying and administering your own Elasticsearch cluster can be a very time-consuming and complex process
+             - that is where the OpenSearch Service comes in to make getting up and running with Elasticsearch a whole lot easier
+             - AWS does all the heavy lifting for you, including:
+               - hardware provisioning and configuring the Elasticsearch cluster
+               - take care of software installation and patching, 
+               - failure recovery, automated backups, and monitoring
+             - It's compatible with all the standard Elasticsearch open-source APIs
+             - It integrates with data ingestion and visualization tools like:
+               - Logstash - which is used for data collection and processing, 
+               - Kibana - which is used for search and data visualization, allowing you to create bar charts, line graphs, and scatterplots
+             - It also integrates with AWS services like CloudWatch for monitoring. And you can also use CloudWatch Logs and Kinesis Firehose for data ingestion
+             - you can even use Lambda functions to respond to new data, say in S3 or DynamoDB, by processing it and streaming it to OpenSearch
+
+
+
+------ Exploring Managed Streaming for Apache Kafka (Amazon MSK) (3m 13s)
+- Streaming Data - it is a continuous stream of small records or events, generated by thousands of devices, websites, and applications
+                 - there's no beginning or end to this kind of data
+                 - it's a continuous flow of data, that keeps on coming for the lifetime of the application
+  Use Cases:
+  - streaming log files to capture events and respond in real time,
+  - building customer profiles, using transaction data
+  - clickstream analysis,
+  - applications that continuously analyze and react to streaming data
+
+- Apache Kafka - open source technology that is used for building real-time data streaming pipelines
+               - It's able to process streams of events from hundreds of event sources
+               - after an event is received, data consumers read the data and process it in the order that it was produced
+               - AK clusters can be difficult and time consuming to set up, with MSK, AWS does the heavy lifting for you:
+                 - provisioning the cluster,
+                 - configuring Apache Kafka, 
+                 - managing upgrades and patches,
+                 - configuring monitoring, 
+                 - replacing unhealthy nodes,
+                 - scaling up and down when needed
+               - very similar to Kinesis, because both handle streaming data, however MSK is for customers who would like to use Apache Kafka for their streaming
+  Example Use Case:
+  - Think of an application that's designed to track and analyze stock market data in real time
+  - Data producers generate the stock price data, which is sent to MSK in real time
+  - Data consumers consume the data from the stream and then process it in the order that it was produced
+  - example is an investment advice application that takes the data, processes it in some way to give you investment advice (it could use this data to generate graphs, create reports, and identify industries to invest in)
+
+
+
+------ Understanding Amazon QuickSight (2m 39s)
+- QuickSight - is a software as a service model business analytics service
+             - It connects to your AWS data sources, as well as on-premises data, and it allows you to create dashboards to gain business insights
+             - is all about getting value from your data
+  Use cases:
+  - analyzing sales performance - to gain insights on your sales, (eg. to understand who is buying what, which are your most successful products,
+and are there any regional differences)
+   - using application traffic data - to visualize trends in your application's traffic, understand things like what are the most popular times or what are your maximum concurrent users,
+   - perform marketing campaign analysis - to measure engagement and conversion rates. Gather point-in-time data to visualize trends
+
+
+
+------ Machine Learning With Amazon SageMaker (5m 21s)
+- Machine Learning Workflow:
+  1. collect and prepare a data
+  2. implement a ML model
+  3. train the model
+  4. test the model and evaluate its performance
+  5. tune model to improve accuracy
+  6. deploy model to production
+
+- SageMaker - is a fully managed machine learning platform, enabling you to:
+  1. Prepare your data  - it can import data from AWS data sources like S3, Athena, Redshift, or Elastic MapReduce, and it can even help you prepare your data by identifying potential errors in the data, finding data quality issues, and identifying bias in your data set.
+  2. Build - includes built-in models for common use cases and supports custom models, so you can use your own model that you've created.
+  3. Train your model - using optimized infrastructure. So custom hardware and chips that are designed for machine learning. And it can even help with automatic model tuning.
+  4. Deploy your model - that could be to optimized EC2 instances, serverless option, or you can deploy to edge devices (like smart cameras and other physical devices that are located on-premises).
+  Example Use Cases:
+  - recommendation engine - to recommend products based on customers' shopping habits and browsing history
+  - identify suspected fraudulent transactions - Banks might use machine learning to do it
+  - predict insurance claimc - insurance company might use it to predict which policyholders are most likely to make a claim because they're accident-prone or careless
+  - virtual customer service assistant - that deals with customer queries
+
+
+
+------ What Is Amazon Kendra? (3m 5s)
+- Kendra - is an intelligent search service that uses Natural Language Processing to let you query your data using natural language instead of using a programming language,
+         - provides a Customized Search capability, allowing you to search your data or find the answers to customer queries
+         - Data sources support includes: S3, FSx, RDS, Aurora, Oracle, or SQL Server, websites and external drives, like Google Drive or Dropbox, SharePoint or GitHub
+         - Data types support includes: unstructured and semi-structured data in formats like HTML, XML, PDF, CSV, or Microsoft Office, including Word documents and PowerPoint documents
+  How does it work?
+  - imagine you have some documents stored in S3 that you want to be able to query using natural language
+  - Kendra can first index your data, and the index holds the contents of your documents, and it's structured in a way that makes them searchable
+  - After the index is created, you can then question Kendra using natural language, and it will provide the answers using the data in the index
+    Question types:
+    - fact-based questions - so simple questions, like who, what, where, and when ("When is the deadline for completing the compliance training?")
+    - descriptive questions - with this type of question, the answer could be a paragraph or a document ("How do I return a faulty item?")
+
+  - add custom search to our applications -> users can search based on the data that we provide
+  - query the data using natural language -> uses natural language processing to handle the query
+  - Data sources -> include S3, FSx, RDS, databases, as well as external sources, like GitHub and Google Drive
+  - Data Types -> unstructured or semi-structured (supports formats like HTML, XML, PDF, CSV, and Microsoft Office)
+  - types of questions that you can ask:
+    - simple fact-based questions - like who, what, and where,
+    - more descriptive questions  - like "How do I return a faulty item?"
+
+
+
+------ Understanding Amazon Lex (2m 34s)
+- Lex - is a service that allows you to build conversational interfaces into your applications using natural language models, so essentially chatbots
+      - when you're talking to an automated bot online, you are interacting with the Lex service on the backend
+      - 1. Easy Integration - seamlessly integrates with AWS Lambda for executing logic, so for taking actions based on the contents of your conversation
+      - 2. Multi-Platform Compatibility - it works with multiple different platforms like mobile devices, web applications, and chat services like Facebook Messenger
+      - 3. Speech or Text input - it can handle speech or text input, and uses automatic speech recognition to understand human voices
+      - 4. NLU - it uses natural language understanding to understand user intent and deliver a natural experience
+  Use Cases:
+  - building virtual agents and voice assistants (eg. to arrange refunds or flight changes, password reset requests, ...)
+  - Automate informational responses (eg. to answer the FAQs on your website so that users can ask them directly and get an answer in real time)
+  - improve productivity with application bots - (eg. create chat bots that can interact with customers and improve the productivity of customer support teams)
+  - in real world is used extensively for example:
+    - on e-commerce websites - providing personalized shopping experiences, 
+    - by healthcare applications - for patient engagement and inquiries,
+    - in banking apps - for handling customer queries and transactions,
+    - by the hospitality industry - for reservation systems and guest services
+ 
+
+
+------ Demo: Using Amazon Polly (4m 19s)
+- Polly - is a service that uses deep learning to generate realistic natural sounding speech from text that you provide
+        - can provide the text in a variety of different languages
+        - resulting audio can be streamed, saved or downloaded (eg. as an mp3 file)
+        - can be used to add natural sounding speech to your applications (eg. a blogging website that wants to offer an audio version of their content)
+  - deep learning - is just a type of artificial intelligence that lets computers learn how to process data in a similar way to the human brain
+
+
+- In the Console I'll search for Polly.
+- Using the menu on the left hand side, select text-to-speech.
+- Make sure that neural is selected, and this option produces more natural and human-like speech.
+- Down here we can select the language that we want to use - and I'm gonna select English British.
+- Next, I'll select a voice and I'm gonna use Amy.
+- Then down here, this is where we can add the text that we want Polly to read out.Demo-Using-Amazon-Polly
+
+
+
+------ Introducing Amazon Comprehend (2m 40s)
+- Comprehend - is a service that uses natural language processing and machine learning to process text
+             - is all about reading and understanding your text data
+             - allows to discover insights, meaning and connections within your text data
+             - Usage: to extract meaning from documents, customer interactions, reviews, emails, support messages or social media feeds
+  What kind of things can it discover? 
+  - sentiment analysis on social media feeds or customer support interactions - can find out how customers feel about product or service
+  - identify the language of the provided text 
+  - analyze a set of documents to discover the primary topics
+  Common Use Cases:
+  - voice of customer analytics - understand and gauge whether customer sentiment is positive, neutral or negative or mixed based on the feedback that you receive from customer support calls, emails and social media
+  - provide a better search experience by indexing key phrases, sentiment and key entities - this enables you to focus the search on intent and context instead of just basic keywords, so enabling customers to search more intelligently
+  - knowledge management and discovery - can analyze and organize a collection of documents by topic, and you can then use these topics
+to serve relevant and personalized content for your customers
+
+  - Natural language processing (NLP) - is a way for computers to analyze,understand and derive meaning from language
+
+
+
+------ Amazon Textract, Amazon Transcribe, and Amazon Translate (3m 8s)
+- these are a group of services that use machine learning technology to process and generate text
+- Textract - extracts information from documents
+- Transcribe - is a speech-to-text service
+- Translate - is a language translation service
+
+- Textract - is all about extracting data from documents
+           - it can read and process any kind of documents (eg. images, PDFs, tables or forms)
+           - it's able to deal with printed or handwritten documents and it uses optical character recognition to read and process the documents
+  Examples:
+  - an automated ID processing application that's able to review driver's licenses and passports
+  - an intelligent expenses system that's able to analyze invoices and review receipts, so that you don't have the manual effort involved in explaining what the receipts are
+
+- Transcribe - is a speech to text service
+             - speech goes in and text comes out
+             - it can deal with streamed audio or you can upload audio files (eg. MP3 files)
+  Use Cases:
+  - generating subtitles for videos
+  - automatically creating meeting notes
+
+- Translate - is a language translation service and it's designed to be accurate, and sound completely natural
+            - it can handle large scale translation jobs using a single API call
+            - it can quickly translate large volumes of HTML or text content
+            - it supports over 70 languages with more being added all the time and you can customize it to recognize your own brand names, product names or industry terminology
+  Use Cases:
+  - translating product documentation, 
+  - support documentation,
+  - real time translation jobs for customer support chat bots
+
+
+
+------ Demo: Using Amazon Transcribe (2m 8s)
+- 1. from the AWS console we'll first create and run a transcription job
+- 2. Next, we'll review the transcription
+- 3. the resulting file can be downloaded
+
+- From the console, search for Transcribe
+- Using the menu on the left, select real-time transcription
+- I'm just gonna get Transcribe to create a transcription of my voice. So after I select start streaming over here, it should begin typing out the transcription.
+- fter I finish and hit stop, I can now review the results and it will download to my local machine
+
+
+
+------ Demo: Amazon Rekognition in Action (4m 51s)
+- Rekognition - is used for image and video analysis
+              - It can perform content moderation to identify harmful or offensive images, identity verification (eg. to identify celebrities
+or for identification purposes)
+              - it can also be used to identify objects and text in images.
+- 1. Let's first explore the Rekognition console and see what options are available
+- 2. Next, we can try uploading some images
+- 3. using Rekognition to analyze the images
+
+- From the console search for Rekognition
+- In the left hand menu, we can see there are a few different demos available. So we can use Rekognition to label elements in an image, identify image properties, perform image moderation, so to detect offensive content, perform facial analysis,
+facial comparison, face liveness,
+and that's when Rekognition can tell you whether the face
+it's seeing is a live face
+or if it's just an image of a face.
+Celebrity Rekognition,
+
+------ Artificial Intelligence, Machine Learning, and Analytics Exam Tips - Part 1 (4m 46s)
+
+
+
+------ Artificial Intelligence, Machine Learning, and Analytics Exam Tips - Part 2 (5m 21s)
+
+
+
+
+
+
+
+
+
