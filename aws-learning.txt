@@ -1332,6 +1332,8 @@ it's seeing is a live face
 or if it's just an image of a face.
 Celebrity Rekognition,
 
+
+
 ------ Artificial Intelligence, Machine Learning, and Analytics Exam Tips - Part 1 (4m 46s)
 
 
@@ -1341,7 +1343,285 @@ Celebrity Rekognition,
 
 
 
+Chapter 10 - Auditing, Monitoring, Logging, and Additional Technology and Services (1h 40m 4s)
+==============================================================================================
 
+------ Introducing Monitoring and Logging on AWS (7m 55s)
+- there are 3 key resources
+- 1. Metrics - numerical representations of things like capacity and demand, tracked over time
+- 2. Logs - records of what has happened, to make sense of errors or security events
+- 3. Configurations - setting and guidelines across all of your cloud resources
+
+- 1. Collecting Metrics - typically, a metric will track some variable over time
+     - AWS services or your applications can publish metrics
+     - Metrics help you monitor workload health
+     - Metrics inform design decisions
+     - Common examples:
+       - lambda invocations or errors
+       - CPU utilization on EC2
+       - RDS read latency (amount of time it takes for your RDS database to respond to a request)
+       - Custom application metrics
+    Why collect metrics?
+    - you can create charts or you can create alerts for when specific events occur (eg. you can view a chart of your CPU utilization
+and maybe you can receive an alert when your utilization goes above 80%)
+    - can be used to trigger automated events (you can create custom code which triggers whenever metrics reach a certain threshold, and these can inform automated actions that take place in your AWS account)
+    Where do they come from? - Log Producers:
+    - metrics are derived from logs
+
+- 2. Logs - are produced by almost every AWS resource
+          - track actions within your infrastructure
+          - can be useful for the security of your AWS account (you can inspect those logs and figure out exactly what happened and who or what made critical changes)
+          - can be things like creating or removing an EC2 instance
+     - Common examples:
+       - VPC Flow Logs, 
+       - EC2 instance logs,
+       - account activity logs, 
+       - application logs
+
+- 3. Configuration Management
+  - configurations - are resource settings or standards, and the configurations you choose can be standardized across your AWS environment
+  - Monitoring your configurations allows you to enforce best practices within your AWS account
+  Use Cases:
+   - configured your IAM users such that they must use an MFA device (bad guy will not be able to access your resources)
+   - by setting the appropriate configurations can you make resources private
+
+  - configurations require monitoring - standardizing configurations requires both:
+    - prevention
+    - detection
+  - automate configurations at scale - will be leveraging AWS services to automate enforcement and auditing of configuration
+
+  - Well-Architected Framework - 6 pillars:
+    - security - tracking actions across your resources is integral to security on AWS
+    - cost optimization - By collecting metrics and visualizing them, you can understand utilization and make sure that you're achieving cost optimization
+    - performance efficiency - use metrics to make sure your workloads are meeting your performance standards
+    - operational excellence - By auditing configurations and collecting appropriate logs and metrics contribute to operational excellence
+    - reliability - Being able to observe your uptime and performance is integral to reliability
+    - sustainability - Metrics can also help you more closely track your carbon footprint on AWS
+
+
+
+------ Exploring Amazon CloudWatch and AWS CloudTrail (5m 27s)
+- these services share some characteristics, they're really quite different in practice
+- CloudWatch - gives visibility to cloud resources and applications
+             - tracks metrics in dashboards
+             - stores logs from many different sources
+             - triggers events using CloudWatch alarms
+             - lets you watch your cloud resources as your AWS ecosystem evolves
+             - For EC2, some metrics can't be collected unless you have the CloudWatch Agent installed on the instance, so make sure you have the CloudWatch Agent installed if you want to collect things like free memory, percentage of disc space used, custom application metrics, etc.
+
+- CloudTrail - provides accountability for actions taken in your account
+             - centralizes activity logs across regions in an S3 bucket
+             - tracks only API activity in your AWS account
+             - creates a trail of breadcrumbs for any action in your AWS account
+
+
+------ Demo: Getting to Know CloudWatch Dashboards (6m 15s)
+- We'll show you how to create a new CloudWatch dashboard,
+- we'll show you how to visualize EC2 metrics and add those to your dashboard
+
+- in the AWS console navigate to the CloudWatch service
+- on the left side menu click on Dashboards
+- then click on Create Dashboard
+- With this dashboard, we want to look at EC2 utilization metrics, so I'm going to name it my EC2 dashboard
+- Now I'll click Create Dashboard
+- It then directs you to a page where you can add the first widget to your dashboard
+- let's start by adding a metric widget of the line graph type
+- click Next
+- Now you see we're adding a metric graph. So the first thing we have to do is choose which metric we'd like to visualize in this line graph
+- The metrics you have the options to choose from depend on the services you're using within your account
+- I'm interested in EC2 metrics, so I'll go ahead and click EC2
+- I'll click Per Instance Metrics
+- I can see all of the metrics for each of my EC2 instances, of which I'm running four in this account
+- the first thing I'm going to do is figure out what metric I'd like to visualize
+- In this case, I'm going to choose CPU Utilization
+- I'll go ahead and search for that metric in the search bar
+- Now you can see I can view the CPU utilization of each of my four EC2 instances
+- I'll go ahead and click on each of these, and returning to the top to view the graph
+- let's go ahead and give this graph a meaningful name, we'll call it EC2 CPU Utilization
+- Apply that new name, and then let's create the widget
+- now we have one widget on our dashboard and we can also create many, many more
+- by default, autosave is off, and so you'll have to click save each time you make a change to your dashboard
+- We can also use CloudWatch to capture custom logs from our applications, To do this, we would have to create a log group
+- let's go ahead and click the sidebar here and choose Log Groups from the logs section, and let's create a log group
+- perhaps your EC2 application sends logs to CloudWatch, you'll want to capture them here, then you could potentially visualize custom metrics on your CloudWatch dashboard
+- let's call this my EC2 app log group
+- you have to pay for the storage of these logs. So it's really important to think critically at the step and choose a retention setting that makes sense for you
+- We can leave the other options as default and choose Create
+- Then through your application code using the AWS SDK, you could send your application logs to this log group and they'll be retained for two months, or 60 days in this case
+
+
+
+------ Managing Many Resources on AWS (2m 49s)
+- Tags - are a key value pair that you can apply to pretty much any cloud resource
+       - you can give your resources readable names,
+       - you can define which project or environment they belong to
+       - You can use tags to filter resources on CloudWatch as well as Cost & Usage Reports
+
+- Systems Manager - another service that helps you organize your AWS resources into groups
+                  - you can also group on premises or resources on other cloud platforms for visibility
+                  - You can take automated actions on resource groups using Systems Manager Run Command
+                  - you can view aggregated operational data of resource groups
+                  - there's a feature called Parameter Store (!!!pop up on exam!!!) - which can help you securely store sensitive data like:
+                                                                   - passwords 
+                                                                   - database strings
+                                                                   - license keys
+
+
+
+------ Hands-on Lab: Visualize Metrics for Tagged Resources on Amazon CloudWatch (45m)
+- Create a CloudWatch Dashboard
+- Select EC2 CPU Utilization in Metrics Explorer
+- Filter the Aggregated Metrics by Environment Tag and Create One Visual for Each Environment
+
+
+
+------ Monitoring Service Health and Best Practices (3m 40s)
+- AWS's network is spread across the globe and it's separated into regions
+- each region is broken down into availability zones
+- these availability zones are designed with redundancy in mind, failures do happen, and these failures can affect service health
+- Health Dashboard - monitor the health of the services that are relevant to your AWS account
+                   - gives you a view of which services are healthy and which are not
+                   - displays which services have been impacted, and it can be set up to send you an alert or take automated actions
+- Monitoring Service Health - in a couple of different ways:
+  - using health dashboard on the AWS console - view the status of services and regions relevant to the workloads running in your account
+  - AWS Health API - allows to programmatically access the same data (use this if you are building your own health dashboard)
+  Monitor best practices:
+  - Trusted Advisor - is a one-stop shop for best practice advice. It can advise on:
+    - performance, 
+    - cost optimization,
+    - service limits, 
+    - fault tolerance,
+    - operational excellence, 
+    - security
+                    - TA has a built-in set of rules that it uses to continuously scan your AWS environment and provides you with relevant best practice suggestions
+                    - It gives you several of these suggestions for free whenever you start an AWS account
+  Free Trusted Advisor checks:
+  - checks to see if you have any open security groups in your VPCs
+  - checks to see if you're using IAM users (hich is to say you're not just using your root user for every action)
+  - makes sure you have MFA enabled on your root user
+  - alerts you if any of your services are approaching the predefined service limit
+  - makes sure you're not saving any of your snapshots publicly
+  - checks to see if you have any public RDS snapshots or EBS volume snapshots
+  - makes sure that your S3 bucket permissions don't allow open access
+
+  - if you upgrade your support plan to business or enterprise, you can gain access to many more checks
+
+
+
+------ Understanding Auditing on AWS (5m 57s)
+- Auditing - is a continuous process
+           - is a continuous act of monitoring passive configurations for security and best practices
+           - sometimes this is done against a set of standards to achieve industry-specific compliance
+  - Auditing Concepts: What types of things might you want to audit in AWS?
+    - Data Encryption - make sure that your data is encrypted, in transit, and at rest
+    - Secure CloudTrail - make sure your CloudTrail logs are secure and can't be tampered with
+    - Public Access - to check to see if any of your resources have public access that shouldn't have it
+    - Resources Provisioning - make sure that any resources that are provisioned meet a certain set of configuration standards
+    - Network Security - make sure there isn't any unnecessary access
+    - Protect Credentials - make sure that your credentials are appropriately secure
+
+- AWS Config - has sets of predefined recommendations, or create custom rules that it will use to check configurations across AWS account
+             - detects non-compliant resources and alert you
+             - does not enforce standards, but audits adherence
+             - it won't prevent the actions from taking place, for that, you'll need to use IAM
+             - is used by Trusted Advisor and other auditing tools on AWS
+
+- Audit Manager - another service used for auditing on AWS
+                - is a place where you can centralize your audit data from Config and other security services
+                - can find the root causes of non-compliant resources and build out auditing reports
+                - can provide prebuilt auditing frameworks for a bunch of different compliance and best practice frameworks like:
+                  - HIPAA,  
+                  - NIST Cybersecurity,
+                  - AWS Operational Best Practices frameworks
+  - after enabling Audit Manager, you'll select one of the predefined or custom frameworks. You'll begin sending data from AWS Config and other security services, and with that data, you'll be able to generate audit reports and use that to take actions in your account or provide to a third party auditor
+
+- Well-Architected Tool - another sort of auditing tool
+                        - there are six pillars (as in Well-Architected Framework) - think of these pillars as the lenses through which you can observe your cloud architecture
+                        - assess particular workloads, learn about best practices and generate action plans to update your architecture
+to more closely align with the Well-Architected Framework
+
+
+
+------ Identifying Business and End User Services (2m 38s)
+- Amazon Connect - is a cloud-based contact center
+                   allows you to create a call center in the cloud, and this can be a distributed call center with agents and managers and cases tracked all around the globe
+                 - managers and agents around the globe can log into your Amazon Connect application and manage their work there
+
+- Amazon WorkSpaces - used to provision desktops for dispersed workforces
+                    - can create or connect a directory of users and give them access to virtual desktops
+                    - used for provisioning secure desktops for remote employees
+
+- Amazon AppStream - it converts applications to Software-as-a-Service, or SaaS, for employees or end users
+                   - is used to host and manage an application in the cloud that can be accessed through a web browser
+                   - you package your application, you load it into AppStream, connect users, and then your application can be accessed
+through a web browser, and you don't have to worry about scaling or provisioning any resources
+
+
+
+------ Auditing, Monitoring, and Logging Exam Tips (5m 23s)
+
+
+
+Chapter 1 - Security, Compliance, and Governance (2h 11m 39s)
+=============================================================
+
+------ Security: The Bigger Picture (5m 5s)
+
+
+
+------ What Do We Need To Secure on AWS? (5m 16s)
+
+
+
+------ Illustrating the Principle of Least Privilege (6m 1s)
+
+
+
+------ What Is IAM? (7m 25s)
+
+
+
+------ Hands-on Lab: Troubleshooting an IAM Policy on an EC2 Instance (45m)
+
+
+
+------ Leveraging Existing Identity Providers (5m 40s)
+
+
+
+------ Keeping Secrets Safe (6m 22s)
+
+
+
+------ Exploring Network Security Services (5m 4s)
+
+
+
+------ What Is Security Hub? (2m 27s)
+
+
+
+------ Demo: Exploring Security Hub (4m 35s)
+
+
+
+------ Responding to Security Events (4m 14s)
+
+
+
+------ Growing Your Security Muscles (2m 21s)
+
+
+
+------ Governing Multiple Accounts on AWS (6m 10s)
+
+
+
+------ Understanding Compliance on AWS (4m 13s)
+
+
+
+------ Security, Compliance, and Governance Exam Tips (6m 46s)
 
 
 
